@@ -1,2 +1,7 @@
 gunicorn==19.7.1
 flask
+json
+os
+re
+collections
+pandas
