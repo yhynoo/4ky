@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'Uruk.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename = 'grain.png') }}">
+        <title>4ky</title>
+    </head>
+    <body class = "urukContainer">
+        <nav>
+            <div class = "urukBox urukNav">
+                <a href = "/">Administrative</a>
+                <a href = "/help">Help</a>
+            </div>
+        </nav>
+
+        <div class = "urukBox">
+            <h1>Welcome to 4ky!</h1>
+            <p>This website is a simple interface for browsing the Late Uruk Period (proto-cuneiform) administrative corpus of <a href = "https://cdli.mpiwg-berlin.mpg.de/">CDLI</a>. It allows you to look for attestations of signs and sign combinations.</p>
+        </div>
+
+        <div class = "urukBox">
+            <form method = "POST" target="_blank">
+                <input type = "text" type = "search" name = "term" placeholder="What would you like to find?" class = "urukInput">
+
+                <br>
+                <br>
+                <fieldset class = "urukSearchOptions">
+                    <legend><b>Period:</b></legend>
+                    <label><input type = "checkbox" name = "timePeriod" value = "Uruk V"><span class = "urukLabel">V</span></label>
+                    <label><input type = "checkbox" name = "timePeriod" value = "Uruk IV"><span class = "urukLabel">IV</span></label>
+                    <label><input type = "checkbox" name = "timePeriod" value = "Uruk III"><span class = "urukLabel">III</span></label>
+                </fieldset>
+                  
+                <fieldset class = "urukSearchOptions">
+                    <legend><b>Origin:</b></legend>
+                    <label><input type = "checkbox" name = "origin" value = "Uruk"><span class = "urukLabel">Uruk</span></label>
+                    <label><input type = "checkbox" name = "origin" value = "Jemdet Nasr"><span class = "urukLabel">Jemdet Nasr</span></label>
+                    <label><input type = "checkbox" name = "origin" value = "Tell Uqair"><span class = "urukLabel">Uqair</span></label>
+                    <label><input type = "checkbox" name = "origin" value = "Umma"><span class = "urukLabel">Umma</span></label>
+                    <label><input type = "checkbox" name = "origin" value = "Larsa"><span class = "urukLabel">Larsa</span></label>
+                    <label><input type = "checkbox" name = "origin" value = "other"><span class = "urukLabel">other</span></label>
+                    <label><input type = "checkbox" name = "origin" value = "uncertain"><span class = "urukLabel">uncertain</span></label>
+                </fieldset>
+                  
+                <fieldset class = "urukSearchOptions">
+                    <legend><b>Signs:</b></legend>
+                    <label><input type = "checkbox" name = "distinguish_variants" value = "1"><span class = "urukLabel">Distinguish variants</span></label>
+                    <label><input type = "checkbox" name = "dismantle" value = "1"><span class = "urukLabel">Dismantle compound signs</span></label>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'Uruk.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename = 'grain.png') }}">
+        <title>4ky: {{queryTerm}}</title>
+    </head>
+    
+    <body class = "urukContainer">
+        <nav>
+            <div class = "urukBox urukNav">
+                <a href = "/">Administrative</a>
+                <a href = "/help">Help</a>
+            </div>
+        </nav>
+
+        <div class = "urukBox">
+            <h1>Search results for "{{queryTerm}}" ({{queryCount}} attestations)</h1>
+        </div>
+
+        <!-- statistics -->
+        <div class = "urukBox">
+            <div class = "urukLine">
+                <h2>Statistics:</h2>
+                <p style = "display: flex; justify-content: flex-end;">
+                    <label class="toggleStatistics"><input type="checkbox" class="toggleStatisticsCheckbox"><span class="urukLabel urukSmallText">Hide statistics</span></label>
+                </p>
+            </div>
+
+            <div class = 'urukStatistics'>
+                <div class = "urukStatisticItem">
+                    <b>Signs most commonly found in the same case:</b>
+                    {{queryCase | safe}}
+                </div>
+
+                <div class = "urukStatisticItem">
+                    <b>Signs most commonly found in the same tablet:</b>
+                    {{queryTablet | safe}}
+                </div>
+
+                <div class = "urukStatisticItem">
+                    <b>Distribution:</b>
+                    <div class = "urukTranscription">
+                        {{queryTable | safe}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- attestations -->
+        <div class = "urukBox">
+            <div class = "urukLine">
+                <h2>Attestations:</h2>
+                <p style = "display: flex; justify-content: flex-end;">
+                    <label class="toggleAllAttestations"><input type="checkbox" class="toggleAllAttestationsCheckbox"><span class="urukLabel urukSmallText">Hide all attestations</span></label>
+                    <label class="toggleAllTranscriptions"><input type="checkbox" class="toggleAllTranscriptionsCheckbox"><span class="urukLabel urukSmallText">Hide all transcriptions</span></label>
+                </p>
+            </div>
+            {{queryAttestations | safe}}
+        </div>
+
+        <!-- visibility toggles -->
+        <script>document.addEventListener('DOMContentLoaded', function() {
+            const toggle = (elements, display) => elements.forEach(el => el.style.display = display);
+            
+            document.querySelector('.toggleStatisticsCheckbox').addEventListener('change', function() {
+                toggle(document.querySelectorAll('.urukStatistics'), this.checked ? 'none' : 'block');
+            });
+        
+            const toggleAllAttestations = document.querySelector('.toggleAllAttestationsCheckbox');
+            toggleAllAttestations.addEventListener('change', function() {
+                const attestationDivs = document.querySelectorAll('.urukAttestation');
+                toggle(attestationDivs, this.checked ? 'none' : 'block');
+                document.querySelector('.toggleAllTranscriptions').style.display = this.checked ? 'none' : 'block';
+            });
+        
+            document.querySelector('.toggleAllTranscriptionsCheckbox').addEventListener('change', function() {
+                const toggleTranscriptionCheckboxes = document.querySelectorAll('.toggleTranscription');
+                toggleTranscriptionCheckboxes.forEach(checkbox => {
+                    checkbox.checked = this.checked;
+                    checkbox.dispatchEvent(new Event('change'));
+                });
+            });
+        
+            document.querySelectorAll('.toggleTranscription').forEach(toggleElement => {
+                toggleElement.addEventListener('change', function() {
+                    const attestationDiv = this.closest('.urukAttestation');
+                    const transcriptionDivs = attestationDiv.querySelectorAll('.urukTranscription');
+                    toggle(transcriptionDivs, this.checked ? 'none' : 'block');
+                });
+            });
+        });        
+        </script>
+    </body>

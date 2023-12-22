@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'Uruk.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename = 'grain.png') }}">
+        <title>Help</title>
+    </head>
+    <body class = 'urukContainer'>
+        <nav>
+            <div class = "urukBox urukNav">
+                <a href = "/">Administrative</a>
+                <a href = "/help">Help</a>
+            </div>
+        </nav>
+
+        <div class = "urukBox">
+            <h1>Help</h1>
+            <p>
+                Welcome to the Help section of <b>4ky</b>. If you can't find the answers to your questions here, please contact the <a href = "mailto:piotrekzadworny@gmail.com">author</a>.
+            </p>
+        </div>
+
+        <div class = "urukBox">
+            <h2>1. Searching</h2>
+            <div class = "urukSmallText">
+                <p>
+                    The primary function of <b>4ky</b> is searching for signs and sign combinations in the proto-cuneiform administrative corpus. There are two main modes: single query search and coordinated search.
+                </p>
+                <p>
+                    <b>Searching for a single query</b><br>
+                    To look for a single sign, type its transcription into the search bar, for example <span class = "urukHighlight">EN</span>.<br>
+                    You can also search for a sign combination: then, you need to type all signs that the combination consists of, separated by spaces, like <span class = "urukHighlight">BU PAP</span>.<br>
+                    The results you see are basic statistics and all a list of all the tablets where all elements of your query appear in a single case, regardless of the order of signs. You can then click on the title of the tablet to see it in CDLI.
+                </p>
+                <p>
+                    <b>Coordinated search</b><br>
+                    You can also look for tablets where multiple signs or sign combinations appear on the same tablet, but not necessarily in the same case. To do that, you need to enter your queries separated with a comma, for example: <span class = "urukHighlight">NAMESZDA, UKKIN</span> or <span class = "urukHighlight">UDU, TE RAD SANGA</span>.<br>
+                    The results will similar to those described above.
+                </p>
+                <p>
+                    <b>Filters and normalization</b><br>
+                    You can look for tablets only from specific periods or sites, or a combination of both. Additionally, you can choose to distinguish sign variants (eg. search specifically for <span class = "urukHighlight">DUG~a</span> instead of all types of <span class = "urukHighlight">DUG</span> and "dismantle" compound signs. Dismantling compound signs makes the search engine treat their elements as separate signs &ndash; eg. searching for <span class = "urukHighlight">SZE~a</span> will find instances where it is inscribed into other signs as well, like <span class = "urukHighlight">|NINDA2xSZE~a|</span>. Filters work the same for single and coordinated queries.
+                </p>
+            </div>
+        </div>
+
+        <div class = "urukBox">
+            <h2>2. Transcriptions</h2>
+            <div class = "urukSmallText">
+                <p>
+                    The transcriptions used for browsing are sourced from CDLI. A number of changes have been introduced however to facilitate a detailed study.
+                </p>
+
+                <b>Removed signs</b>
+                <div class = "urukTranscription">
+                    <span class = "urukLabel">[ ]</span><br>
+                    <span class = "urukLabel">( )</span> other than in numerals<br>
+                    <span class = "urukLabel">#</span> for reconstructed signs<br>
+                    <span class = "urukLabel">,</span> after numerals
+                </div>
+
+                <b>Editing signs</b>
+                <div class = "urukTranscription">
+                    <span class = "urukLabel">X</span> replaced by <span class = "urukHighlight">?</span><br>
+                    <span class = "urukLabel">[...]</span> replaced by <span class = "urukHighlight">...</span>
+                </div>
+
+                <b>Complex signs broken into constituent pieces</b>
+                <div class = "urukTranscription">
+                    <span class = "urukLabel">MUD</span> is replaced by <span class = "urukHighlight">|MUSZEN.HI|</span><br>
+                    <span class = "urukLabel">SZAM2</span> is replaced by <span class = "urukHighlight">|NINDA2xSZE~a|</span>
+                </div>
+            </div>
+        </div>
+
+        <div class = "urukBox">
+            <h3>3. Colophon</h3>
+            <div class = "urukSmallText">
+                <p>
+                    The author of <b>4ky</b> (2023) is Piotr Zadworny, a student of Assyriology at Leiden University.<br>
+                    <a href = "https://leidenuniv.academia.edu/PiotrekZadworny">Academia.edu</a><br>
+                    <a href = "https://www.linkedin.com/in/piotr-zadworny/">LinkedIn</a><br>
+                    <a href = "mailto:piotrekzadworny@gmail.com">Email</a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
