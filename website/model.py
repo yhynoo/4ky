@@ -11,7 +11,7 @@ def normalize_variants(input_string):
     return re.sub(r'~[a-z](\d)?', '', input_string).replace(',', '')
 
 def dismantle_complex_signs(line):
-    dismantling = lambda array: [re.sub(r'[.,&x+]|(?<!\.)\.(?!\.)', ' ', element.replace('|', '')).split() for element in array]
+    dismantling = lambda array: [re.sub(r'[.,&x+()]|(?<!\.)\.(?!\.)', ' ', element.replace('|', '')).split() for element in array]
     return [item for sublist in dismantling(line) for item in sublist]
 
 def includes_term(term, line_word, distinguish_variants):
@@ -33,7 +33,7 @@ def filter_by_origin(obj_origin, origin, specific_origins):
     return not origin or ('other' in origin and obj_origin in specific_origins) or obj_origin in origin
 
 def collect_attestations(query, period, origin, distinguish_variants, dismantle):
-    file_path = os.path.join(current_app.root_path, 'data', 'UpdatedUruk_complete.json')
+    file_path = os.path.join(current_app.root_path, 'data', 'CDLI_source.json')
 
     with open(file_path, 'r') as file:
         data = json.load(file)
@@ -76,14 +76,15 @@ def collect_attestations(query, period, origin, distinguish_variants, dismantle)
                         inner_array = dismantle_complex_signs(inner_array) if dismantle == 'True' else inner_array
                         inner_array = [normalize_variants(element) for element in inner_array]
                     
-                    coattestations.extend([element for element in inner_array if element not in query])
+                    stop_words_pattern = re.compile(r'^N\d{2}[a-zA-Z]*$|^[a-z]$|^N$|^\d+|\?$|^$')
+                    coattestations.extend([element for element in inner_array if element not in query and not stop_words_pattern.match(element)])
 
     tablet_coattestations = collect_tablet_coattestations(data, matched_tablets, query, distinguish_variants, dismantle)
 
     return attestations, coattestations, tablet_coattestations
 
 def collect_coordinated_attestations(query, period, origin, distinguish_variants, dismantle):
-    file_path = os.path.join(current_app.root_path, 'data', 'UpdatedUruk_complete.json')
+    file_path = os.path.join(current_app.root_path, 'data', 'CDLI_source.json')
 
     with open(file_path, 'r') as file:
         data = json.load(file)
@@ -154,7 +155,9 @@ def collect_tablet_coattestations(data, matched_tablets, query, distinguish_vari
                         array = dismantle_complex_signs(array) if dismantle == 'True' else array
                         array = [normalize_variants(element) for element in array]
                     
-                    tablet_coattestations.extend([element for element in array if element not in query])
+                    stop_words_pattern = re.compile(r'^N\d{2}[a-zA-Z]*$|^[a-z]$|^N$|^\d+|\?$|^$')
+                    tablet_coattestations.extend([element for element in array if element not in query and not stop_words_pattern.match(element)])
+
     return tablet_coattestations
 
 
