@@ -47,7 +47,10 @@ def parse_text_to_json(text, artifacts_csv):
 
     for line in text.split('\n'):
         if line.startswith('&'):
-            if current_object: objects.append(current_object)
+            if current_column:
+                current_object["columns"].append(current_column)
+            if current_object:
+                objects.append(current_object)
 
             current_column = []
             current_id = str(int(line[2:]))
@@ -60,14 +63,17 @@ def parse_text_to_json(text, artifacts_csv):
                               "columns": []}
 
         elif line.startswith('@column'):
-            if current_column: current_object["columns"].append(current_column)
+            if current_column:
+                current_object["columns"].append(current_column)
             current_column = []
 
         elif line.strip():
             current_column.append(line.strip().split())
 
-    if current_column: current_object["columns"].append(current_column)
-    if current_object: objects.append(current_object)
+    if current_column:
+        current_object["columns"].append(current_column)
+    if current_object:
+        objects.append(current_object)
 
     return objects
 
@@ -81,7 +87,7 @@ def save_json_to_file(json_data, output_file_path):
 
 # run
 input_file_path = 'inscriptions-output.txt'
-output_file_path = 'output.json'
+output_file_path = 'CDLI_source.json'
 artifacts_csv_path = 'artifacts-merged.csv'
 
 txt_fragment = read_text_from_file(input_file_path)
