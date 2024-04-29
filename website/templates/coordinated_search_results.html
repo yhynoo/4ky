@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename = 'Uruk.css') }}">
         <link rel="icon" href="{{ url_for('static', filename = 'grain.png') }}">
         <title>4ky: {{queryTerm}}</title>
-    </head>
+    </head> 
     
     <body class = "urukContainer">
         <nav>
@@ -17,15 +17,15 @@
         </nav>
 
         <div class = "urukBox">
-            <h1>Coordinated search results for "{{queryTerm}}" ({{queryCount}} tablets)</h1>
+            <h1>Coordinated search results for "{{queryTerm}}" &ndash; {{queryCount}} tablets</h1>
         </div>
 
         <!-- statistics -->
         <div class = "urukBox">
             <div class = "urukLine">
-                <h2>Statistics:</h2>
+                <h2>Overview:</h2>
                 <p style = "display: flex; justify-content: flex-end;">
-                    <label class="toggleStatistics"><input type="checkbox" class="toggleStatisticsCheckbox"><span class="urukLabel urukSmallText">Hide statistics</span></label>
+                    <label class="toggleStatistics"><input type="checkbox" class="toggleStatisticsCheckbox"><span class="urukLabel urukSmallText">Hide overview</span></label>
                 </p>
             </div>
 

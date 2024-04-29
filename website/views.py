@@ -12,6 +12,7 @@ def search():
         origins = request.form.getlist('origin')
         distinguish_variants = bool(request.form.get('distinguish_variants'))
         dismantle = bool(request.form.get('dismantle'))
+        atomize = bool(request.form.get('atomize'))
 
         # splitting
         parts = term.split(', ')
@@ -22,7 +23,8 @@ def search():
             'timePeriod': ','.join(time_periods),
             'origin': ','.join(origins),
             'distinguish_variants': distinguish_variants,
-            'dismantle': dismantle
+            'dismantle': dismantle,
+            'atomize': atomize
         }
 
         if len(term) == 1:
@@ -35,10 +37,12 @@ def search():
 @views.route('/search-results')
 def search_results():
     term = json.loads(request.args.get('term').replace("'", '"'))
+
     time_periods = request.args.get('timePeriod', '').split(',') if request.args.get('timePeriod', '') != '' else []
     origins = request.args.get('origin', '').split(',') if request.args.get('origin', '') != '' else []
     distinguish_variants = request.args.get('distinguish_variants')
     dismantle = request.args.get('dismantle')
+    atomize = request.args.get('atomize')
 
     att = None
     att_list = None
@@ -47,17 +51,17 @@ def search_results():
     coatt_list = None
     tab_coatt_list = None
 
-    att, coatt, tab_coatt = collect_attestations(term, time_periods, origins, distinguish_variants, dismantle)
+    att, coatt, tab_coatt, matched_tablets = collect_attestations(term, time_periods, origins, distinguish_variants, dismantle, atomize)
     
     if att:
         att_list = process_attestations(term, att, dismantle)
         att_table = create_attestations_table(att)
 
     if coatt:
-        coatt_list = process_coattestations(coatt)
+        coatt_list = process_coattestations(coatt, len(att))
 
     if tab_coatt:
-        tab_coatt_list = process_coattestations(tab_coatt)
+        tab_coatt_list = process_coattestations(tab_coatt, len(matched_tablets))
 
     return render_template('search_results.html', 
                            queryTerm = ' '.join(term),
@@ -65,6 +69,7 @@ def search_results():
                            queryCase = coatt_list,
                            queryTablet = tab_coatt_list,
                            queryCount = len(att), 
+                           queryTabletCount = len(matched_tablets),
                            queryAttestations = att_list)
 
 @views.route('/coordinated-search-results')
@@ -76,20 +81,21 @@ def coordinated():
     origins = request.args.get('origin', '').split(',') if request.args.get('origin', '') != '' else []
     distinguish_variants = request.args.get('distinguish_variants')
     dismantle = request.args.get('dismantle')
+    atomize = request.args.get('atomize')
 
     att = None
     att_list = None
     att_table = None
     tab_coatt_list = None
 
-    att, tab_coatt = collect_coordinated_attestations(terms, time_periods, origins, distinguish_variants, dismantle)
+    att, tab_coatt = collect_coordinated_attestations(terms, time_periods, origins, distinguish_variants, dismantle, atomize)
 
     if att:
         att_list = process_coordinated_attestations(terms, att, dismantle)
         att_table = create_attestations_table(att)
 
     if tab_coatt:
-        tab_coatt_list = process_coattestations(tab_coatt)
+        tab_coatt_list = process_coattestations(tab_coatt, len(att))
 
     return render_template('coordinated_search_results.html',
                            queryTerm = ', '.join([' '.join(sublist) for sublist in terms]),
@@ -101,3 +107,7 @@ def coordinated():
 @views.route('/help')
 def help():
     return render_template('help.html')
+
+@views.route('/atomization')
+def atomization():
+    return render_template('atomization.html')
