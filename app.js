@@ -1,7 +1,8 @@
 import express from "npm:express";
 import ejs from "npm:ejs";
 
-import { cleanTranscription } from './js/transcription-cleaner.js'
+import { cleanTranscription } from './js/transcriptionCleaner.js'
+import { checkSimpleFeatures } from "./js/simpleFeatures.js";
 
 const app = express();
 
@@ -26,14 +27,26 @@ app.post('/', (req, res) => {
     const { transcriptionArray, transcriptionString } = cleanTranscription(req.body.transcription)
 
     // operate on the array of lines
-    console.log(transcriptionArray)
+    const { foundTheonyms, foundTimeExpressions, foundToponyms } = checkSimpleFeatures(transcriptionArray)
 
     // re-render the page.
     res.render('index', {data: 
         { 
-            text: transcriptionString,
+            // features - does it contain time expressions, original metadata ('colophon'), lexical items, is it a ration list?
+            features: {
+                isRations: false,
+                lexicalItems: [],
+                originalMetadata: '',
+
+                theonyms: foundTheonyms,
+                timeExpressions: foundTimeExpressions,
+                toponyms: foundToponyms
+            },
+            
+            // type
+            certainty: 0,
             prediction: 'uncertain',
-            certainty: 0
+            text: transcriptionString
         } 
     })
 })

@@ -9,3 +9,7 @@ export function cleanTranscription(transcription) {
 
     return { transcriptionArray, transcriptionString }
 }
+
+export function cleanVariants(sign) {
+    return sign.replace(/~[a-wyz0-9]+/g, '');
+}

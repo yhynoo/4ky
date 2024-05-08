@@ -17,7 +17,7 @@
 
         <div class='urukBox'>
             <h1>Account types</h1>
-            <p>This simple web app helps you to classify your proto-cuneiform accounts according to type. It is AI-based, so the results have a degree of uncertainty.</p>
+            <p>This simple web app helps you to classify your proto-cuneiform account transcriptions according to <span class = 'urukHelp'>type<span class = "urukHelpText urukSmallText">The AI can currently recognize: lexical lists, mathematical texts; as well as divide economic texts into animal, cereal, human and other accounts.</span></span>. It is <a href = ''>AI-based</a>, so the results have a degree of uncertainty.</p>
         </div>
     
         <% if (!data.prediction) { %>
@@ -31,29 +31,47 @@
         <% } else { %>
             <div class='urukBox urukSmallText'>
                 <div class='urukAttestation'>
-                    <% if (data.prediction > 90) { %>
-                        <b>Prediction (with <%= data.certainty %>% certainty):</b>
+                    <% if (data.certainty >= 80) { %>
+                        <b>Prediction:</b>
                         <div class='urukTranscription'>
-                            It is a <%= data.prediction %> account.
+                            I am <%= data.certainty %>% sure it is a <%= data.prediction %> account.
                         </div>
                     <% } else { %>
-                        <b>Prediction:</b>
+                        <b>Type:</b>
                         <div class='urukTranscription'>
                             I'm sorry, I don't know what kind of account this is.
                         </div>
                     <% } %>
                 </div>
+
+                <div class='urukAttestation'>
+                    <b>I also found...</b>
+                    <div class='urukTranscription'>
+                        <% if (data.features.timeExpressions.length > 0) { %><%= data.features.timeExpressions.length %> possible time expression(s): <span class = "urukLabel"><%= data.features.timeExpressions.join(', ') %></span><br><% } %>
+
+                        <% if (data.features.theonyms.length > 0) { %><%= data.features.theonyms.length %> possible divine name(s): <span class = "urukLabel"><%= data.features.theonyms.join(', ') %></span><br><% } %>
+
+                        <% if (data.features.toponyms.length > 0) { %><%= data.features.toponyms.length %> possible toponym(s): <span class = "urukLabel"><%= data.features.toponyms.join(', ') %></span><% } %>
+                    </div>
+                </div>
+
                 <div class="urukAttestation">
-                    <b>Your query:</b>
+                    <b>Your</b> <span class = 'urukHelp'><b>query</b><span class = 'urukHelpText'>As you can see, all metadata was removed from your query. This is done to make sure that the AI does not get 'distracted.'</span></span><b>:</b>
                     <div class="urukTranscription">
                         <pre><%- data.text %></pre>
                     </div>
                 </div>
+
             </div>
         <% } %>
     </div>
 
     <script>
+        window.onload = function() {
+            var textarea = document.getElementById('transcription');
+            textarea.select();
+        };
+
         document.getElementById('transcription').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 e.preventDefault(); // Prevent default form submission
