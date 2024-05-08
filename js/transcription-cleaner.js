@@ -5,7 +5,7 @@ export function cleanTranscription(transcription) {
         .map(line => line.replace(/[#()?|\[\]]/g, '').replace(/^\d+[^ ]*\s*/, ' ').replace(', ', '').trim())
 
     const transcriptionString = transcriptionArray
-        .join('<br>')
+        .join('\n')
 
     return { transcriptionArray, transcriptionString }
 }

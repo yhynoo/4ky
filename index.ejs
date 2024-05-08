@@ -6,45 +6,51 @@
     <link rel="icon" href="grain.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4ky: Account types</title>
+    <title>4ky: AI</title>
 </head>
 <body>
     <div class="urukContainer">
         <div class="urukBox urukNav">
-            <a href="https://fourky.onrender.com">Administrative</a>
             <a href="/">Account types</a>
-            <a href="/help">Help</a>
+            <a href="/">About</a>
         </div>
 
         <div class='urukBox'>
-            <h1>4ky AI: account types</h1>
-            <p>This website helps you to classify your proto-cuneiform accounts according to type. It is AI-based, so the results have a degree of uncertainty.</p>
+            <h1>Account types</h1>
+            <p>This simple web app helps you to classify your proto-cuneiform accounts according to type. It is AI-based, so the results have a degree of uncertainty.</p>
         </div>
     
-        <div class='urukBox'>
-            <form method="post" id="form">
-                <textarea class='urukInput' id="transcription" name="transcription"></textarea><br>
-            </form>
-        </div>
+        <% if (!data.prediction) { %>
 
-        <% if (data && data.prediction && data.certainty && data.text) { %>
+            <div class='urukBox'>
+                <form method="post" id="form">
+                    <textarea class='urukInput' id="transcription" name="transcription"></textarea><br>
+                </form>
+            </div>
+
+        <% } else { %>
             <div class='urukBox urukSmallText'>
                 <div class='urukAttestation'>
                     <% if (data.prediction > 90) { %>
                         <b>Prediction (with <%= data.certainty %>% certainty):</b>
                         <div class='urukTranscription'>
-                            It is a <%- data.prediction %> account.
+                            It is a <%= data.prediction %> account.
                         </div>
                     <% } else { %>
                         <b>Prediction:</b>
                         <div class='urukTranscription'>
-                            I don't know what kind of tablet this is.
+                            I'm sorry, I don't know what kind of account this is.
                         </div>
                     <% } %>
                 </div>
+                <div class="urukAttestation">
+                    <b>Your query:</b>
+                    <div class="urukTranscription">
+                        <pre><%- data.text %></pre>
+                    </div>
+                </div>
             </div>
         <% } %>
-        
     </div>
 
     <script>

@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }))
 // -- SETTING UP REQUEST MANAGEMENT
 
 app.get("/", (_req, res) => {
-    res.render('index', {data: {msg: 'No transcription processed yet.'}});
+    res.render('index', {data: {}});
 });
 
 app.post('/', (req, res) => {
@@ -32,7 +32,7 @@ app.post('/', (req, res) => {
     res.render('index', {data: 
         { 
             text: transcriptionString,
-            prediction: '',
+            prediction: 'uncertain',
             certainty: 0
         } 
     })
