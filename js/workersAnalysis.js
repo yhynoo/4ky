@@ -1,4 +1,5 @@
-import { cleanVariants } from './transcriptionCleaner.js'
+import { cleanVariants } from './helpers.js';
+import data from '../data/4ky_clean.json' with {type: 'json'}
 
 // to be expanded according to scholarship
 const allTheonyms = [
@@ -15,18 +16,39 @@ const allToponyms = [
     ['UNUG']
 ]
 
-export function checkSimpleFeatures(transcriptionArray) {
+export function analysisLexical(transcriptionArray) {
+    const foundLexicalItems = []
+    transcriptionArray.forEach(testLine => {
+        data.filter(tablet => tablet.inscription.accountType.includes('lexical')).forEach(tablet => {
+            const tabletContent = tablet.inscription.transliterationClean
+            tabletContent.split('\n').forEach(line => {
+                if (!line.includes('...') && !line.includes('X')) {
+                    const lexicalLine = line.replace(/,|(?<!\S)\d+N\d+(?!\S)/g, '').replace(/\bN\b/g, '').trim();
+
+                    if (checkOppositeMatch(testLine, lexicalLine)) {
+                        foundLexicalItems.push({tablet, lexicalLine})
+                    }
+                }
+            })
+        })
+    })
+    return { foundLexicalItems }
+}
+
+function checkOppositeMatch(query, lineToCheck) {
+    const sortedQuery = query.split(' ').slice().sort()
+    const sortedLineToCheck = lineToCheck.split(' ').slice().sort()
+
+    return (sortedLineToCheck.every(sign => sortedQuery.includes(sign)))
+}
+
+export function analysisFeatures(transcriptionArray) {
     const foundTheonyms = []
     const foundTimeExpressions = []
     const foundToponyms = []
 
     transcriptionArray.forEach(line => {
-        const cleanLine = []
-        const splitLine = line.split(' ')
-
-        splitLine.forEach(sign => {
-            cleanLine.push(cleanVariants(sign))
-        })
+        const cleanLine = cleanVariants(line.split(' '))
 
         // find theonyms
         allTheonyms.forEach(theonym => {

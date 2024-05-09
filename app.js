@@ -1,14 +1,13 @@
 import express from "npm:express";
 import ejs from "npm:ejs";
 
-import { cleanTranscription } from './js/transcriptionCleaner.js'
-import { checkSimpleFeatures } from "./js/simpleFeatures.js";
+import { analysisPost, analysisResultsGet, searchPost, searchResultsGet } from "./js/views.js";
 
 const app = express();
 
 // setting the app to work with EJS and telling it where to take the views from
 app.set('view engine', 'ejs');
-app.set('views', './');
+app.set('views', './views');
 
 // setting the app to load CSS properly -- Deno.cwd() returns the root directory.
 app.use(express.static(Deno.cwd() + '/static'))
@@ -19,37 +18,33 @@ app.use(express.urlencoded({ extended: true }))
 
 // -- SETTING UP REQUEST MANAGEMENT
 
-app.get("/", (_req, res) => {
-    res.render('index', {data: {}});
-});
+// search
 
-app.post('/', (req, res) => {
-    const { transcriptionArray, transcriptionString } = cleanTranscription(req.body.transcription)
-
-    // operate on the array of lines
-    const { foundTheonyms, foundTimeExpressions, foundToponyms } = checkSimpleFeatures(transcriptionArray)
-
-    // re-render the page.
-    res.render('index', {data: 
-        { 
-            // features - does it contain time expressions, original metadata ('colophon'), lexical items, is it a ration list?
-            features: {
-                isRations: false,
-                lexicalItems: [],
-                originalMetadata: '',
-
-                theonyms: foundTheonyms,
-                timeExpressions: foundTimeExpressions,
-                toponyms: foundToponyms
-            },
-            
-            // type
-            certainty: 0,
-            prediction: 'uncertain',
-            text: transcriptionString
-        } 
+    app.get('/', (_req, res) => {
+        res.render('search')
     })
-})
+
+    app.post('/', (req, res) => {
+        searchPost(req, res)
+    })
+
+    app.get('/searchResults', (req, res) => {
+        searchResultsGet(req, res)
+    })
+
+// analysis
+
+    app.get('/analysis', (_req, res) => {
+        res.render('analysis')
+    });
+
+    app.post('/analysis', (req, res) => {
+        analysisPost(req, res)
+    })
+
+    app.get('/analysisResults', (req, res) => {
+        analysisResultsGet(req, res)
+    })
 
 app.listen(8000, () => {
     console.log("Server is running on http://localhost:8000");

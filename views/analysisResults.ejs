@@ -1,3 +1,23 @@
+<% // LABELS
+
+const lexicalListLabels = {
+    464118: "Lu A",
+    471682: "Animals",
+    471683: "Birds",
+    471684: "Cities",
+    471685: "Fish",
+    471686: "Geography",
+    471687: "Grain",
+    471688: "Metal",
+    471689: "Officials",
+    471691: "Plants",
+    471692: "Tribute",
+    471693: "Vessels and Garments",
+    471694: "Wood"
+}
+
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,29 +26,22 @@
     <link rel="icon" href="grain.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4ky: AI</title>
+    <title>4ky: AI - results</title>
 </head>
 <body>
     <div class="urukContainer">
         <div class="urukBox urukNav">
-            <a href="/">Account types</a>
-            <a href="/">About</a>
+            <a href="/">Sign search</a>
+            <a href="/analysis">Analysis</a>
+            <a href="/about">About</a>
         </div>
 
         <div class='urukBox'>
-            <h1>Account types</h1>
-            <p>This simple web app helps you to classify your proto-cuneiform account transcriptions according to <span class = 'urukHelp'>type<span class = "urukHelpText urukSmallText">The AI can currently recognize: lexical lists, mathematical texts; as well as divide economic texts into animal, cereal, human and other accounts.</span></span>. It is <a href = ''>AI-based</a>, so the results have a degree of uncertainty.</p>
+            <h1>Analysis: results</h1>
+            <p>Warning: those results are generated automatically. They require careful examination and interpretation, and are only meant to help you explore the corpus.</p>
         </div>
-    
-        <% if (!data.prediction) { %>
 
-            <div class='urukBox'>
-                <form method="post" id="form">
-                    <textarea class='urukInput' id="transcription" name="transcription"></textarea><br>
-                </form>
-            </div>
-
-        <% } else { %>
+        <% if (data.prediction) { %>
             <div class='urukBox urukSmallText'>
                 <div class='urukAttestation'>
                     <% if (data.certainty >= 80) { %>
@@ -47,6 +60,17 @@
                 <div class='urukAttestation'>
                     <b>I also found...</b>
                     <div class='urukTranscription'>
+                        <% if (Object.keys(data.features.lexicalItems).length > 0) { %>
+                            <%= Object.keys(data.features.lexicalItems).length %> items known from lexical lists:
+                            <span class="urukLabel">
+                                <% Object.entries(data.features.lexicalItems).forEach(([key, value]) => { %>
+                                    <%= key %> (<%= Object.keys(value).map(key => lexicalListLabels[key]).join(', ') %>)
+                                    <% if (key !== Object.keys(data.features.lexicalItems)[Object.keys(data.features.lexicalItems).length - 1]) { %>, <% } %>
+                                <% }); %>
+                            </span>
+                            <br>
+                        <% } %>
+
                         <% if (data.features.timeExpressions.length > 0) { %><%= data.features.timeExpressions.length %> possible time expression(s): <span class = "urukLabel"><%= data.features.timeExpressions.join(', ') %></span><br><% } %>
 
                         <% if (data.features.theonyms.length > 0) { %><%= data.features.theonyms.length %> possible divine name(s): <span class = "urukLabel"><%= data.features.theonyms.join(', ') %></span><br><% } %>
@@ -65,19 +89,5 @@
             </div>
         <% } %>
     </div>
-
-    <script>
-        window.onload = function() {
-            var textarea = document.getElementById('transcription');
-            textarea.select();
-        };
-
-        document.getElementById('transcription').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault(); // Prevent default form submission
-                document.getElementById('form').submit(); // Submit the form
-            }
-        });
-    </script>
 </body>
 </html>

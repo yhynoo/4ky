@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="grain.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4ky: analysis</title>
+</head>
+<body>
+    <div class="urukContainer">
+        <div class="urukBox urukNav">
+            <a href="/">Sign search</a>
+            <a href="/analysis">Analysis</a>
+            <a href="/about">About</a>
+        </div>
+
+        <div class='urukBox'>
+            <h1>Analysis</h1>
+            <p>Here, you can paste your transcription of a proto-cuneiform account to extract some information about its features, such as its <span class = "urukHelp">type<span class = "urukHelpText urukSmallText">I can currently recognize: lexical lists and mathematical texts, as well as divide economic accounts into animal, cereal, human and other.</span></span>, contained <span class = "urukHelp">data<span class="urukHelpText urukSmallText">I can try to figure out if the account is a ration text, whether it has original metadata (a 'colophon'), as well as track items known from lexical lists, time expressions, divine names, and toponyms.</span></span>, and so on.</p>
+            <p>It is <a href = '/about'>AI-based</a>, so there is some level of uncertainty.</p>
+        </div>
+
+        <div class='urukBox'>
+            <form method="post" id="form" target="_blank">
+                <textarea class='urukInput' id="transcription" name="transcription"></textarea><br>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var textarea = document.getElementById('transcription');
+            textarea.select();
+        };
+
+        document.getElementById('transcription').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault(); // Prevent default form submission
+                document.getElementById('form').submit(); // Submit the form
+            }
+        });
+    </script>
+</body>
+</html>
