@@ -88,8 +88,15 @@ export function displayLexicalEntries(lexicalItems) {
         }
 
         // Add tablet ID under the compositeID
-        tree[line][compositeID].add(item.tablet.id);
+        tree[line][compositeID].add(
+            {
+                id: item.tablet.id,
+                provenience: item.tablet.origin.provenience,
+                period: item.tablet.origin.period
+            });
     });
 
     return tree;
 }
+
+

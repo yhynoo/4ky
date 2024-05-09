@@ -1,5 +1,6 @@
 import data from '../data/4ky_clean.json' with {type: 'json'}
 import { checkMatch } from './helpers.js';
+import { lexicalListLabels, locationLabels, periodLabels } from './labels.js';
 
 export function searchCorpus(term, _periods, _origins, distinguishVariantsFlag, splitCompoundsFlag) {
     const economicAttestations = []
@@ -33,4 +34,51 @@ export function searchCorpus(term, _periods, _origins, distinguishVariantsFlag, 
 
     return { economicAttestations, economicCompounds, lexicalAttestations, lexicalCompounds }
 
+}
+
+export function processSearchLexical(lexicalAttestations) {
+    const hierarchy = {}
+
+    lexicalAttestations.forEach(item => {
+        const { 
+            tablet: { id },
+            tablet: { inscription: { compositeId: text } },
+            tablet: { origin: { provenience: place, period: time} },
+            lexicalLine 
+        }= item
+
+        if (!hierarchy[lexicalLine]) hierarchy[lexicalLine] = {}
+        if (!hierarchy[lexicalLine][text]) hierarchy[lexicalLine][text] = {}
+        if (!hierarchy[lexicalLine][text][place]) hierarchy[lexicalLine][text][place] = []
+
+        hierarchy[lexicalLine][text][place].push({id, time})
+
+    })
+    return hierarchy
+}
+
+export function drawSearchLexical(hierarchy) {
+    let attestationHTML = ``
+    Object.keys(hierarchy).sort().forEach(line => {
+        attestationHTML += `
+            <div class = 'urukAttestation urukSmallText'>
+            <b>${line}</b>`
+
+        Object.keys(hierarchy[line]).sort().forEach(text => {
+            attestationHTML += `
+                <div class = 'urukTranscription'>
+                <b>${lexicalListLabels[text] || 'unknown'}</b><br>`
+
+                Object.keys(hierarchy[line][text]).sort().forEach(place => {
+                    attestationHTML += `<p>${locationLabels[place] || 'uncertain'} (${hierarchy[line][text][place].length}): <span class = 'urukLabel'>`
+                    attestationHTML += hierarchy[line][text][place].map(item => {
+                        return `<a href = 'https://cdli.mpiwg-berlin.mpg.de/artifacts/${item.id}' target='_blank'>${item.id}</a> (${periodLabels[item.time]})`
+                    }).join(', ')
+                })
+                attestationHTML += '</span></p></div>'
+        })
+        attestationHTML += `</div>`
+    })
+
+    return attestationHTML
 }

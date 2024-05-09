@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="grain.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4ky: <%= term %></title>
+</head>
+<body>
+    <div class="urukContainer">
+        <div class="urukBox urukNav">
+            <a href="/">Sign search</a>
+            <a href="/analysis">Analysis</a>
+            <a href="/about">About</a>
+        </div>
+
+        <div class='urukBox'>
+            <h1>Search results for <%= term %></h1>
+            <p>Placeholder text.</p>
+        </div>
+
+        <div class="urukBox">
+            <h2>Statistics</h2>
+        </div>
+
+        <% if (Object.keys(data.lexicalItems).length > 0) { %>
+            <div class="urukBox">
+                <h2>Attestations (<%= data.lexicalItemsCount %>) in lexical texts</h2>
+                <p>Here, you can see <b>exact</b> matches of your query in lexical list witnesses. The numbers are item IDs in <a href='https://cdli.mpiwg-berlin.mpg.de'>CDLI</a> database. You can click on them to see each tablet there.</p>
+                <%- data.lexicalItems %>
+            </div>
+        <% } %>
+
+        <div class="urukBox">
+            <h2>Attestations in economic accounts</h2>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 import { cleanTranscription, displayLexicalEntries } from './helpers.js'
 import { analysisLexical, analysisFeatures } from "./workersAnalysis.js"
-import { searchCorpus } from "./workersSearch.js"
+import { searchCorpus, processSearchLexical, drawSearchLexical } from "./workersSearch.js"
+import { lexicalListLabels, locationLabels, periodLabels } from './labels.js'
 
 export function analysisPost(req, res) {
     const transcription = req.body.transcription
@@ -21,7 +22,7 @@ export function analysisResultsGet(req, res) {
     const { foundLexicalItems } = analysisLexical(transcriptionArray)
     const { foundTheonyms, foundTimeExpressions, foundToponyms } = analysisFeatures(transcriptionArray)
 
-    const processedLexicalEntries = displayLexicalEntries(foundLexicalItems)
+    const processedLexicalEntries = processLexical(lexicalAttestations)
 
     // render the results page
     res.render('analysisResults', {data: 
@@ -41,7 +42,8 @@ export function analysisResultsGet(req, res) {
             certainty: 0, // placeholder
             prediction: 'uncertain', // placeholder
             text: transcriptionString
-        }
+        },
+        lexicalListLabels
     })
 }
 
@@ -75,11 +77,15 @@ export function searchResultsGet(req, res) {
     if (term.split(',').length === 1) {
         const { _economicAttestations,
                 _economicCompounds, 
-                _lexicalAttestations, 
+                lexicalAttestations, 
                 _lexicalCompounds 
             } = searchCorpus(term, timePeriods, provenience, distinguishVariantsFlag, splitCompoundsFlag)
-    
+        
         res.render('searchResults', {data: {
-        }})
+                lexicalItemsCount: lexicalAttestations.length,
+                lexicalItems: drawSearchLexical(processSearchLexical(lexicalAttestations))
+            },
+            term
+        })
     }
 }

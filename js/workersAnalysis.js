@@ -36,10 +36,27 @@ export function analysisLexical(transcriptionArray) {
 }
 
 function checkOppositeMatch(query, lineToCheck) {
-    const sortedQuery = query.split(' ').slice().sort()
-    const sortedLineToCheck = lineToCheck.split(' ').slice().sort()
+    const countQuery = countOccurrences(query.split(' '));
+    const countLineToCheck = countOccurrences(lineToCheck.split(' '));
 
-    return (sortedLineToCheck.every(sign => sortedQuery.includes(sign)))
+    // Iterate through each unique string in the line to check
+    for (const [sign, count] of Object.entries(countLineToCheck)) {
+        // Check if the count in the line to check is greater than the count in the query
+        if (count > (countQuery[sign] || 0)) {
+            return false; // If count in line to check is greater, return false
+        }
+    }
+
+    return true; // All counts in line to check are less than or equal to counts in query
+}
+
+// Function to count occurrences of each string in an array
+function countOccurrences(array) {
+    const counts = {};
+    for (const item of array) {
+        counts[item] = (counts[item] || 0) + 1;
+    }
+    return counts;
 }
 
 export function analysisFeatures(transcriptionArray) {
