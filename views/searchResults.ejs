@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="urukContainer">
-        <div class="urukBox urukNav">
+        <div class="urukBox urukNav urukSmallText">
             <a href="/">Sign search</a>
             <a href="/analysis">Analysis</a>
             <a href="/about">About</a>
@@ -18,11 +18,13 @@
 
         <div class='urukBox'>
             <h1>Search results for <%= term %></h1>
-            <p>Placeholder text.</p>
         </div>
 
         <div class="urukBox">
             <h2>Statistics</h2>
+            <% if (data.economicCompounds) { %>
+                <%- data.economicCompounds %>
+            <% } %>
         </div>
 
         <% if (Object.keys(data.lexicalItems).length > 0) { %>
@@ -33,9 +35,12 @@
             </div>
         <% } %>
 
-        <div class="urukBox">
-            <h2>Attestations in economic accounts</h2>
-        </div>
+        <% if (data.economicAttestations) { %>
+            <div class="urukBox">
+                <h2>Attestations in economic accounts</h2>
+                <%- data.economicAttestations %>
+            </div>
+        <% } %>
 
     </div>
 </body>

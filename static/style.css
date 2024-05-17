@@ -100,7 +100,6 @@ h2 {
 .urukNav {
     margin: auto;
     display: flex;
-    font-size: 0.8em;
 
     justify-content: flex-end;
     gap: 6em;

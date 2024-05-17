@@ -32,3 +32,10 @@ export const periodLabels = {
     3: 'IV',
     4: 'III'
 }
+
+export const typeLabels = {
+    "animals": "Animals and animal products",
+    "cereals": "Agriculture and cereal products",
+    "fields": "Land",
+    "humans": "Workers"
+}

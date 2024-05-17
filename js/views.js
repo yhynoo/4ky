@@ -1,7 +1,14 @@
 import { cleanTranscription, displayLexicalEntries } from './helpers.js'
 import { analysisLexical, analysisFeatures } from "./workersAnalysis.js"
-import { searchCorpus, processSearchLexical, drawSearchLexical } from "./workersSearch.js"
-import { lexicalListLabels, locationLabels, periodLabels } from './labels.js'
+import { 
+    searchCorpus, 
+    processSearchEconomic,
+    drawSearchEconomic,
+    processSearchEconomicCompounds, 
+    processSearchLexical, 
+    drawSearchLexical
+} from "./workersSearch.js"
+import { lexicalListLabels } from './labels.js'
 
 export function analysisPost(req, res) {
     const transcription = req.body.transcription
@@ -22,7 +29,7 @@ export function analysisResultsGet(req, res) {
     const { foundLexicalItems } = analysisLexical(transcriptionArray)
     const { foundTheonyms, foundTimeExpressions, foundToponyms } = analysisFeatures(transcriptionArray)
 
-    const processedLexicalEntries = processLexical(lexicalAttestations)
+    const processedLexicalEntries = displayLexicalEntries(foundLexicalItems)
 
     // render the results page
     res.render('analysisResults', {data: 
@@ -75,13 +82,16 @@ export function searchResultsGet(req, res) {
     const splitCompoundsFlag = split === 'true'
 
     if (term.split(',').length === 1) {
-        const { _economicAttestations,
-                _economicCompounds, 
+        const { economicAttestations,
+                economicCompounds, 
                 lexicalAttestations, 
                 _lexicalCompounds 
             } = searchCorpus(term, timePeriods, provenience, distinguishVariantsFlag, splitCompoundsFlag)
-        
+
         res.render('searchResults', {data: {
+                economicAttestations: drawSearchEconomic(processSearchEconomic(economicAttestations)),
+                economicCompounds: processSearchEconomicCompounds(economicCompounds),
+                
                 lexicalItemsCount: lexicalAttestations.length,
                 lexicalItems: drawSearchLexical(processSearchLexical(lexicalAttestations))
             },
