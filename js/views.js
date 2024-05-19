@@ -1,5 +1,5 @@
 import { cleanTranscription, displayLexicalEntries } from './helpers.js'
-import { analysisLexical, analysisFeatures } from "./workersAnalysis.js"
+import { analysisLexical, analysisFeatures, analysisPrediction } from "./workersAnalysis.js"
 import { 
     searchCorpus, 
     processSearchEconomic,
@@ -22,7 +22,7 @@ export function analysisPost(req, res) {
     res.redirect(`/analysisResults?${queryParams.toString()}`)
 }
 
-export function analysisResultsGet(req, res) {
+export async function analysisResultsGet(req, res) {
     const { transcriptionArray, transcriptionString } = cleanTranscription(req.query.transcription)
 
     // operate on the array
@@ -30,6 +30,7 @@ export function analysisResultsGet(req, res) {
     const { foundTheonyms, foundTimeExpressions, foundToponyms } = analysisFeatures(transcriptionArray)
 
     const processedLexicalEntries = displayLexicalEntries(foundLexicalItems)
+    const processedPrediction = await analysisPrediction(transcriptionString)
 
     // render the results page
     res.render('analysisResults', {data: 
@@ -46,8 +47,7 @@ export function analysisResultsGet(req, res) {
             },
             
             // type
-            certainty: 0, // placeholder
-            prediction: 'uncertain', // placeholder
+            prediction: processedPrediction,
             text: transcriptionString
         },
         lexicalListLabels

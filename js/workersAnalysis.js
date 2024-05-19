@@ -59,6 +59,12 @@ function countOccurrences(array) {
     return counts;
 }
 
+export async function analysisPrediction(transcriptionString) {
+    const prediction = new Deno.Command('python3', { args: [ Deno.cwd() + '/ai/ai_proba_loader.py', transcriptionString ] })
+    const { stdout, stderr } = await prediction.output();
+    return new TextDecoder().decode(stdout)
+}
+
 export function analysisFeatures(transcriptionArray) {
     const foundTheonyms = []
     const foundTimeExpressions = []
