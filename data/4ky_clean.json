@@ -23102,7 +23102,7 @@
         "designation": "ATU 6, pl. 064, W 15772,p",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/2296",
         "inscription": {
-            "transliterationClean": " ... , ... \n ... , ... X \n ... , ... X \n , UKKIN~a \n 1N01 , AL \n , PAP~a X ...a \n 2N01 , EN~a TUR \n , NESAG2~b BAa \n , A NUNUZ~a1a \n ... , ... TUR \n , EN~a UNUG~a HIa \n ... , ... \n , ... \n 1N01 , U4x1N57 X ... \n 1N01 ... , ... ",
+            "transliterationClean": " ... , ... \n ... , ... X \n ... , ... X \n , UKKIN~a \n 1N01 , AL \n , PAP~a X ... \n 2N01 , EN~a TUR \n , NESAG2~b BA \n , A NUNUZ~a1 \n ... , ... TUR \n , EN~a UNUG~a HI \n ... , ... \n , ... \n 1N01 , U4x1N57 X ... \n 1N01 ... , ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -23204,7 +23204,7 @@
         "designation": "ATU 6, pl. 065, W 15772,z",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/2306",
         "inscription": {
-            "transliterationClean": " ... , ... X \n ... , ... BAR \n , KI PIRIG~b1 X ... \n ... , ... AL \n , ... X \n 1N01 , U4x1N57 TUR \n , 3N57.PIRIG~b1 DU E2~aa \n ... , ... \n , EN~a ...a ",
+            "transliterationClean": " ... , ... X \n ... , ... BAR \n , KI PIRIG~b1 X ... \n ... , ... AL \n , ... X \n 1N01 , U4x1N57 TUR \n , 3N57.PIRIG~b1 DU E2~a \n ... , ... \n , EN~a ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -33249,7 +33249,7 @@
         "designation": "ATU 7, pl. 069, W 20511,17a",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/3822",
         "inscription": {
-            "transliterationClean": " ... , ... \n ... , ... \n , ... PAP~a SU~a \n ... 3N01 , SZU \n , KASZ~c SZE~a&SZE~aa \n , MUDa \n , PIRIG~b1a \n ... 2N01 , ... SZU \n , PAP~aa \n , GIR3~cxSZE3 NUN~a ...a \n ... , ... \n 2N01 , SZU \n , TAK4~a U2~ba \n , EN~a Xa \n ... 1N01 , SZU \n , UB ZI~aa \n ... , ... \n ... , ... SAG \n , GUG2 BARa \n ... 1N01 , X ... \n 2N01 , X NIM~b1 ... \n ... , ... \n ... , ... \n ... , ... ",
+            "transliterationClean": " ... , ... \n ... , ... \n , ... PAP~a SU~a \n ... 3N01 , SZU \n , KASZ~c SZE~a&SZE~a \n , MUD \n , PIRIG~b1 \n ... 2N01 , ... SZU \n , PAP~a \n , GIR3~cxSZE3 NUN~a ... \n ... , ... \n 2N01 , SZU \n , TAK4~a U2~b \n , EN~a X \n ... 1N01 , SZU \n , UB ZI~a \n ... , ... \n ... , ... SAG \n , GUG2 BAR \n ... 1N01 , X ... \n 2N01 , X NIM~b1 ... \n ... , ... \n ... , ... \n ... , ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -34110,7 +34110,7 @@
         "designation": "Anonymous 471695 unpublished unassigned ?",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/471695",
         "inscription": {
-            "transliterationClean": " 3N01 , APIN~a 3N57 UR4~a \n , EN~a DU ZATU759a \n , BAN~b KASZ~ca \n , KI@n SAGa \n 1N14 2N01 , ... \n , 3N57 PAP~aa \n , SZU KI Xa \n , EN~a AN EZINU~da \n , IDIGNA ...a \n 1N01 , ISZ~a \n , PAP~a GIR3~ca \n 1N14 6N01 , ... ",
+            "transliterationClean": " 3N01 , APIN~a 3N57 UR4~a \n , EN~a DU ZATU759 \n , BAN~b KASZ~c \n , KI@n SAG \n 1N14 2N01 , ... \n , 3N57 PAP~a \n , SZU KI X \n , EN~a AN EZINU~d \n , IDIGNA ... \n 1N01 , ISZ~a \n , PAP~a GIR3~c \n 1N14 6N01 , ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -34119,7 +34119,7 @@
         },
         "origin": {
             "period": 4,
-            "provenience": 0
+            "provenience": 306
         }
     },
     {
@@ -34136,7 +34136,7 @@
         },
         "origin": {
             "period": 4,
-            "provenience": 0
+            "provenience": 306
         }
     },
     {
@@ -34153,7 +34153,7 @@
         },
         "origin": {
             "period": 4,
-            "provenience": 0
+            "provenience": 306
         }
     },
     {
@@ -34170,7 +34170,7 @@
         },
         "origin": {
             "period": 4,
-            "provenience": 0
+            "provenience": 306
         }
     },
     {
@@ -34340,7 +34340,7 @@
         },
         "origin": {
             "period": 4,
-            "provenience": 0
+            "provenience": 306
         }
     },
     {
@@ -34357,7 +34357,7 @@
         },
         "origin": {
             "period": 4,
-            "provenience": 0
+            "provenience": 306
         }
     },
     {
@@ -34374,7 +34374,7 @@
         },
         "origin": {
             "period": 4,
-            "provenience": 0
+            "provenience": 306
         }
     },
     {
@@ -37408,7 +37408,7 @@
         "designation": "BagM 22, 060, W 23972,2",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/4683",
         "inscription": {
-            "transliterationClean": " ... , U4 ... \n ... , SZUBUR ... \n 3N01 , AL \n , ...a \n , SZU ...a \n , BAR X ...a \n 1N01 , AMAR 3N57 X ... \n , PAP~aa \n 1N01 ... , X ... \n , NIMGIRa ",
+            "transliterationClean": " ... , U4 ... \n ... , SZUBUR ... \n 3N01 , AL \n , ... \n , SZU ... \n , BAR X ... \n 1N01 , AMAR 3N57 X ... \n , PAP~a \n 1N01 ... , X ... \n , NIMGIR ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -37425,7 +37425,7 @@
         "designation": "BagM 22, 061, W 23973,1",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/4684",
         "inscription": {
-            "transliterationClean": " ... , BALAG ... \n , ZATU651@g SANGA~a MU GAL~a SZUa \n ... , X ... \n , EZEN~axSU~a ZATU651xEN~aa \n ... , KASKAL ... \n , GAL~a SANGA~a MU SZUa \n ... , X ... \n , SIG AN MUSZ3~aa \n ... , ... \n , EZEN~b AB~a X ...a \n ... , MU X ... \n 1N01 , NUN~a PAP~a SAL UR~a \n 1N01 , MA SAL.KUR~a KU6~a \n 1N01 , EN~a SZITA~a1 SAG \n , NAM2 X ...a \n , X EN~a ...a \n 1N01 , EN~a NUN~a GISZxSZU2~a DU \n , X ...a \n 1N01 , UKKIN~a SIG2~b GAL~a \n 1N01 , GAL~a SZIDIM ... \n 1N01 , ... \n ... , GA~a X ... ",
+            "transliterationClean": " ... , BALAG ... \n , ZATU651@g SANGA~a MU GAL~a SZU \n ... , X ... \n , EZEN~axSU~a ZATU651xEN~a \n ... , KASKAL ... \n , GAL~a SANGA~a MU SZU \n ... , X ... \n , SIG AN MUSZ3~a \n ... , ... \n , EZEN~b AB~a X ... \n ... , MU X ... \n 1N01 , NUN~a PAP~a SAL UR~a \n 1N01 , MA SAL.KUR~a KU6~a \n 1N01 , EN~a SZITA~a1 SAG \n , NAM2 X ... \n , X EN~a ... \n 1N01 , EN~a NUN~a GISZxSZU2~a DU \n , X ... \n 1N01 , UKKIN~a SIG2~b GAL~a \n 1N01 , GAL~a SZIDIM ... \n 1N01 , ... \n ... , GA~a X ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -38190,7 +38190,7 @@
         "designation": "BagM 22, 074, W 23999,1",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/4735",
         "inscription": {
-            "transliterationClean": " 8N01 , SAL.KUR~a EN~a EZEN~b AN HI URI3~a ZATU774 \n 5N01 , SAL \n 4N01 , SAL \n , NAB DI BU~a+DU6~aa \n , ZI~a ANa \n , ANSZE~e 7N57 DUR2 DUa \n , LAL3~a GAR IG~ba \n 1N01 , SZA3~a1 TUR \n , TU~ba \n 3N01 , KUR~a \n 1N01 , KUR~a \n , NA~a NIR~aa \n 2N01 , SZA3~a1 TUR \n , GI6 KISZIK~a URI3~aa \n , ...a ",
+            "transliterationClean": " 8N01 , SAL.KUR~a EN~a EZEN~b AN HI URI3~a ZATU774 \n 5N01 , SAL \n 4N01 , SAL \n , NAB DI BU~a+DU6~a \n , ZI~a AN \n , ANSZE~e 7N57 DUR2 DU \n , LAL3~a GAR IG~b \n 1N01 , SZA3~a1 TUR \n , TU~b \n 3N01 , KUR~a \n 1N01 , KUR~a \n , NA~a NIR~a \n 2N01 , SZA3~a1 TUR \n , GI6 KISZIK~a URI3~a \n , ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -38513,7 +38513,7 @@
         "designation": "BagM 22, 080, W 24004,8b",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/4756",
         "inscription": {
-            "transliterationClean": " 1N01 , AL \n , ZATU659a \n ... , TUR ... \n , BU~a PAP~a ...a \n 1N01 ... , ... \n , 3N57.PIRIG~b1 ...a \n 1N01 ... , ZATU659 UKKIN~a X ... ",
+            "transliterationClean": " 1N01 , AL \n , ZATU659 \n ... , TUR ... \n , BU~a PAP~a ... \n 1N01 ... , ... \n , 3N57.PIRIG~b1 ... \n 1N01 ... , ZATU659 UKKIN~a X ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -53609,7 +53609,7 @@
         "designation": "CDLJ 2009/4 §3.6.1",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/3500",
         "inscription": {
-            "transliterationClean": " 8N01 , BAR SZAM2 EZEN~axSU~a 3N57.NUNUZ~a1 \n 1N01 , AL \n , MUSZEN TUR BU~aa \n 1N01 , EN~a TUR \n , BU~a SZA3~a1a \n 2N01 , U4x1N57 TUR \n , LUGALa \n , X MUSZEN 6N57 KASZ~ca \n 2N01 , BULUG3 \n , SZU ZI~aa \n , ZI~a SZUBUR PAP~aa \n 1N01 , U2~b A \n , GI&GI PIRIG~b1a \n 1N01 , SZU \n , DUR2 DUR2a ",
+            "transliterationClean": " 8N01 , BAR SZAM2 EZEN~axSU~a 3N57.NUNUZ~a1 \n 1N01 , AL \n , MUSZEN TUR BU~a \n 1N01 , EN~a TUR \n , BU~a SZA3~a1 \n 2N01 , U4x1N57 TUR \n , LUGAL \n , X MUSZEN 6N57 KASZ~c \n 2N01 , BULUG3 \n , SZU ZI~a \n , ZI~a SZUBUR PAP~a \n 1N01 , U2~b A \n , GI&GI PIRIG~b1 \n 1N01 , SZU \n , DUR2 DUR2 ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -53626,7 +53626,7 @@
         "designation": "CDLJ 2009/4 §4",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6268",
         "inscription": {
-            "transliterationClean": " 3N14 2N01 , AL 2N57 MUN~a1 \n , PA~aa \n , KASZ~c DA~aa \n , SUKUD@g~d NI~aa \n , U4 SZUa \n , ZATU659a \n , BU~a SZE~a SZUBURa \n , EN~a U2~b DUa \n , EZINU~a EN~aa \n , ZATU659a \n , ZATU659a \n , SZU SZUa \n , BU~a GIa \n , SZU2 PAP~aa \n , 3N57 SALa \n , 3N57 Aa \n , BU~a UR~aa \n , 3N57a \n , DIM~aa \n , EN~a GISZxSZU2~aa \n , SZU SZUa \n , EZEN~b EN~aa \n , SZU2 SALa \n , EN~a AMAR SZUa \n , E2~a BU~aa \n , DIM~aa \n , PAP~aa \n , SZA3~a1 A TAK4~aa \n , NAM2a \n , BAHAR2~a EN~aa \n , EN~a U2~b HIa \n , BAHAR2~a 3N57a \n , 6N57 U8a \n 9N01 , EN~a TUR \n , PA~a TUN3~aa \n , SAG HI NINa \n , SI BARA3a \n , NI~a GIR3~ca \n , BU~a+DU6~a GULa \n , DIM~aa \n , PAP~a SAL DAR~aa \n , KID~e NUN~a EN~aa \n , MAH~bxNA~aa \n 7N01 , U4x2N57 TUR \n , SZU2 SALa \n , SZUR2~ba \n , TI SU~a EN~aa \n , DAR~b E2~aa \n , GISZxSZU2~a EN~aa \n , SI E2~a ME~aa \n , 3N57 SALa \n 2N01 , U4x1N57 TUR \n , BU~a GIa \n , PAP~a HALa \n 1N14 2N01 , U4x3N57 TUR \n , SIG7 MUSZENa \n , EN~a U2~b DUa \n , ZATU659a \n , GI SZA3~a1a \n , SAGxGESZTU~b GISZa \n , GU4 SAL EN~aa \n , EN~a U2~b AB~aa \n , GIR3@g~c EN~aa \n , E2~a BU~aa \n , 3N57 NUNUZ~ca \n , E2~a GIR3~ca \n , SI AD~a ANa \n 1N14 1N01 , AL \n , SZE~a MUSZENa \n , IN~b EN~aa \n , HAL PAP~aa \n , TUR3~a 5N57a \n , PAP~aa \n , AN TE KI GAL~aa \n , ZI~a E2~aa \n , ZATU773~a MASZ KUR~aa \n , EN~a AN E2~aa \n , BU~a SZE~aa \n , MUSZ3~a NU11@ta \n 2N01 , EN~a TUR \n , BAHAR2~a BU~aa \n , BU~a DUa \n 3N01 , U4x1N57 TUR \n , GA2~a1 EN~a GUa \n , SZU2 BU~aa \n , 1N57 A NE~aa \n 3N01 , U4x2N57 TUR \n , GI&GI&GI EN~aa \n , NU UDU~axTAR~aa \n , EN~a SZITA@g~a AB~aa \n 4N01 , U4x3N57 TUR \n , 3N57 DUR2 BU~a+DU6~aa \n , EN~a Aa \n , GUL SAGa \n , ZATU659a \n , 1N57 MUN~a1 \n 4N14 3N01 , AL \n 1N14 1N01 , EN~a TUR \n 5N01 , U4x1N57 TUR \n 1N14 , U4x2N57 TUR \n 1N14 6N01 , U4x3N57 TUR \n 1N34 2N14 5N01 , 1N57 2N57 MUN~a1 SU~a PAP~a 1N58.BAD~a SI AN AD~a GIR~a ",
+            "transliterationClean": " 3N14 2N01 , AL 2N57 MUN~a1 \n , PA~a \n , KASZ~c DA~a \n , SUKUD@g~d NI~a \n , U4 SZU \n , ZATU659 \n , BU~a SZE~a SZUBUR \n , EN~a U2~b DU \n , EZINU~a EN~a \n , ZATU659 \n , ZATU659 \n , SZU SZU \n , BU~a GI \n , SZU2 PAP~a \n , 3N57 SAL \n , 3N57 A \n , BU~a UR~a \n , 3N57 \n , DIM~a \n , EN~a GISZxSZU2~a \n , SZU SZU \n , EZEN~b EN~a \n , SZU2 SAL \n , EN~a AMAR SZU \n , E2~a BU~a \n , DIM~a \n , PAP~a \n , SZA3~a1 A TAK4~a \n , NAM2 \n , BAHAR2~a EN~a \n , EN~a U2~b HI \n , BAHAR2~a 3N57 \n , 6N57 U8 \n 9N01 , EN~a TUR \n , PA~a TUN3~a \n , SAG HI NIN \n , SI BARA3 \n , NI~a GIR3~c \n , BU~a+DU6~a GUL \n , DIM~a \n , PAP~a SAL DAR~a \n , KID~e NUN~a EN~a \n , MAH~bxNA~a \n 7N01 , U4x2N57 TUR \n , SZU2 SAL \n , SZUR2~b \n , TI SU~a EN~a \n , DAR~b E2~a \n , GISZxSZU2~a EN~a \n , SI E2~a ME~a \n , 3N57 SAL \n 2N01 , U4x1N57 TUR \n , BU~a GI \n , PAP~a HAL \n 1N14 2N01 , U4x3N57 TUR \n , SIG7 MUSZEN \n , EN~a U2~b DU \n , ZATU659 \n , GI SZA3~a1 \n , SAGxGESZTU~b GISZ \n , GU4 SAL EN~a \n , EN~a U2~b AB~a \n , GIR3@g~c EN~a \n , E2~a BU~a \n , 3N57 NUNUZ~c \n , E2~a GIR3~c \n , SI AD~a AN \n 1N14 1N01 , AL \n , SZE~a MUSZEN \n , IN~b EN~a \n , HAL PAP~a \n , TUR3~a 5N57 \n , PAP~a \n , AN TE KI GAL~a \n , ZI~a E2~a \n , ZATU773~a MASZ KUR~a \n , EN~a AN E2~a \n , BU~a SZE~a \n , MUSZ3~a NU11@t \n 2N01 , EN~a TUR \n , BAHAR2~a BU~a \n , BU~a DU \n 3N01 , U4x1N57 TUR \n , GA2~a1 EN~a GU \n , SZU2 BU~a \n , 1N57 A NE~a \n 3N01 , U4x2N57 TUR \n , GI&GI&GI EN~a \n , NU UDU~axTAR~a \n , EN~a SZITA@g~a AB~a \n 4N01 , U4x3N57 TUR \n , 3N57 DUR2 BU~a+DU6~a \n , EN~a A \n , GUL SAG \n , ZATU659 \n , 1N57 MUN~a1 \n 4N14 3N01 , AL \n 1N14 1N01 , EN~a TUR \n 5N01 , U4x1N57 TUR \n 1N14 , U4x2N57 TUR \n 1N14 6N01 , U4x3N57 TUR \n 1N34 2N14 5N01 , 1N57 2N57 MUN~a1 SU~a PAP~a 1N58.BAD~a SI AN AD~a GIR~a ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -53703,7 +53703,7 @@
         },
         "origin": {
             "period": 4,
-            "provenience": 0
+            "provenience": 306
         }
     },
     {
@@ -64347,7 +64347,7 @@
         "designation": "CUSAS 31, 127",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6437",
         "inscription": {
-            "transliterationClean": " ... BAR SZE~a ... \n ... , ... X NAM2 \n 5N19 , \n 1N30c' , \n 2N19 1N04 , \n 4N19 , \n 5N04 , \n , KID~e BAR TUN3~a ",
+            "transliterationClean": " ... BAR SZE~a ... \n ... , ... X NAM2 \n 5N19 , \n 1N30' , \n 2N19 1N04 , \n 4N19 , \n 5N04 , \n , KID~e BAR TUN3~a ",
             "compositeId": 0,
             "accountType": [
                 "economic", "cereals"
@@ -70077,7 +70077,7 @@
         "designation": "IM 046022",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/2771",
         "inscription": {
-            "transliterationClean": " , ... DAHa \n , RU ...a \n , ... SAR~a 3N57a PAP~a SU~a \n , MUD ...a \n ... , ... ",
+            "transliterationClean": " , ... DAH \n , RU ... \n , ... SAR~a 3N57 PAP~a SU~a \n , MUD ... \n ... , ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -72372,7 +72372,7 @@
         "designation": "IM 073464",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/3936",
         "inscription": {
-            "transliterationClean": " ... 3N01 , AL \n ... , ...a \n ... , X ...a \n ... , X ...a \n , NIM~a GESZTU~b ... \n ... , ... SZEN~a A ",
+            "transliterationClean": " ... 3N01 , AL \n ... , ... \n ... , X ... \n ... , X ... \n , NIM~a GESZTU~b ... \n ... , ... SZEN~a A ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -84731,7 +84731,7 @@
         "designation": "IM 134762",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/4292",
         "inscription": {
-            "transliterationClean": " ... , X EN~a NIM~b1 ... \n , SAL ZATU628~b 1N04 AMA~aa SU~a PAP~a ",
+            "transliterationClean": " ... , X EN~a NIM~b1 ... \n , SAL ZATU628~b 1N04 AMA~a SU~a PAP~a ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -89338,7 +89338,7 @@
         "designation": "MRAH O.4995",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/5573",
         "inscription": {
-            "transliterationClean": " 1N14 7N01 , AL \n , DA~a ... KU6~aa \n , KISZIK~a SZUBUR NA~aa \n , BU~a NA~a MUDa \n , MUDa \n , GI&GI 3N57a \n , ZATU819 Xa \n , EZINU~a EN~aa \n , BARA3 DUa \n , GI6 LAM~b SZUa \n , SAL E2~aa \n , BU~a SALa \n , SZUBURa \n , DIM~aa \n , KAL~b2 NIMGIRa \n , GISZxSZU2~a NIMGIRa \n , LA2 SUM~ba \n , URI3~a ZATU773~aa \n 2N01 , EN~a TUR \n , AN EN~aa \n , SI UR~aa \n 3N01 , U4x1N57 TUR \n , UDU~a E2~a PIRIG~b1a \n , LAL2~a BU~aa \n , 3N57 KI DUa \n 1N01 , U4x2N57 TUR \n , HI DU TA~ca \n 9N01 , U4x3N57 TUR \n , DIN E2~aa \n , GIR3~c NI~aa \n , SZUBUR RAD~a MUSZENa \n , 1N57 EN~a NIM~b1a \n , PAP~aa \n , TUR3~a U2~b DUa \n , AN UB HIa \n , TAK4~a Aa \n , U2~b ...a \n 1N14 9N01 , AL \n , GUL KITIa \n , ESZDA ANa \n , NA~a SZUBUR KISZIK~aa \n , EN~a PAP~aa \n , GI DIM~aa \n , EN~a TURa \n , E2~a SZUBURa \n , GI&GI 3N57a \n , AMA~a AN EN~aa \n , EN~a NA~a NIM~b2a \n , MA MAa \n , EN~a NA~a NIM~b2a \n , GI ... NA~aa \n , AN KIa \n , EN~a NUNUZ~a0 GA2~a1a \n , LA2 TEa \n , KASZ~c Xa \n , SZU2 URI3~aa \n , TU~a EN~a ...a \n 6N01 , TUR EN~a \n , KASZ~c AN NA~a ME~aa \n , HIx1N57&HI+1N57 EN~aa \n , PAP~aa \n , GIR3@g~b 3N57a \n , UR~a URI3~aa \n , X ...a \n 4N01 , U4x1N57 TUR \n , SZU PAP~aa \n , EN~a ...a \n , EN~a Xa \n , AN ZATU735~a DUa \n , ERIM~a ...a \n 1N14 3N01 , U4x3N57 TUR \n , TAK4~a BARA2~aa \n , SZU2 PAP~aa \n , E2~a LAM~b MUDa \n , BU~a+DU6~a GULa \n , AN TAK4~a U8a \n , GA2~a1 EN~a GUa \n , 3N57 E2~a ...a \n , X ...a \n , ...a \n , ...a \n , ...a \n , ...a \n 3N14 6N01 , AL \n 8N01 , EN~a TUR \n 7N01 , U4x1N57 TUR \n 1N01 , U4x2N57 TUR \n 2N14 2N01 , U4x3N57 TUR \n 1N34 1N14 4N01 , 1N57 2N57 MUN~a1 SU~a PAP~a NIM~b2 DARA3~cxKAR2 AL ",
+            "transliterationClean": " 1N14 7N01 , AL \n , DA~a ... KU6~a \n , KISZIK~a SZUBUR NA~a \n , BU~a NA~a MUD \n , MUD \n , GI&GI 3N57 \n , ZATU819 X \n , EZINU~a EN~a \n , BARA3 DU \n , GI6 LAM~b SZU \n , SAL E2~a \n , BU~a SAL \n , SZUBUR \n , DIM~a \n , KAL~b2 NIMGIR \n , GISZxSZU2~a NIMGIR \n , LA2 SUM~b \n , URI3~a ZATU773~a \n 2N01 , EN~a TUR \n , AN EN~a \n , SI UR~a \n 3N01 , U4x1N57 TUR \n , UDU~a E2~a PIRIG~b1 \n , LAL2~a BU~a \n , 3N57 KI DU \n 1N01 , U4x2N57 TUR \n , HI DU TA~c \n 9N01 , U4x3N57 TUR \n , DIN E2~a \n , GIR3~c NI~a \n , SZUBUR RAD~a MUSZEN \n , 1N57 EN~a NIM~b1 \n , PAP~a \n , TUR3~a U2~b DU \n , AN UB HI \n , TAK4~a A \n , U2~b ... \n 1N14 9N01 , AL \n , GUL KITI \n , ESZDA AN \n , NA~a SZUBUR KISZIK~a \n , EN~a PAP~a \n , GI DIM~a \n , EN~a TUR \n , E2~a SZUBUR \n , GI&GI 3N57 \n , AMA~a AN EN~a \n , EN~a NA~a NIM~b2 \n , MA MA \n , EN~a NA~a NIM~b2 \n , GI ... NA~a \n , AN KI \n , EN~a NUNUZ~a0 GA2~a1 \n , LA2 TE \n , KASZ~c X \n , SZU2 URI3~a \n , TU~a EN~a ... \n 6N01 , TUR EN~a \n , KASZ~c AN NA~a ME~a \n , HIx1N57&HI+1N57 EN~a \n , PAP~a \n , GIR3@g~b 3N57 \n , UR~a URI3~a \n , X ... \n 4N01 , U4x1N57 TUR \n , SZU PAP~a \n , EN~a ... \n , EN~a X \n , AN ZATU735~a DU \n , ERIM~a ... \n 1N14 3N01 , U4x3N57 TUR \n , TAK4~a BARA2~a \n , SZU2 PAP~a \n , E2~a LAM~b MUD \n , BU~a+DU6~a GUL \n , AN TAK4~a U8 \n , GA2~a1 EN~a GU \n , 3N57 E2~a ... \n , X ... \n , ... \n , ... \n , ... \n , ... \n 3N14 6N01 , AL \n 8N01 , EN~a TUR \n 7N01 , U4x1N57 TUR \n 1N01 , U4x2N57 TUR \n 2N14 2N01 , U4x3N57 TUR \n 1N34 1N14 4N01 , 1N57 2N57 MUN~a1 SU~a PAP~a NIM~b2 DARA3~cxKAR2 AL ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -89440,7 +89440,7 @@
         "designation": "MS 2359",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6027",
         "inscription": {
-            "transliterationClean": " 3N01 , ... UDU~a LU2 \n , ...a \n , ...a \n , SAL ZATU751~a SAL ME~a Xa \n 3N01 , SANGA~a KALAM~b DU PAP~a \n , GA2~a2x3N57a \n , SI KISAL~b1 PAP~aa \n , HI UR5~a ZATU628~a MUSZEN SALa \n 2N01 , EN~a PAP~a SANGA~a \n , 1N58 EN~a AN DUR2 HIa \n , 1N04 SIa \n 7N01 , X ... \n , UR~a KU6~a RAD~aa \n , DIM~aa \n , X Xa \n , ...a \n , ...a \n , ...a \n , ...a \n ... , ... SI E2~b X NI~a \n , ... ZATU751~a 3N57 DUR2a \n , \n , ESZDA \n , 3N57 ESZDA \n , EN~a NA2~a AB~a \n 1N14 6N01 , BA DUB~a \n , RAD~a ... ",
+            "transliterationClean": " 3N01 , ... UDU~a LU2 \n , ... \n , ... \n , SAL ZATU751~a SAL ME~a X \n 3N01 , SANGA~a KALAM~b DU PAP~a \n , GA2~a2x3N57 \n , SI KISAL~b1 PAP~a \n , HI UR5~a ZATU628~a MUSZEN SAL \n 2N01 , EN~a PAP~a SANGA~a \n , 1N58 EN~a AN DUR2 HI \n , 1N04 SI \n 7N01 , X ... \n , UR~a KU6~a RAD~a \n , DIM~a \n , X X \n , ... \n , ... \n , ... \n , ... \n ... , ... SI E2~b X NI~a \n , ... ZATU751~a 3N57 DUR2 \n , \n , ESZDA \n , 3N57 ESZDA \n , EN~a NA2~a AB~a \n 1N14 6N01 , BA DUB~a \n , RAD~a ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -89491,7 +89491,7 @@
         "designation": "MS 2388",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6030",
         "inscription": {
-            "transliterationClean": " 3N01 , BA 2N57 \n , A SAGa \n , TA~d DUa \n , EN~a URU~a1 2N57a \n 2N14 3N08 , U4 \n 8N01 , 2N57 X ... \n , 3N57 SALa \n , 3N57 KU6~a RAD~aa \n , SZUBURa \n , 3N57 SALa \n , BU~a GIa \n , TUR BU~aa \n , X X IB~a DUa \n , NA~a EN~a X UDU~aa \n 1N14 ... , U4 \n ... , ... \n , ... \n 1N14 2N08 ... , U4 \n ... , DAR~a MAR~a PAP~a SU~a ",
+            "transliterationClean": " 3N01 , BA 2N57 \n , A SAG \n , TA~d DU \n , EN~a URU~a1 2N57 \n 2N14 3N08 , U4 \n 8N01 , 2N57 X ... \n , 3N57 SAL \n , 3N57 KU6~a RAD~a \n , SZUBUR \n , 3N57 SAL \n , BU~a GI \n , TUR BU~a \n , X X IB~a DU \n , NA~a EN~a X UDU~a \n 1N14 ... , U4 \n ... , ... \n , ... \n 1N14 2N08 ... , U4 \n ... , DAR~a MAR~a PAP~a SU~a ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -89593,7 +89593,7 @@
         "designation": "MS 2395",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6036",
         "inscription": {
-            "transliterationClean": " ... , ... \n , ... \n , TUR \n 6N01 , EN~a \n 2N01 , NUN~a ZATU687 EN~a EN~a TUR \n , EN~a PAP~aa \n , 3N57 GAN2a \n 4N01 , EN~a X KI ZATU687 AN \n , EN~a SZU2.E2~ba \n , BU~a SZUa \n , SAL BU~aa \n , EN~a HI KASZ~ca \n , UMUN2 \n , EN~a PAP~a \n , UMUN2 KU3~a \n , HI KI \n , ",
+            "transliterationClean": " ... , ... \n , ... \n , TUR \n 6N01 , EN~a \n 2N01 , NUN~a ZATU687 EN~a EN~a TUR \n , EN~a PAP~a \n , 3N57 GAN2 \n 4N01 , EN~a X KI ZATU687 AN \n , EN~a SZU2.E2~b \n , BU~a SZU \n , SAL BU~a \n , EN~a HI KASZ~c \n , UMUN2 \n , EN~a PAP~a \n , UMUN2 KU3~a \n , HI KI \n , ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -89644,7 +89644,7 @@
         "designation": "MS 2398",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6039",
         "inscription": {
-            "transliterationClean": " 1N01 , DIM~a \n , DAHa \n , DUR2 SZE3a \n 1N01 , EN~a PAP~a \n , EN~a AN MUSZ3~aa \n , ISZ~b BU~aa \n 1N01 BAHAR2~b PAP~a \n , SZUBURa \n , ISZ~b BU~aa \n , PAP~a 1N57 SU~a RU KI \n 3N01 , PAP~a SU~a \n , RU KI ",
+            "transliterationClean": " 1N01 , DIM~a \n , DAH \n , DUR2 SZE3 \n 1N01 , EN~a PAP~a \n , EN~a AN MUSZ3~a \n , ISZ~b BU~a \n 1N01 BAHAR2~b PAP~a \n , SZUBUR \n , ISZ~b BU~a \n , PAP~a 1N57 SU~a RU KI \n 3N01 , PAP~a SU~a \n , RU KI ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -89712,7 +89712,7 @@
         "designation": "MS 2431",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6048",
         "inscription": {
-            "transliterationClean": " 3N01 , BA \n , MUSZENa \n , EN~a 1N04a \n , EN~a NUNUZ~ca \n 7N01 , GI \n , ZATU659a \n , APIN~ba \n , ZATU659a \n , EN~a GISZxSZU2~aa \n , TUR SZUa \n , SZA3~a1 GI4~aa \n , NIMGIRa \n 3N01 , PA~a KU3~a A \n , GISZ3~b UR~aa \n , U8 ME~aa \n , KASZ~c MUSZEN GIa \n 2N01 , EN~a GI SZAGAN \n , DU7 ZATU686~ba \n , SZA3~a1 A TAK4~aa \n 1N01 , MUN~a1 KU3~a E2~a \n , GISZ AN ZATU773~aa \n 1N01 , NUN~a MU MAH~a \n , EN~a GA2~a1 GUa \n 1N01 , KALAM~a SZU \n , SZUBURa \n 2N01 , SI NUN~a PA~a \n , AB~a KU6~aa \n , NA~a MUSZEN GIa \n 1N01 , U2~b A \n , EN~a ZATU697~ca \n 5N02 , \n , BU3 DUR2 Aa \n , KASKAL SZUBURa \n , KASZ~c Xa \n , EN~a SAGa \n , X EN~aa \n 2N01 , BA \n , KASZ~c ...a \n , ME~a ...a \n 2N01 , GI \n , BU~a PAP~aa \n , 3N57 RUa \n 1N01 , TUG2~a NU SILA3~axSZU2 A \n , BAN~b PAP~aa \n 1N02 , \n , EN~a PAP~aa \n , 1N57 SIG RAD~a \n 2N14 6N01 , 2N57 \n 3N01 , BA \n 7N01 , GI \n 1N14 1N01 , EN~a \n 5N02 , \n 6N01 , 1N57 \n 2N01 , BA \n 2N01 , GI \n 1N01 , KU3~a E2~a \n 1N02 , \n 5N01 , BA \n 9N01 , GI \n 1N14 1N01 , EN~a \n 1N01 , KU3~a E2~a \n 6N02 , \n 3N14 2N01 , 1N57 2N57 MUN~a1 DU TE SIG RAD~a ",
+            "transliterationClean": " 3N01 , BA \n , MUSZEN \n , EN~a 1N04 \n , EN~a NUNUZ~c \n 7N01 , GI \n , ZATU659 \n , APIN~b \n , ZATU659 \n , EN~a GISZxSZU2~a \n , TUR SZU \n , SZA3~a1 GI4~a \n , NIMGIR \n 3N01 , PA~a KU3~a A \n , GISZ3~b UR~a \n , U8 ME~a \n , KASZ~c MUSZEN GI \n 2N01 , EN~a GI SZAGAN \n , DU7 ZATU686~b \n , SZA3~a1 A TAK4~a \n 1N01 , MUN~a1 KU3~a E2~a \n , GISZ AN ZATU773~a \n 1N01 , NUN~a MU MAH~a \n , EN~a GA2~a1 GU \n 1N01 , KALAM~a SZU \n , SZUBUR \n 2N01 , SI NUN~a PA~a \n , AB~a KU6~a \n , NA~a MUSZEN GI \n 1N01 , U2~b A \n , EN~a ZATU697~c \n 5N02 , \n , BU3 DUR2 A \n , KASKAL SZUBUR \n , KASZ~c X \n , EN~a SAG \n , X EN~a \n 2N01 , BA \n , KASZ~c ... \n , ME~a ... \n 2N01 , GI \n , BU~a PAP~a \n , 3N57 RU \n 1N01 , TUG2~a NU SILA3~axSZU2 A \n , BAN~b PAP~a \n 1N02 , \n , EN~a PAP~a \n , 1N57 SIG RAD~a \n 2N14 6N01 , 2N57 \n 3N01 , BA \n 7N01 , GI \n 1N14 1N01 , EN~a \n 5N02 , \n 6N01 , 1N57 \n 2N01 , BA \n 2N01 , GI \n 1N01 , KU3~a E2~a \n 1N02 , \n 5N01 , BA \n 9N01 , GI \n 1N14 1N01 , EN~a \n 1N01 , KU3~a E2~a \n 6N02 , \n 3N14 2N01 , 1N57 2N57 MUN~a1 DU TE SIG RAD~a ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -89729,7 +89729,7 @@
         "designation": "MS 2432",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6049",
         "inscription": {
-            "transliterationClean": " 4N01 , EN~a \n , ZATU795a \n , MUSZEN ZATU659a \n , KAK~a AB~aa \n , EN~a GA2~a2a \n 7N01 , SAL \n ... , ... ZATU795 \n 3N01 , EN~a \n , ...a \n , ... AN ME~a E~aa \n , ZATU659a \n 5N01 , SAL \n , SZUBUR MU ... \n , ",
+            "transliterationClean": " 4N01 , EN~a \n , ZATU795 \n , MUSZEN ZATU659 \n , KAK~a AB~a \n , EN~a GA2~a2 \n 7N01 , SAL \n ... , ... ZATU795 \n 3N01 , EN~a \n , ... \n , ... AN ME~a E~a \n , ZATU659 \n 5N01 , SAL \n , SZUBUR MU ... \n , ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -89797,7 +89797,7 @@
         "designation": "MS 2436",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6053",
         "inscription": {
-            "transliterationClean": " 5N02 , RU KI \n , NI~a GIR3~ca \n , UB SZUBURa \n , GAR U2~aa \n , EN~a MASZ BU~aa \n , U2~b RUa \n 4N02 , HI KI \n , NIR~a ZATU773~aa \n , BU~a GIa \n , NI~a ZATU811 SZUa \n , UD5~aa \n 5N02 , SIG RAD~a \n , BU3 Aa \n , KASKAL SZUBURa \n , 1N57 HI MUSZENa \n , KASZ~c ZATU823a \n , EZEN~b EN~aa \n 2N02 , URU~a1 AN MUSZ3~a \n , TAK4~a A SZA3~a1a \n , SAR~a EN~aa \n 3N02 , ZATU795 LAM~b \n , LU2 AN ZATU773~aa \n , UD5~aa \n , AB~b GU4 EN~aa \n 2N02 , BU~a SI TE KITI \n , EN~a MASZ KAL~b2 BU~aa \n , MUSZEN RAD~aa \n , RAD~a BU~a SI TE KITI ZATU795 LAM~b AN MUSZ3~a URU~a1 \n 2N15 1N02 , 2N57 MUN~a1 PAP~a 2N57 SU~a \n , RAD~a KITI SI TE BU~a \n , ZATU795 LAM~b RU KI HI KI URU~a1 AN MUSZ3~a SIG RAD~a ",
+            "transliterationClean": " 5N02 , RU KI \n , NI~a GIR3~c \n , UB SZUBUR \n , GAR U2~a \n , EN~a MASZ BU~a \n , U2~b RU \n 4N02 , HI KI \n , NIR~a ZATU773~a \n , BU~a GI \n , NI~a ZATU811 SZU \n , UD5~a \n 5N02 , SIG RAD~a \n , BU3 A \n , KASKAL SZUBUR \n , 1N57 HI MUSZEN \n , KASZ~c ZATU823 \n , EZEN~b EN~a \n 2N02 , URU~a1 AN MUSZ3~a \n , TAK4~a A SZA3~a1 \n , SAR~a EN~a \n 3N02 , ZATU795 LAM~b \n , LU2 AN ZATU773~a \n , UD5~a \n , AB~b GU4 EN~a \n 2N02 , BU~a SI TE KITI \n , EN~a MASZ KAL~b2 BU~a \n , MUSZEN RAD~a \n , RAD~a BU~a SI TE KITI ZATU795 LAM~b AN MUSZ3~a URU~a1 \n 2N15 1N02 , 2N57 MUN~a1 PAP~a 2N57 SU~a \n , RAD~a KITI SI TE BU~a \n , ZATU795 LAM~b RU KI HI KI URU~a1 AN MUSZ3~a SIG RAD~a ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -89899,7 +89899,7 @@
         "designation": "MS 2442",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6059",
         "inscription": {
-            "transliterationClean": " 4N01 , BAHAR2~c KU6~a HAL DIN \n , GIR3~c DUa \n , NAM~a KIa \n , SZUBUR RUa \n , LA2 TEa \n 2N01 , ZATU659 \n , X PA~aa \n 1N01 , 3N57 EN2.E2~b \n 1N01 , EN~a RU BU~a \n , KU6~a DIN HAL \n 8N01 , HAL KU6~a DIN ",
+            "transliterationClean": " 4N01 , BAHAR2~c KU6~a HAL DIN \n , GIR3~c DU \n , NAM~a KI \n , SZUBUR RU \n , LA2 TE \n 2N01 , ZATU659 \n , X PA~a \n 1N01 , 3N57 EN2.E2~b \n 1N01 , EN~a RU BU~a \n , KU6~a DIN HAL \n 8N01 , HAL KU6~a DIN ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -89916,7 +89916,7 @@
         "designation": "MS 2443",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6060",
         "inscription": {
-            "transliterationClean": " 2N01 , DUB~a EN~a ZATU697~a \n , SZITA~a3 HAL BU~aa \n , PAP~a 3N57 SU~aa \n 3N01 , URU~a1 DU \n , KALAM~a E2~ba \n , EN~a PAP~aa \n , GIR3~c PAP~aa \n 2N01 , NI~a GIR3~c \n , SZUBURa \n , SAGSZU GAL~aa \n 1N01 , EN~a GA2~a1 KISZIK~a \n , UB ZI~aa \n , DUB~a EN~a RAD~a KU6~a \n , \n 8N01 , EN~a KU6~a DUB~a RAD~a ",
+            "transliterationClean": " 2N01 , DUB~a EN~a ZATU697~a \n , SZITA~a3 HAL BU~a \n , PAP~a 3N57 SU~a \n 3N01 , URU~a1 DU \n , KALAM~a E2~b \n , EN~a PAP~a \n , GIR3~c PAP~a \n 2N01 , NI~a GIR3~c \n , SZUBUR \n , SAGSZU GAL~a \n 1N01 , EN~a GA2~a1 KISZIK~a \n , UB ZI~a \n , DUB~a EN~a RAD~a KU6~a \n , \n 8N01 , EN~a KU6~a DUB~a RAD~a ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -90001,7 +90001,7 @@
         "designation": "MS 2498",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6065",
         "inscription": {
-            "transliterationClean": " 9N01 , PAP~a SU~a 2N57 MUN~a1 \n , ... SAGa \n , AN URU~a1a \n , BU~a U2~aa \n , PIRIG~b1 E2~b UDU~aa \n , NAR Aa \n , EN~a Xa \n , NE~a SZUa \n , SZUBURa \n , EN~a PA~aa \n 6N01 , PAP~a SU~a 1N57 MUN~a1 \n , U2~b SAGa \n , EN~a HIa \n , ZATU659a \n , ZATU832 HIa \n , EN2.E2~b 3N57a \n , E2~b BU~aa \n , \n 2N01 , IM~a \n , PAP~a GIR3~ca \n , IM~a AN KISAL~b1a \n 2N01 , SZA SZE~a \n , ISZ~b ZATU832a \n , ZATU773~a UNUG~aa \n 3N01 , TUR PAP~a ... \n , GAN2 HIa \n , E2~b SI NAGA~aa \n , EN~a EZEN~ba \n 5N01 , SI KI ZATU795 \n , ZATU811 3N57a \n , ZATU659 MUSZENa \n , SZUBURa \n , E2~b BAR 3N57a \n , NIGIN EN~a TIa \n 2N01 , ME~a \n , KASKAL SZUBURa \n , NU SZUBURa \n 3N01 , URU~a1 PA~a BU~a \n , 3N57 E2~ba \n , GA2~a1xEN~a NUNUZ~a1a \n , SZU TURa \n , KU6~a DU \n , ",
+            "transliterationClean": " 9N01 , PAP~a SU~a 2N57 MUN~a1 \n , ... SAG \n , AN URU~a1 \n , BU~a U2~a \n , PIRIG~b1 E2~b UDU~a \n , NAR A \n , EN~a X \n , NE~a SZU \n , SZUBUR \n , EN~a PA~a \n 6N01 , PAP~a SU~a 1N57 MUN~a1 \n , U2~b SAG \n , EN~a HI \n , ZATU659 \n , ZATU832 HI \n , EN2.E2~b 3N57 \n , E2~b BU~a \n , \n 2N01 , IM~a \n , PAP~a GIR3~c \n , IM~a AN KISAL~b1 \n 2N01 , SZA SZE~a \n , ISZ~b ZATU832 \n , ZATU773~a UNUG~a \n 3N01 , TUR PAP~a ... \n , GAN2 HI \n , E2~b SI NAGA~a \n , EN~a EZEN~b \n 5N01 , SI KI ZATU795 \n , ZATU811 3N57 \n , ZATU659 MUSZEN \n , SZUBUR \n , E2~b BAR 3N57 \n , NIGIN EN~a TI \n 2N01 , ME~a \n , KASKAL SZUBUR \n , NU SZUBUR \n 3N01 , URU~a1 PA~a BU~a \n , 3N57 E2~b \n , GA2~a1xEN~a NUNUZ~a1 \n , SZU TUR \n , KU6~a DU \n , ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -90171,7 +90171,7 @@
         "designation": "MS 2510",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6078",
         "inscription": {
-            "transliterationClean": " ... , ... \n ... , X \n , Xa \n 1N01 , TUR ... \n , SZA3~a1 NARa \n ... 1N01 , GA2~a1 SZA3~a1 \n , E2~a SI ME~aa \n 1N01 , GAR X \n , Xa \n 1N01 , ... PAP~a \n , X LAM~ba \n 1N01 , AMAR \n , EN~a AN UMUN2a \n 1N01 , ... KU6~a \n , ... Xa \n 1N01 , SAL SZU PAP~a \n , EN~a BU~a 1N57a \n , SZAM2 GA2~a2 NESAG2~a X ... \n ... , ... ",
+            "transliterationClean": " ... , ... \n ... , X \n , X \n 1N01 , TUR ... \n , SZA3~a1 NAR \n ... 1N01 , GA2~a1 SZA3~a1 \n , E2~a SI ME~a \n 1N01 , GAR X \n , X \n 1N01 , ... PAP~a \n , X LAM~b \n 1N01 , AMAR \n , EN~a AN UMUN2 \n 1N01 , ... KU6~a \n , ... X \n 1N01 , SAL SZU PAP~a \n , EN~a BU~a 1N57 \n , SZAM2 GA2~a2 NESAG2~a X ... \n ... , ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -90358,7 +90358,7 @@
         "designation": "MS 2520",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6088",
         "inscription": {
-            "transliterationClean": " ... , ... \n 1N02 , SZUBUR \n , BU~a GIa \n , EN~a DU ANa \n 1N01 , U4x3N57 MUSZEN ZATU659 \n , EN~a AN ...a \n , ...a \n 1N01 , DU TUR \n , EN~a SZU2.E2~ba \n , 1N01 DU Xa \n 3N01 , SIG RAD~a IM~a \n , 3N58 E2~ba \n , TI@t GIR3~ca \n , AN 1N24a \n , DU KU6~aa \n , ... SIG RAD~a ... \n ... , ... \n 1N02 ... , X ... \n X ... , ... \n , X ... \n ... , ... \n ... , ... ",
+            "transliterationClean": " ... , ... \n 1N02 , SZUBUR \n , BU~a GI \n , EN~a DU AN \n 1N01 , U4x3N57 MUSZEN ZATU659 \n , EN~a AN ... \n , ... \n 1N01 , DU TUR \n , EN~a SZU2.E2~b \n , 1N01 DU X \n 3N01 , SIG RAD~a IM~a \n , 3N58 E2~b \n , TI@t GIR3~c \n , AN 1N24 \n , DU KU6~a \n , ... SIG RAD~a ... \n ... , ... \n 1N02 ... , X ... \n X ... , ... \n , X ... \n ... , ... \n ... , ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -90375,7 +90375,7 @@
         "designation": "MS 2521",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6089",
         "inscription": {
-            "transliterationClean": " 1N01 , SU~a \n 2N01 , BAR \n , HI@g~ba \n , NIM~aa \n , TURa \n 2N01 , SAL UNUG~a ZATU628~a LAGAR~a \n , SZUR2~b BU~aa \n , SZUR2~aa \n , ",
+            "transliterationClean": " 1N01 , SU~a \n 2N01 , BAR \n , HI@g~b \n , NIM~a \n , TUR \n 2N01 , SAL UNUG~a ZATU628~a LAGAR~a \n , SZUR2~b BU~a \n , SZUR2~a \n , ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -90409,7 +90409,7 @@
         "designation": "MS 2672",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6093",
         "inscription": {
-            "transliterationClean": " ... , ... X \n 7N01 , HI KI PA~a \n , ... URI3~aa \n , BU~a+DU6~aa \n , E2~b BU~aa \n , SUKKAL Xa \n , KI U4 NUa \n , RU NARa \n , AN GUM~ba \n 6N01 , BA KAB \n , X SZUa \n , UR3~b2a \n , SZU ...a \n , DARA4~a1 SIa \n , UR~aa \n , URI3~a DU ...a \n 3N01 , KU3~c RAD~a \n , EN~a ...a \n , PAP~a ...a \n , EN~a ...a \n 4N01 , SZA RAD~a \n , EN~a PAP~a ...a \n , A SANGA~a ...a \n , ...a \n , ...a \n 3N01 , EN~a PA~a NUN~a X \n , 1N01 ...a \n , ...a \n , ...a \n 2N01 ... , ... \n , ...a \n , ...a \n ... , ... \n ... , ... \n ... 1N34 1N14 ... , DA~a X PA~a BU~a ... ",
+            "transliterationClean": " ... , ... X \n 7N01 , HI KI PA~a \n , ... URI3~a \n , BU~a+DU6~a \n , E2~b BU~a \n , SUKKAL X \n , KI U4 NU \n , RU NAR \n , AN GUM~b \n 6N01 , BA KAB \n , X SZU \n , UR3~b2 \n , SZU ... \n , DARA4~a1 SI \n , UR~a \n , URI3~a DU ... \n 3N01 , KU3~c RAD~a \n , EN~a ... \n , PAP~a ... \n , EN~a ... \n 4N01 , SZA RAD~a \n , EN~a PAP~a ... \n , A SANGA~a ... \n , ... \n , ... \n 3N01 , EN~a PA~a NUN~a X \n , 1N01 ... \n , ... \n , ... \n 2N01 ... , ... \n , ... \n , ... \n ... , ... \n ... , ... \n ... 1N34 1N14 ... , DA~a X PA~a BU~a ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -90596,7 +90596,7 @@
         "designation": "MS 2684",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6105",
         "inscription": {
-            "transliterationClean": " ... , ... \n 1N01 , EN~a KALAM~b \n , EN~a SI SZAGANa \n , SILA3~axNI~a GAL~aa \n 4N01 , APIN~a U2~b SAG \n , BU~a MASZa \n , U2~a GARa \n , AB~a 5N57a \n , BU~a DUa \n , HIx1N57 GI6a \n 1N01 , SI4~a ZATU628~a SAL ZATU697~b \n , BU~a SZUa \n , X ...a \n 1N01 ... , X ... \n 1N01 , BULUG3 NI~a \n , BU~a SZE~aa \n , DARA3~dxKAR2a \n 2N01 , SZIM~a MASZ DU KI \n , EN~a EN2.E2~ba \n , BU~a GIa \n , EN~a ZATU829a \n 1N01 , HAL PAP~a \n , KITI 3N57a \n , KI NE~a A ...a \n 1N01 ... , X ... \n , X KISAL~b1 ...a \n , ...a \n 1N01 , MUSZ3~a ... \n , X ME~a Xa \n , UNUG~a ...a \n ... 2N01 , NI~a TUR \n 2N01 , UTUL~a URU~a1@n \n 1N01 , DARA3~cxKAR2 \n 1N01 , ADAB \n 1N01 , ZATU799 \n ... , ... X ",
+            "transliterationClean": " ... , ... \n 1N01 , EN~a KALAM~b \n , EN~a SI SZAGAN \n , SILA3~axNI~a GAL~a \n 4N01 , APIN~a U2~b SAG \n , BU~a MASZ \n , U2~a GAR \n , AB~a 5N57 \n , BU~a DU \n , HIx1N57 GI6 \n 1N01 , SI4~a ZATU628~a SAL ZATU697~b \n , BU~a SZU \n , X ... \n 1N01 ... , X ... \n 1N01 , BULUG3 NI~a \n , BU~a SZE~a \n , DARA3~dxKAR2a \n 2N01 , SZIM~a MASZ DU KI \n , EN~a EN2.E2~b \n , BU~a GI \n , EN~a ZATU829 \n 1N01 , HAL PAP~a \n , KITI 3N57 \n , KI NE~a A ... \n 1N01 ... , X ... \n , X KISAL~b1 ... \n , ... \n 1N01 , MUSZ3~a ... \n , X ME~a X \n , UNUG~a ... \n ... 2N01 , NI~a TUR \n 2N01 , UTUL~a URU~a1@n \n 1N01 , DARA3~cxKAR2 \n 1N01 , ADAB \n 1N01 , ZATU799 \n ... , ... X ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -90817,7 +90817,7 @@
         "designation": "MS 2697",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6118",
         "inscription": {
-            "transliterationClean": " 6N01 , EN~a HI NUN~a E2~b \n , HI KASKALa \n , KASZ~c KASZ~ca \n , NIMGIR ANa \n , NI~a GIR3~aa \n , SAG Xa \n , X Xa \n 3N01 , SAL SAL X \n , EN~a SU~a TIa \n , 1N01 GIR3~ca \n , SZU2.1N02a \n ... , ... GIR~a A RAD~a \n 9N01 , SU~a SZU E2~b PAP~a \n , UNUG~a GIR~a A RAD~a PA~a ",
+            "transliterationClean": " 6N01 , EN~a HI NUN~a E2~b \n , HI KASKAL \n , KASZ~c KASZ~c \n , NIMGIR AN \n , NI~a GIR3~a \n , SAG X \n , X X \n 3N01 , SAL SAL X \n , EN~a SU~a TI \n , 1N01 GIR3~c \n , SZU2.1N02 \n ... , ... GIR~a A RAD~a \n 9N01 , SU~a SZU E2~b PAP~a \n , UNUG~a GIR~a A RAD~a PA~a ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -90902,7 +90902,7 @@
         "designation": "MS 2782/05",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6125",
         "inscription": {
-            "transliterationClean": " ... , ... X \n , NARa \n , ISZ~b KASZ~ca \n , PAP~a 3N57a \n 2N01 , SAL \n ... , ... A \n 1N01 , EN~a \n , EN~a SZA3~a1 HIa \n 5N01 , SAL \n , EN~a ... \n ... , ... ",
+            "transliterationClean": " ... , ... X \n , NAR \n , ISZ~b KASZ~c \n , PAP~a 3N57 \n 2N01 , SAL \n ... , ... A \n 1N01 , EN~a \n , EN~a SZA3~a1 HI \n 5N01 , SAL \n , EN~a ... \n ... , ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -91888,7 +91888,7 @@
         "designation": "MS 2863/16",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6182",
         "inscription": {
-            "transliterationClean": " 6N01 , BA \n , SZU SZUa \n , PAP~a TUR3~a DUa \n , 3N57a \n , NI~a GIR3~ca \n , GI4~a SZA3~a1a \n , NE~a ZATU778a \n ... , ... \n , DIM~a Xa \n , ... Xa \n 3N01 ... , ... \n , ...a \n , ...a \n , ...a \n 3N01 ... , ... \n , ...a \n , ...a \n , ...a \n ... , ... BA \n ... , ... \n ... , ... TUR \n 5N01 , GI \n 3N02 , \n ... , ... DU TE ZATU795 LAM~b ",
+            "transliterationClean": " 6N01 , BA \n , SZU SZU \n , PAP~a TUR3~a DU \n , 3N57 \n , NI~a GIR3~c \n , GI4~a SZA3~a1 \n , NE~a ZATU778 \n ... , ... \n , DIM~a X \n , ... X \n 3N01 ... , ... \n , ... \n , ... \n , ... \n 3N01 ... , ... \n , ... \n , ... \n , ... \n ... , ... BA \n ... , ... \n ... , ... TUR \n 5N01 , GI \n 3N02 , \n ... , ... DU TE ZATU795 LAM~b ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -91922,7 +91922,7 @@
         "designation": "MS 2863/18",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6184",
         "inscription": {
-            "transliterationClean": " ... , ... \n , ...a \n , ... SZU GIa \n , DANNA KUR~aa \n , ... KASKALa \n , KASZ~c MUSZENa \n , ... E2~aa \n , KA~a EN~a DUa \n ... , X \n , ...a \n , ...a \n , NA~a MUSZEN GIa \n , AD~a Xa \n , ...a \n , ...a \n , ...a \n , ... TI ZI~aa \n , NE~a E2~a PAP~aa \n 1N01 , U4x1N57 TUR \n , ... 3N57a \n 7N01 , U4x3N57 TUR \n , DIM~a DA~aa \n , UR~a UR~aa \n , LA2 X NA2~aa \n , 3N57 Xa \n , X Xa \n , X Xa \n , X KI Xa \n , PAP~a SU~a 1N57 MUN~a1 \n 2N14 8N01 , AL \n 1N14 2N01 , ... \n ... , ... \n ... , ... RAD~a ",
+            "transliterationClean": " ... , ... \n , ... \n , ... SZU GI \n , DANNA KUR~a \n , ... KASKAL \n , KASZ~c MUSZEN \n , ... E2~a \n , KA~a EN~a DU \n ... , X \n , ... \n , ... \n , NA~a MUSZEN GI \n , AD~a X \n , ... \n , ... \n , ... \n , ... TI ZI~a \n , NE~a E2~a PAP~a \n 1N01 , U4x1N57 TUR \n , ... 3N57 \n 7N01 , U4x3N57 TUR \n , DIM~a DA~a \n , UR~a UR~a \n , LA2 X NA2~a \n , 3N57 X \n , X X \n , X X \n , X KI X \n , PAP~a SU~a 1N57 MUN~a1 \n 2N14 8N01 , AL \n 1N14 2N01 , ... \n ... , ... \n ... , ... RAD~a ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -92398,7 +92398,7 @@
         "designation": "MS 2900/10",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6218",
         "inscription": {
-            "transliterationClean": " ... , ... \n ... , ... \n , ... X NAM2 \n ... , ... \n , NAB DIa \n ... , ... X \n , EN~a NUNUZ~ca \n ... , ... \n 1N02 , RAD~a \n , AN 3N57 PIRIG~b1a \n 1N02 , X ... \n , DU BA KIa \n ... , ... \n , ... \n ... 1N01 , ... \n 2N01 ... , ... \n 2N01 ... , ... \n ... , ... ",
+            "transliterationClean": " ... , ... \n ... , ... \n , ... X NAM2 \n ... , ... \n , NAB DI \n ... , ... X \n , EN~a NUNUZ~c \n ... , ... \n 1N02 , RAD~a \n , AN 3N57 PIRIG~b1 \n 1N02 , X ... \n , DU BA KI \n ... , ... \n , ... \n ... 1N01 , ... \n 2N01 ... , ... \n 2N01 ... , ... \n ... , ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -92432,7 +92432,7 @@
         "designation": "MS 2900/12",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6220",
         "inscription": {
-            "transliterationClean": " ... , ... \n ... 2N01 , ... GI \n , ...a \n , BU~a+DU6~a PAP~a BU~a+DU6~a EZINU~aa \n 4N01 , ... TUR \n , 3N57 NUNUZ~a1a \n , 3N57 BU~a SZE~aa \n , NI~a SA~ca \n , GI4~a SZA3~a1 ...a \n ... , ... \n ... 1N14 1N01 , 2N57 ... \n ... , ... \n 2N01 , GI \n 3N02 , \n ... 1N14 1N01 , ... \n 4N01 ... , ... ",
+            "transliterationClean": " ... , ... \n ... 2N01 , ... GI \n , ... \n , BU~a+DU6~a PAP~a BU~a+DU6~a EZINU~a \n 4N01 , ... TUR \n , 3N57 NUNUZ~a1 \n , 3N57 BU~a SZE~a \n , NI~a SA~c \n , GI4~a SZA3~a1 ... \n ... , ... \n ... 1N14 1N01 , 2N57 ... \n ... , ... \n 2N01 , GI \n 3N02 , \n ... 1N14 1N01 , ... \n 4N01 ... , ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -92721,7 +92721,7 @@
         "designation": "MS 2900/31",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6239",
         "inscription": {
-            "transliterationClean": " ... , ... \n , BAHAR2~a EN~a ANa \n ... , ... \n , EN~a ANa \n ... , ... \n , EN 1N57 BU~aa \n ... , ... \n , SANGA~a AB~ba \n ... , ... \n 1N01 ... , ... \n 1N01 ... , ... \n 1N01 ... , ... \n ... 1N14 3N01 , ... PAP~a X X MUN~a1 ... ",
+            "transliterationClean": " ... , ... \n , BAHAR2~a EN~a AN \n ... , ... \n , EN~a AN \n ... , ... \n , EN 1N57 BU~a \n ... , ... \n , SANGA~a AB~b \n ... , ... \n 1N01 ... , ... \n 1N01 ... , ... \n 1N01 ... , ... \n ... 1N14 3N01 , ... PAP~a X X MUN~a1 ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -93010,7 +93010,7 @@
         "designation": "MS 2967",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6253",
         "inscription": {
-            "transliterationClean": " 6N01 , BA \n , HAL ME~aa \n , RUa \n , SZU ME~aa \n , SAG GISZxSZU2~a SZUa \n , 3N57 EN2.E2~ba \n , SAL BU~aa \n 1N01 , PAP~a \n , TAK4~a KASZ~ca \n 1N01 , GI \n , SZUBUR Xa \n 1N01 , TI PAP~a \n , MUNSZUB~b GIa \n 1N02 , \n , HI KASKALa \n 1N01 , GAL~a SZITA~a1 \n , MU TURa \n , RU NINDA2xGUDU4 NUN~a \n ... , ... ",
+            "transliterationClean": " 6N01 , BA \n , HAL ME~a \n , RU \n , SZU ME~a \n , SAG GISZxSZU2~a SZU \n , 3N57 EN2.E2~b \n , SAL BU~a \n 1N01 , PAP~a \n , TAK4~a KASZ~c \n 1N01 , GI \n , SZUBUR X \n 1N01 , TI PAP~a \n , MUNSZUB~b GI \n 1N02 , \n , HI KASKAL \n 1N01 , GAL~a SZITA~a1 \n , MU TUR \n , RU NINDA2xGUDU4 NUN~a \n ... , ... ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -93554,7 +93554,7 @@
         "designation": "MS 3887",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/6279",
         "inscription": {
-            "transliterationClean": " 1N01 , UNUG~a TEa \n 1N01 , EN~a SAG ANa \n 1N01 , EN~a HI RAD~aa \n 1N01 , SZA TAK4~a Aa \n 1N01 , SZA DAR~b E2~ba \n 1N01 , U2~b Aa \n 1N01 , GA2~a2 SZUa \n 1N01 , GIR3~ca \n 1N01 , EN~a KIa \n 1N01 , MUN~a1 AL TE Aa \n 1N01 , EN~a SZE~a SAGa \n 1N01 , KID~b LAGAB~aa \n 1N01 , EN~a PIRIG~b1a \n 1N01 , LA2 SUG5a \n 1N01 , BU~a PAP~a BU~aa \n 1N01 , SZU SZUa \n 1N01 , EN~a IB~aa \n 1N01 , SI 5N57a \n 1N01 , TUR3~a ZATU773~a SIa \n , \n 1N14 8N01 , BA MUN~a1 2N57 SU~a PAP~a \n , RU KI KAL~b2 EN~a MASZ BU~a \n , ",
+            "transliterationClean": " 1N01 , UNUG~a TE \n 1N01 , EN~a SAG AN \n 1N01 , EN~a HI RAD~a \n 1N01 , SZA TAK4~a A \n 1N01 , SZA DAR~b E2~b \n 1N01 , U2~b A \n 1N01 , GA2~a2 SZU \n 1N01 , GIR3~c \n 1N01 , EN~a KI \n 1N01 , MUN~a1 AL TE A \n 1N01 , EN~a SZE~a SAG \n 1N01 , KID~b LAGAB~a \n 1N01 , EN~a PIRIG~b1 \n 1N01 , LA2 SUG5 \n 1N01 , BU~a PAP~a BU~a \n 1N01 , SZU SZU \n 1N01 , EN~a IB~a \n 1N01 , SI 5N57 \n 1N01 , TUR3~a ZATU773~a SI \n , \n 1N14 8N01 , BA MUN~a1 2N57 SU~a PAP~a \n , RU KI KAL~b2 EN~a MASZ BU~a \n , ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -98263,7 +98263,7 @@
         "designation": "MSVO 1, 212",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/5279",
         "inscription": {
-            "transliterationClean": " 1N01 , SAL GAR X X \n , ZATU751~a ERIM~aa \n , ... Xa \n 1N01 , SAL.KUR~a ... \n , 3N57 ... Xa \n , ... KU3~aa \n 1N01 , KUR~a E2~a SZA MUSZENx2N57 \n , SI DUG~a X Xa \n , ...a \n 1N01 , KUR~a MUSZENx2N57 ... \n 1N14 , UDU~a \n 1N01 , ... \n , AMA~a ERIM~a MUSZEN MASZa \n 1N01 , ... \n , ...a \n , ... SAG ERIM~a ...a \n 1N01 , ... \n , ... KA2xLAM GA~aa \n , X IL KIa \n 1N01 , ... DIM~a DA~a X \n , LAGAB~b DUxDISZ ERIM~aa \n 1N01 , ... X \n , ... Xa \n 1N01 , SAL AL TUR ... \n , AN MUSZENx2N57 GAR X SZAa \n , ...a \n 1N01 , KUR~a EN~a TI E2~a \n , AMA~a MUSZEN MASZ KI ZATU694~c GIa \n 1N01 , SAL E2~a EN~a ... \n , GAL~a PU2a \n , X X ...a \n 1N01 , SAL EN~a SZU2.E2~a \n , SU~a U2~ba \n , URU~a1 SAR~aa \n 1N01 , KUR~a ZATU735~a E2~a \n , E2~a SAL AD~ca \n , GU4@g DINa \n 1N01 , SAL UD5~a \n , MEN~a DUR2 ZATU751~a ERIM~aa \n , TUM~c SZA SZAa \n 1N01 , KUR~a X UD5~a AD~a \n , I GI6 ERIM~aa \n , E2~a DAHa \n 1N01 , PAP~a BU~a NE~a \n , SAGxMAa \n , RU ...a \n 1N01 , SAL SZA TAK4~a A \n , TU~b UD5~aa \n , ...a \n , DAH X SAGxMA KI \n 1N02 , SAL MAH~axNA~a \n , TUM~c SZA SZAa \n , DAH E2~aa \n 2N02 , MEN~a NUNUZ~a1 TUR \n , DAH ...a \n 1N02 , E2~a EN~a TI \n , SI MAa \n , GIxKU~b1a \n 1N02 , SAL E2~a TI EN~a \n , SZE~a&SZE~a KASZ~c DA~aa \n 1N02 , SAL X X \n , TUM~c KU6~a Xa \n 1N02 , SAL MEN~a NUNUZ~a1 \n , SAG TAK4~a NI~aa \n , KU6~a KISIM~a KU~b1a \n 2N02 , MEN~a NUNUZ~a1 TUR \n , MUSZEN KASZ~ba \n , DAH E2~aa \n 1N02 , SILA3~axSZU2 EN~a A \n , KU6~a ERIM~aa \n , E2~a DAHa \n 1N02 , SAL A SILA3~axSZU2 EN~a \n , MUSZEN MASZa \n , GIxKU~b1a \n 1N14 7N01 , SAL.KUR~a SAGxMA \n 1N14 , SAL.KUR~a ERIM~a X ... \n 2N14 7N01 , SAL.KUR~a UB PA~a SAGxMA SANGA~a X EN~a 1N04 ",
+            "transliterationClean": " 1N01 , SAL GAR X X \n , ZATU751~a ERIM~a \n , ... X \n 1N01 , SAL.KUR~a ... \n , 3N57 ... X \n , ... KU3~a \n 1N01 , KUR~a E2~a SZA MUSZENx2N57 \n , SI DUG~a X X \n , ... \n 1N01 , KUR~a MUSZENx2N57 ... \n 1N14 , UDU~a \n 1N01 , ... \n , AMA~a ERIM~a MUSZEN MASZ \n 1N01 , ... \n , ... \n , ... SAG ERIM~a ... \n 1N01 , ... \n , ... KA2xLAM GA~a \n , X IL KI \n 1N01 , ... DIM~a DA~a X \n , LAGAB~b DUxDISZ ERIM~a \n 1N01 , ... X \n , ... X \n 1N01 , SAL AL TUR ... \n , AN MUSZENx2N57 GAR X SZA \n , ... \n 1N01 , KUR~a EN~a TI E2~a \n , AMA~a MUSZEN MASZ KI ZATU694~c GI \n 1N01 , SAL E2~a EN~a ... \n , GAL~a PU2 \n , X X ... \n 1N01 , SAL EN~a SZU2.E2~a \n , SU~a U2~b \n , URU~a1 SAR~a \n 1N01 , KUR~a ZATU735~a E2~a \n , E2~a SAL AD~c \n , GU4@g DIN \n 1N01 , SAL UD5~a \n , MEN~a DUR2 ZATU751~a ERIM~a \n , TUM~c SZA SZA \n 1N01 , KUR~a X UD5~a AD~a \n , I GI6 ERIM~a \n , E2~a DAH \n 1N01 , PAP~a BU~a NE~a \n , SAGxMA \n , RU ... \n 1N01 , SAL SZA TAK4~a A \n , TU~b UD5~a \n , ... \n , DAH X SAGxMA KI \n 1N02 , SAL MAH~axNA~a \n , TUM~c SZA SZA \n , DAH E2~a \n 2N02 , MEN~a NUNUZ~a1 TUR \n , DAH ... \n 1N02 , E2~a EN~a TI \n , SI MA \n , GIxKU~b1 \n 1N02 , SAL E2~a TI EN~a \n , SZE~a&SZE~a KASZ~c DA~a \n 1N02 , SAL X X \n , TUM~c KU6~a X \n 1N02 , SAL MEN~a NUNUZ~a1 \n , SAG TAK4~a NI~a \n , KU6~a KISIM~a KU~b1 \n 2N02 , MEN~a NUNUZ~a1 TUR \n , MUSZEN KASZ~b \n , DAH E2~a \n 1N02 , SILA3~axSZU2 EN~a A \n , KU6~a ERIM~a \n , E2~a DAH \n 1N02 , SAL A SILA3~axSZU2 EN~a \n , MUSZEN  \n , GIxKU~b1 \n 1N14 7N01 , SAL.KUR~a SAGxMA \n 1N14 , SAL.KUR~a ERIM~a X ... \n 2N14 7N01 , SAL.KUR~a UB PA~a SAGxMA SANGA~a X EN~a 1N04 ",
             "compositeId": 0,
             "accountType": [
                 "economic", "humans"
@@ -98280,7 +98280,7 @@
         "designation": "MSVO 1, 213",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/5280",
         "inscription": {
-            "transliterationClean": " 1N01 , SAGxMA SAL.KUR~a SZA E2~a MUSZENx2N57 \n , ZATU751~a ERIM~aa \n , ...a \n 1N01 , SAGxMA X SZA ... \n , DUR2 3N57 ZATU751~aa \n , AB~a TUR KU3~a 1N02a \n 1N01 , SAGxMA SZA MUSZEN E2~a ... \n , SI MA EN~a Xa \n , GIxKU~b1 BARa \n 1N01 , SAGxMA KUR~a SZA MUSZENx2N57 E2~a \n 1N14 , UDU~a \n 1N01 , KISZ KUR~a \n , AMA~a MUSZEN MASZ ERIM~aa \n 1N01 , SAGxMA GESZTU~c5 MUSZENx2N57 GI SZA E2~a AMA~a \n , SAG ERIM~a TAK4~a NI~a MUSZ3~a UR2 DUR2a \n 1N01 , ... KUR~a PIRIG~b1 ERIM~a \n , KA2xLAM GA~aa \n 1N02 , SAL.KUR~a E2~a EN~a TI \n , SI MA EN~a GIxKU~b1a \n 1N02 , SAL.KUR~a EN~a TI E2~a \n , TUM~c KU6~aa \n , GA2~a2xSZE3 ZATU751~aa \n 1N02 , SAL.KUR~a EN~a E2~a TI \n , SZE~a&SZE~a KASZ~b DA~aa \n , 3N57 Aa \n 1N01 , SAL.KUR~a DIM~a DA~a SAGxMA \n , LAGAB~b DUxDISZ ERIM~aa \n 2N01 , SAGxMA SAL.KUR~a AL \n , ... X DUa \n 1N01 , TUR PAP~a SAL NI~a AL ... \n , AN GAR MUSZENx2N57 SZAa SAL \n 1N01 , KUR~a PAP~a EN~a SZU2.E2~a \n , SAL AMA~a MUSZEN MASZ GIxKU~b1 KIa \n 1N01 , SAL.KUR~a EN~a SZU2.E2~a \n , GAL~a ERIM~a PU2a \n 1N01 , SAL.KUR~a EN~a SZU2.E2~a \n , SU~a U2~ba \n , URU~a1 SAR~aa \n 1N01 , SAGxMA KUR~a E2~c ZATU735~a \n , E2~a SAL AD~ca \n 1N01 , SAL.KUR~a UD5~a ... \n , GA2~a2xSZE3 DUR2 ZATU751~aa ERIM~a \n ... , ... X \n , I GI6 ERIM~aa \n 1N01 , ... PAP~a BU~a ... \n , SAGxMAa \n 1N01 , X ... SAL \n , ... Xa \n 1N01 , SAL.KUR~a E2~a SZUR2~a SZU RU DU \n , GA2~a2xSZE3 RUa SAGxMA ERIM~a \n 1N01 , SAL.KUR~a SAGxMA TU~b TAK4~a A \n , E2~a U4 LAM~ba \n , AD~c NI~a SZUa \n 1N01 , SAL.KUR~a MAH~axNA~a \n , TUM~c SZA SZAa SAL.KUR~a \n 2N01 , MEN~a TUR NUNUZ~a1 \n , E2~a DAHa ",
+            "transliterationClean": " 1N01 , SAGxMA SAL.KUR~a SZA E2~a MUSZENx2N57 \n , ZATU751~a ERIM~a \n , ... \n 1N01 , SAGxMA X SZA ... \n , DUR2 3N57 ZATU751~a \n , AB~a TUR KU3~a 1N02 \n 1N01 , SAGxMA SZA MUSZEN E2~a ... \n , SI MA EN~a X \n , GIxKU~b1 BAR \n 1N01 , SAGxMA KUR~a SZA MUSZENx2N57 E2~a \n 1N14 , UDU~a \n 1N01 , KISZ KUR~a \n , AMA~a MUSZEN MASZ ERIM~a \n 1N01 , SAGxMA GESZTU~c5 MUSZENx2N57 GI SZA E2~a AMA~a \n , SAG ERIM~a TAK4~a NI~a MUSZ3~a UR2 DUR2 \n 1N01 , ... KUR~a PIRIG~b1 ERIM~a \n , KA2xLAM GA~a \n 1N02 , SAL.KUR~a E2~a EN~a TI \n , SI MA EN~a GIxKU~b1 \n 1N02 , SAL.KUR~a EN~a TI E2~a \n , TUM~c KU6~a \n , GA2~a2xSZE3 ZATU751~a \n 1N02 , SAL.KUR~a EN~a E2~a TI \n , SZE~a&SZE~a KASZ~b DA~a \n , 3N57 A \n 1N01 , SAL.KUR~a DIM~a DA~a SAGxMA \n , LAGAB~b DUxDISZ ERIM~a \n 2N01 , SAGxMA SAL.KUR~a AL \n , ... X DU \n 1N01 , TUR PAP~a SAL NI~a AL ... \n , AN GAR MUSZENx2N57 SZA SAL \n 1N01 , KUR~a PAP~a EN~a SZU2.E2~a \n , SAL AMA~a MUSZEN MASZ GIxKU~b1 KI \n 1N01 , SAL.KUR~a EN~a SZU2.E2~a \n , GAL~a ERIM~a PU2 \n 1N01 , SAL.KUR~a EN~a SZU2.E2~a \n , SU~a U2~b \n , URU~a1 SAR~a \n 1N01 , SAGxMA KUR~a E2~c ZATU735~a \n , E2~a SAL AD~c \n 1N01 , SAL.KUR~a UD5~a ... \n , GA2~a2xSZE3 DUR2 ZATU751~a ERIM~a \n ... , ... X \n , I GI6 ERIM~a \n 1N01 , ... PAP~a BU~a ... \n , SAGxMA \n 1N01 , X ... SAL \n , ... X \n 1N01 , SAL.KUR~a E2~a SZUR2~a SZU RU DU \n , GA2~a2xSZE3 RU SAGxMA ERIM~a \n 1N01 , SAL.KUR~a SAGxMA TU~b TAK4~a A \n , E2~a U4 LAM~b \n , AD~c NI~a SZU \n 1N01 , SAL.KUR~a MAH~axNA~a \n , TUM~c SZA SZA SAL.KUR~a \n 2N01 , MEN~a TUR NUNUZ~a1 \n , E2~a DAH ",
             "compositeId": 0,
             "accountType": [
                 "economic", "humans"
@@ -98297,7 +98297,7 @@
         "designation": "MSVO 1, 214",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/5281",
         "inscription": {
-            "transliterationClean": " 1N02 , SAL.KUR~a MEN~a NUNUZ~a1 \n , SAG TAK4~a NI~aa \n , KU6~a KISIM~a KU~b1a \n 2N02 , SAL.KUR~a TUR MEN~a NUNUZ~a1 \n , MUSZEN 6N57 KASZ~ca \n , DAH E2~aa \n 1N02 , SAL EN~a A SILA3~axSZU2 \n , KU6~a ERIM~aa \n , E2~a DAHa \n 1N02 , SAL SILA3~axSZU2 EN~a A \n , MUSZEN MASZa \n , GIxKU~b1a \n , NIMGIR SAGxMA ",
+            "transliterationClean": " 1N02 , SAL.KUR~a MEN~a NUNUZ~a1 \n , SAG TAK4~a NI~a \n , KU6~a KISIM~a KU~b1 \n 2N02 , SAL.KUR~a TUR MEN~a NUNUZ~a1 \n , MUSZEN 6N57 KASZ~c \n , DAH E2~a \n 1N02 , SAL EN~a A SILA3~axSZU2 \n , KU6~a ERIM~a \n , E2~a DAH \n 1N02 , SAL SILA3~axSZU2 EN~a A \n , MUSZEN MASZ \n , GIxKU~b1 \n , NIMGIR SAGxMA ",
             "compositeId": 0,
             "accountType": [
                 "economic", "humans"
@@ -98365,7 +98365,7 @@
         "designation": "MSVO 1, 218",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/5285",
         "inscription": {
-            "transliterationClean": " 2N01 , GIR3@g~b PA~a \n , 1N57 3N57 SAL EN~a TEa \n , 3N57 KU6~a RAD~aa \n , 1N57 E2~a 3N57 DA~aa \n , NI~a TAK4~a SAGa \n 2N01 , PA~a AB2 KI \n , EN~a ZATU630a \n , SZUM SZUBURa \n , E2~a SAG 3N57a \n , PIRIG~b1a \n 1N01 , KI AB2 PA~a \n , X X ME~a SZUa \n , HI AD~c GIa \n , NI~a.RU AB~a APIN~a DUB~a \n 2N01 , GIR3@g~b PA~a \n , 1N57 3N57 SAL EN~a TEa \n , 3N57 KU6~a RAD~aa \n , 1N57 E2~a 3N57 DA~aa \n , NI~a TAK4~a SAGa \n 2N01 , PA~a AB2 KI \n , SZUM SZUBURa \n , PIRIG~b1a \n 1N01 , KI AB2 PA~a \n , HI AD~c GIa \n 1N01 , 3N57 SAL \n , DUB~a AB~a APIN~a \n , NI~a.RU AB~a ",
+            "transliterationClean": " 2N01 , GIR3@g~b PA~a \n , 1N57 3N57 SAL EN~a TE \n , 3N57 KU6~a RAD~a \n , 1N57 E2~a 3N57 DA~a \n , NI~a TAK4~a SAG \n 2N01 , PA~a AB2 KI \n , EN~a ZATU630 \n , SZUM SZUBUR \n , E2~a SAG 3N57 \n , PIRIG~b1 \n 1N01 , KI AB2 PA~a \n , X X ME~a SZU \n , HI AD~c GI \n , NI~a.RU AB~a APIN~a DUB~a \n 2N01 , GIR3@g~b PA~a \n , 1N57 3N57 SAL EN~a TE \n , 3N57 KU6~a RAD~a \n , 1N57 E2~a 3N57 DA~a \n , NI~a TAK4~a SAG \n 2N01 , PA~a AB2 KI \n , SZUM SZUBUR \n , PIRIG~b1 \n 1N01 , KI AB2 PA~a \n , HI AD~c GI \n 1N01 , 3N57 SAL \n , DUB~a AB~a APIN~a \n , NI~a.RU AB~a ",
             "compositeId": 0,
             "accountType": [
                 "economic", "humans"
@@ -98399,7 +98399,7 @@
         "designation": "MSVO 1, 220",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/5287",
         "inscription": {
-            "transliterationClean": " 2N01 , KUR~a DUB~a GI \n 1N01 , AL \n , UB ZI~aa \n 1N01 , EN~a TUR \n , 3N57 SZUa \n , ZATU628~a SAL SZU AMA~a SAL NAM2 KAB \n , AB~a UB ",
+            "transliterationClean": " 2N01 , KUR~a DUB~a GI \n 1N01 , AL \n , UB ZI~a \n 1N01 , EN~a TUR \n , 3N57 SZU \n , ZATU628~a SAL SZU AMA~a SAL NAM2 KAB \n , AB~a UB ",
             "compositeId": 0,
             "accountType": [
                 "economic", "humans"
@@ -98433,7 +98433,7 @@
         "designation": "MSVO 1, 222",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/5289",
         "inscription": {
-            "transliterationClean": " 2N01 , SAL.KUR~a GAL~a SAL \n , EN~a PAP~a Xa \n , SUKKAL GIR3@g~ca ",
+            "transliterationClean": " 2N01 , SAL.KUR~a GAL~a SAL \n , EN~a PAP~a X \n , SUKKAL GIR3@g~c ",
             "compositeId": 0,
             "accountType": [
                 "economic", "humans"
@@ -98722,7 +98722,7 @@
         "designation": "MSVO 1, 239",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/5306",
         "inscription": {
-            "transliterationClean": " , 1N57 MASZ2a \n , SZU ZI~aa ",
+            "transliterationClean": " , 1N57 MASZ2 \n , SZU ZI~a ",
             "compositeId": 0,
             "accountType": [
                 "economic", "animals"
@@ -99283,7 +99283,7 @@
         "designation": "MSVO 3, 29",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/5340",
         "inscription": {
-            "transliterationClean": " 3N48 1N34 6N14 1N01 1N39~a , U4x3N14.7N01 SZE~a DUB~a LAGAB~bxLAGAB~b KU~b1 SZIM~aa SZAM2 ",
+            "transliterationClean": " 3N48 1N34 6N14 1N01 1N39~a , U4x3N14.7N01 SZE~a DUB~a LAGAB~bxLAGAB~b KU~b1 SZIM~a SZAM2 ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -101238,7 +101238,7 @@
         "designation": "MSVO 4, 58",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/5460",
         "inscription": {
-            "transliterationClean": " 2N01 , SZAM2 APIN~a \n , NIM~b2a \n , ZATU659a \n 2N01 , RAD~a \n , ADAB SZUBURa \n , NIM~b1 EN~aa \n 1N01 , SANGA~a \n , GIR3@g~b 3N57a \n 1N01 , SUKKAL ME~a \n , 6N57 KISZa \n , ADAB SZUBUR \n 2N01 , MAR~a AN \n , ZATU751~a EN~aa \n , BU~a+DU6~a GULa \n 4N01 , DAR~c PAP~a \n , DAR~c PAP~a \n 6N01 , ADAB SZUBUR \n 6N01 , DAR~c PAP~a \n 1N14 2N01 , EN~a TE AN MAR~a ",
+            "transliterationClean": " 2N01 , SZAM2 APIN~a \n , NIM~b2 \n , ZATU659 \n 2N01 , RAD~a \n , ADAB SZUBUR \n , NIM~b1 EN~a \n 1N01 , SANGA~a \n , GIR3@g~b 3N57 \n 1N01 , SUKKAL ME~a \n , 6N57 KISZ \n , ADAB SZUBUR \n 2N01 , MAR~a AN \n , ZATU751~a EN~a \n , BU~a+DU6~a GUL \n 4N01 , DAR~c PAP~a \n , DAR~c PAP~a \n 6N01 , ADAB SZUBUR \n 6N01 , DAR~c PAP~a \n 1N14 2N01 , EN~a TE AN MAR~a ",
             "compositeId": 0,
             "accountType": [
                 "economic"
@@ -109341,7 +109341,7 @@
         "designation": "W 20274,032",
         "link": "https://cdli.mpiwg-berlin.mpg.de/artifacts/3530",
         "inscription": {
-            "transliterationClean": " 6N01 , DUG~c AN ZATU759 GI6 KAR2~a NUN~a \n 3N01 , NAGA~a DU DUG~c ... \n 4N01 , GI6 KAR2~a NUN~a UNUG~a BU3 \n 1N01 , U2~a GA~a.ZATU753 NAGA~a \n , SI EN~a ZI~a ... \n , GU7 \n 1N01 , KUR~a.E2~a 3N57a SU~a PAP~a \n 1N01 KU3~a , \n 5N01 , NI2 ZATU649 \n 2N01 , ZATU648 \n 4N01 , TUR3~a \n 3N01 , ... \n 1N14 4N01 , DUG~c GU7 ",
+            "transliterationClean": " 6N01 , DUG~c AN ZATU759 GI6 KAR2~a NUN~a \n 3N01 , NAGA~a DU DUG~c ... \n 4N01 , GI6 KAR2~a NUN~a UNUG~a BU3 \n 1N01 , U2~a GA~a.ZATU753 NAGA~a \n , SI EN~a ZI~a ... \n , GU7 \n 1N01 , KUR~a.E2~a 3N57 SU~a PAP~a \n 1N01 KU3~a , \n 5N01 , NI2 ZATU649 \n 2N01 , ZATU648 \n 4N01 , TUR3~a \n 3N01 , ... \n 1N14 4N01 , DUG~c GU7 ",
             "compositeId": 0,
             "accountType": [
                 "economic"

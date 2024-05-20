@@ -61,7 +61,7 @@ function countOccurrences(array) {
 
 export async function analysisPrediction(transcriptionString) {
     const prediction = new Deno.Command('python3', { args: [ Deno.cwd() + '/ai/ai_proba_loader.py', transcriptionString ] })
-    const { stdout, stderr } = await prediction.output();
+    const { stdout } = await prediction.output();
     return new TextDecoder().decode(stdout)
 }
 

@@ -18,24 +18,25 @@ export const locationLabels = {
     12: 'Susa',
     42: 'Jebel Aruda',
     44: 'Habuba Kabira',
-    72: 'Tell Uqair',
+    72: 'Uqair',
     91: 'Ešnunna',
+    97: 'Godin Tepe',
     105: 'Uruk',
+    130: 'Tutub',
+    137: 'Chogha Mish',
     154: 'Umma',
     159: 'Jemdet Nasr',
+    161: 'Mari',
     168: 'Larsa',
-    217: 'Nagar'
+    184: 'Kish',
+    217: 'Nagar',
+    279: 'Nineveh',
+    306: 'uncertain',
+    1000: 'other'
 }
 
 export const periodLabels = {
     2: 'V',
     3: 'IV',
     4: 'III'
-}
-
-export const typeLabels = {
-    "animals": "Animals and animal products",
-    "cereals": "Agriculture and cereal products",
-    "fields": "Land",
-    "humans": "Workers"
 }

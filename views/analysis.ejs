@@ -30,11 +30,6 @@
     </div>
 
     <script>
-        window.onload = function() {
-            var textarea = document.getElementById('transcription');
-            textarea.select();
-        };
-
         document.getElementById('transcription').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 e.preventDefault(); // Prevent default form submission

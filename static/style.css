@@ -39,7 +39,7 @@ h2 {
 .urukContainer {
     margin: auto;
     padding: 2em 1em;
-    max-width: 90ch;
+    width: min(90ch, 80vw);
 }
 
 .urukHelp {
@@ -131,6 +131,26 @@ h2 {
 
 .urukSmallText {
     font-size: 0.8em;
+}
+
+.urukTable {
+    width: 100%;
+
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 0;
+
+    font-size: 1em;
+}
+
+.urukTable tr {
+    height: 2.4em;
+}
+
+.urukTable td {
+    border: 0;
+    text-align: left;
+    letter-spacing: normal;
 }
 
 .urukTranscription {

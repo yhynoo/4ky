@@ -32,24 +32,48 @@ export function checkMatch(query, lineToCheck, distinguishVariantsFlag, splitCom
     }
 
     // Managing returns
-    // Clean match is when all the elements fit.
-    if (cleanMatchFlag === true) {
-        return {
-            isMatch: sortedQuery.length === sortedLineToCheck.length && sortedQuery.every((value, index) => value === sortedLineToCheck[index]),
-            foundCompoundsTablet
-        }
-    } else {
-        return {
-            isMatch: sortedQuery.every(value => sortedLineToCheck.includes(value)),
-            foundCompoundsTablet
-        }
+    const isMatch = (cleanMatchFlag === true) ? sortedQuery.length === sortedLineToCheck.length && sortedQuery.every((value, index) => value === sortedLineToCheck[index]) : sortedQuery.every(value => sortedLineToCheck.includes(value))
+    foundCompoundsTablet = (isMatch) ? foundCompoundsTablet : []
+
+    return { isMatch, foundCompoundsTablet }
+}
+
+export function isStopWord(sign, query, splitCompoundsFlag) {
+    if ([",", "...", "N", "X", "\n"].includes(sign)) return true
+    if (/^\d+N\d+$/.test(sign)) return true
+    if (query.map(t => t.trim()).includes(sign)) return true
+
+    if (splitCompoundsFlag && /[.+&x]/.test(sign)) {
+        if (sign.split(/[.+&x]/g).some(value => query.includes(value))) return true
     }
+
+    return false
+}
+
+export function highlightMatches(query, line, distinguishVariantsFlag, splitCompoundsFlag) {
+    const splitLine = line.split(' ');
+
+    const processWord = word => distinguishVariantsFlag ? word : word.replace(/~[a-z](\d)?/g, '');
+    const processedQuery = distinguishVariantsFlag ? query.join(' ').replace(',', '').split(' ') : cleanVariants(query.join(' ').replace(',', '').split(' '));
+
+    const newLine = splitLine.map(word => {
+        const processedWord = processWord(word);
+
+        if (processedQuery.includes(processedWord)) {
+            return `<span class='urukHighlight'>${word}</span>`;
+        } else if (splitCompoundsFlag && /[.+&x]/.test(processedWord)) {
+            if (processedWord.split(/[.+&x]/g).some(value => processedQuery.includes(value))) {
+                return `<span class='urukHighlight'>${word}</span>`;
+            }
+        }
+        return word;
+    });
+
+    return newLine.join(' ');
 }
 
 export function splitAndEvaluateCompounds(query, line) {
     const trueMatches = []
-
-    // First save potential matches
     const potentialMatches = line.filter(item => /[.+&x]/g.test(item))
 
     // Break and flatten the line

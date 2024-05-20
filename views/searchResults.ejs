@@ -22,22 +22,27 @@
 
         <div class="urukBox">
             <h2>Statistics</h2>
-            <% if (data.economicCompounds) { %>
-                <%- data.economicCompounds %>
-            <% } %>
+            <p>Data in this section concers the administrative accounts only. For an explanation of the algorithms used for calculations, see the <a href = '/about'>About</a> section.</p>
+            <%- data.statistics.distribution %>
+            <%- data.statistics.lineCollocations %>
+            <%- data.statistics.tabletCollocations %>
+            <%- data.statistics.economicCompounds %>
         </div>
 
         <% if (Object.keys(data.lexicalItems).length > 0) { %>
             <div class="urukBox">
-                <h2>Attestations (<%= data.lexicalItemsCount %>) in lexical texts</h2>
-                <p>Here, you can see <b>exact</b> matches of your query in lexical list witnesses. The numbers are item IDs in <a href='https://cdli.mpiwg-berlin.mpg.de'>CDLI</a> database. You can click on them to see each tablet there.</p>
+                <h2>Lexical attestations (<%= data.lexicalItemsCount %> witnesses)</h2>
                 <%- data.lexicalItems %>
             </div>
         <% } %>
 
         <% if (data.economicAttestations) { %>
             <div class="urukBox">
-                <h2>Attestations in economic accounts</h2>
+                <% if (data.isCoordinated) { %>
+                    <h2>Administrative attestations (<%= data.economicAccountsCount %> accounts)</h2>
+                <% } else { %>
+                    <h2>Administrative attestations (<%= data.economicAttestationsCount %> matches in <%= data.economicAccountsCount %> accounts)</h2>
+                <% } %>
                 <%- data.economicAttestations %>
             </div>
         <% } %>

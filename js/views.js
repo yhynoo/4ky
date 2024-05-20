@@ -1,7 +1,10 @@
 import { cleanTranscription, displayLexicalEntries } from './helpers.js'
 import { analysisLexical, analysisFeatures, analysisPrediction } from "./workersAnalysis.js"
 import { 
-    searchCorpus, 
+    searchCorpus,
+    countUniqueAccounts,
+    processSearchDistribution,
+    processSearchCollocations,
     processSearchEconomic,
     drawSearchEconomic,
     processSearchEconomicCompounds, 
@@ -81,21 +84,30 @@ export function searchResultsGet(req, res) {
     const distinguishVariantsFlag = distinguishVariants === 'true'
     const splitCompoundsFlag = split === 'true'
 
-    if (term.split(',').length === 1) {
-        const { economicAttestations,
-                economicCompounds, 
-                lexicalAttestations, 
-                _lexicalCompounds 
-            } = searchCorpus(term, timePeriods, provenience, distinguishVariantsFlag, splitCompoundsFlag)
+    const { economicAttestations,
+            economicCompounds, 
+            lexicalAttestations, 
+            _lexicalCompounds,
+            isCoordinated
+        } = searchCorpus(term, timePeriods, provenience, distinguishVariantsFlag, splitCompoundsFlag)
 
-        res.render('searchResults', {data: {
-                economicAttestations: drawSearchEconomic(processSearchEconomic(economicAttestations)),
-                economicCompounds: processSearchEconomicCompounds(economicCompounds),
-                
-                lexicalItemsCount: lexicalAttestations.length,
-                lexicalItems: drawSearchLexical(processSearchLexical(lexicalAttestations))
+    const { lineCountsHTML: lineCollocations, tabletCountsHTML: tabletCollocations } = processSearchCollocations(term, economicAttestations, distinguishVariantsFlag, splitCompoundsFlag, isCoordinated)
+
+    res.render('searchResults', {data: {
+            economicAttestations: drawSearchEconomic(processSearchEconomic(economicAttestations)),
+            economicAccountsCount: countUniqueAccounts(economicAttestations),
+            economicAttestationsCount: economicAttestations.length,
+            statistics: {
+                distribution: processSearchDistribution(economicAttestations),
+                lineCollocations,
+                tabletCollocations,
+                economicCompounds: processSearchEconomicCompounds(economicCompounds)
             },
-            term
-        })
-    }
+            isCoordinated,
+            
+            lexicalItemsCount: lexicalAttestations.length,
+            lexicalItems: drawSearchLexical(processSearchLexical(lexicalAttestations))
+        },
+        term
+    })
 }
