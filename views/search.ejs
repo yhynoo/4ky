@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -8,49 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4ky</title>
 </head>
-<body>
-    <div class="urukContainer">
+<body class = 'urukContainer'>
+    <nav>
         <div class="urukBox urukNav urukSmallText">
             <a href="/">Sign search</a>
-            <a href="/analysis">Analysis</a>
             <a href="/about">About</a>
         </div>
+    </nav>
 
-        <div class="urukBox">
-            <h1>Welcome to 4ky!</h1>
-            <p>This web app is an interface meant to make the exploration of the Late Uruk period (proto-cuneiform) corpus easier. All data originates from <a href = 'https://cdli.mpiwg-berlin.mpg.de'>CDLI</a>.</p>
-        </div>
+    <div class="urukBox">
+        <h1>4ky</h1>
+        <p>
+            This is an interface meant to make the exploration of the Late Uruk period (proto-cuneiform) corpus easier.<br>
+            All data originates from <a href = 'https://cdli.mpiwg-berlin.mpg.de'>CDLI</a>.
+        </p>
+    </div>
 
-        <div class = "urukBox">
-            <form method = "POST" target="_blank">
-                <input type = "text" type = "search" name = "term" placeholder="What sign would you like to search for?" class = "urukSearch">
+    <div class = "urukBox">
+        <form method = "POST" target="_blank">
+            <div class="urukLine urukLineHigh">
+                <input type = "text" type = "search" name = "term" placeholder="What would you like to find?" class = "urukSearch">
+            </div>
 
-                <br>
-                <br>
-                <fieldset class = "urukSearchOptions">
-                    <legend><b>Period:</b></legend>
-                    <label><input type = "checkbox" name = "timePeriod" value = "2"><span class = "urukLabel">V</span></label>
-                    <label><input type = "checkbox" name = "timePeriod" value = "3"><span class = "urukLabel">IV</span></label>
-                    <label><input type = "checkbox" name = "timePeriod" value = "4"><span class = "urukLabel">III</span></label>
-                </fieldset>
-                  
-                <fieldset class = "urukSearchOptions">
-                    <legend><b>Origin:</b></legend>
-                    <label><input type = "checkbox" name = "provenience" value = "105"><span class = "urukLabel">Uruk</span></label>
-                    <label><input type = "checkbox" name = "provenience" value = "159"><span class = "urukLabel">Jemdet Nasr</span></label>
-                    <label><input type = "checkbox" name = "provenience" value = "72"><span class = "urukLabel">Uqair</span></label>
-                    <label><input type = "checkbox" name = "provenience" value = "154"><span class = "urukLabel">Umma</span></label>
-                    <label><input type = "checkbox" name = "provenience" value = "158"><span class = "urukLabel">Larsa</span></label>
-                    <label><input type = "checkbox" name = "provenience" value = "0"><span class = "urukLabel">other</span></label>
-                    <label><input type = "checkbox" name = "provenience" value = "306"><span class = "urukLabel">uncertain</span></label>
-                </fieldset>
-                  
-                <fieldset class = "urukSearchOptions">
-                    <legend><b>Signs:</b></legend>
-                    <label><input type = "checkbox" name = "distinguishVariants" value = '1'><span class = "urukLabel">Distinguish variants</span></label>
-                    <label><input type = "checkbox" name = "splitCompounds" value = '1'><span class = "urukLabel">Dismantle compound signs</span></label>
-                </fieldset>
-            </form>
-        </div>
+            <fieldset class = "urukSearchOptions urukSmallText">
+                <legend><b>Period:</b></legend>
+                <label><input type = "checkbox" name = "timePeriod" value = "2"><span class = "urukLabel">V</span></label>
+                <label><input type = "checkbox" name = "timePeriod" value = "3"><span class = "urukLabel">IV</span></label>
+                <label><input type = "checkbox" name = "timePeriod" value = "4"><span class = "urukLabel">III</span></label>
+            </fieldset>
+                
+            <fieldset class = "urukSearchOptions urukSmallText">
+                <legend><b>Origin:</b></legend>
+                <label><input type = "checkbox" name = "provenience" value = "105"><span class = "urukLabel">Uruk</span></label>
+                <label><input type = "checkbox" name = "provenience" value = "159"><span class = "urukLabel">Jemdet Nasr</span></label>
+                <label><input type = "checkbox" name = "provenience" value = "72"><span class = "urukLabel">Uqair</span></label>
+                <label><input type = "checkbox" name = "provenience" value = "154"><span class = "urukLabel">Umma</span></label>
+                <label><input type = "checkbox" name = "provenience" value = "158"><span class = "urukLabel">Larsa</span></label>
+                <label><input type = "checkbox" name = "provenience" value = "0"><span class = "urukLabel">other</span></label>
+                <label><input type = "checkbox" name = "provenience" value = "306"><span class = "urukLabel">uncertain</span></label>
+            </fieldset>
+                
+            <fieldset class = "urukSearchOptions urukSmallText">
+                <legend><b>Signs:</b></legend>
+                <label><input type = "checkbox" name = "distinguishVariants" value = '1'><span class = "urukLabel">Distinguish variants</span></label>
+                <label><input type = "checkbox" name = "splitCompounds" value = '1'><span class = "urukLabel">Dismantle compounds</span></label>
+                <label><input type = "checkbox" name = "atomize" value = '1'><span class = "urukLabel">Conventional transcriptions</span></label>
+            </fieldset>
+        </form>
     </div>
 </body>
+</html>

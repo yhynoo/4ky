@@ -5,9 +5,9 @@ import numpy as np
 
 # Load the models and the vectorizer
 script_dir = os.path.dirname(os.path.abspath(__file__))
-svms = joblib.load(os.path.join(script_dir, 'signStopProbability', 'svm_models.pkl'))
-tfidf_vectorizer = joblib.load(os.path.join(script_dir, 'signStopProbability', 'tfidf_vectorizer.pkl'))
-mlb = joblib.load(os.path.join(script_dir, 'signStopProbability', 'mlb.pkl'))
+svms = joblib.load(os.path.join(script_dir, 'signStopProbability', 'svm_models.joblib'))
+tfidf_vectorizer = joblib.load(os.path.join(script_dir, 'signStopProbability', 'tfidf_vectorizer.joblib'))
+mlb = joblib.load(os.path.join(script_dir, 'signStopProbability', 'mlb.joblib'))
 
 # Function to make a prediction on a single text with confidence scores
 def predict_single_with_confidence(text):

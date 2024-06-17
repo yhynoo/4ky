@@ -1,4 +1,4 @@
-import { cleanTranscription, displayLexicalEntries } from './helpers.js'
+import { cleanTranscription, displayLexicalEntries, makeJSONButton } from './helpers.js'
 import { analysisLexical, analysisFeatures, analysisPrediction } from "./workersAnalysis.js"
 import { 
     searchCorpus,
@@ -91,7 +91,10 @@ export function searchResultsGet(req, res) {
             isCoordinated
         } = searchCorpus(term, timePeriods, provenience, distinguishVariantsFlag, splitCompoundsFlag)
 
-    const { lineCountsHTML: lineCollocations, tabletCountsHTML: tabletCollocations } = processSearchCollocations(term, economicAttestations, distinguishVariantsFlag, splitCompoundsFlag, isCoordinated)
+    const { lineCountsHTML, jsonButtonLine, tabletCountsHTML, jsonButtonTablet } = processSearchCollocations(term, economicAttestations, distinguishVariantsFlag, splitCompoundsFlag, isCoordinated)
+    const { compoundsHTML, jsonButtonCompounds } = processSearchEconomicCompounds(economicCompounds)
+    const jsonButtonEconomic = makeJSONButton(economicAttestations)
+    const jsonButtonLexical = makeJSONButton(lexicalAttestations)
 
     res.render('searchResults', {data: {
             economicAttestations: drawSearchEconomic(processSearchEconomic(economicAttestations)),
@@ -99,11 +102,17 @@ export function searchResultsGet(req, res) {
             economicAttestationsCount: economicAttestations.length,
             statistics: {
                 distribution: processSearchDistribution(economicAttestations),
-                lineCollocations,
-                tabletCollocations,
-                economicCompounds: processSearchEconomicCompounds(economicCompounds)
+                lineCountsHTML,
+                tabletCountsHTML,
+                compoundsHTML 
             },
             isCoordinated,
+
+            jsonButtonLine,
+            jsonButtonTablet,
+            jsonButtonCompounds,
+            jsonButtonEconomic,
+            jsonButtonLexical,
             
             lexicalItemsCount: lexicalAttestations.length,
             lexicalItems: drawSearchLexical(processSearchLexical(lexicalAttestations))

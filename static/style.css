@@ -1,4 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
+/* imports */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');
+
+/* handles */
+
+body {
+    margin: 0;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6em;
+    font-weight: 400;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+b {
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 1.2em;
+    font-weight: 500;
+
+}
+
+h2 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+h3 {
+    margin: 0;
+    font-size: 1em;
+}
+
+p {
+    margin: 0;
+    padding: 0.8em 0 0.4em;
+}
 
 a:link, a:visited {
     text-decoration: none;
@@ -9,64 +50,25 @@ a:hover {
     text-decoration: underline;
 }
 
-body {
-    margin: 0;
-
-    font-family: 'Gudea', sans-serif;
-    line-height: 1.6em;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+fieldset {
+    margin: 1em 0;
+    border: 0;
 }
 
-h1 {
-    font-size: 1.2em;
-}
-
-h2 {
-    font-size: 1em;
-}
+/* classes */
 
 .urukAttestation {
-    padding: 0.8em 0;
+    padding: 0 3% 1.2em;
 }
 
 .urukBox {
-    padding: 2em 0;
+    padding: 1.6em 0;
 }
 
 .urukContainer {
     margin: auto;
     padding: 2em 1em;
-    width: min(90ch, 80vw);
-}
-
-.urukHelp {
-    position: relative;
-    border-bottom: 2px dotted rgba(250, 189, 47, 1);
-}
-
-.urukHelp .urukHelpText {
-    visibility: hidden;
-    width: 40ch;
-    border: 0;
-    border-radius: 8px;
-    padding: 0.8em;
-
-    background-color: whitesmoke;
-    text-align: center;
-
-    top: 150%;
-    left: 50%;
-    margin-left: -20ch;
-
-    position: absolute;
-    z-index: 1;
-}
-
-.urukHelp:hover .urukHelpText {
-    visibility: visible;
+    max-width: 85ch;
 }
 
 .urukHighlight {
@@ -76,61 +78,75 @@ h2 {
 }
 
 .urukInput {
-    border: 0;
-    border-bottom: 3px solid rgba(250, 189, 47, 0.3);
-    background-color: rgba(250, 189, 47, 0.06);
-    border-radius: 8px;
-
-    padding: 0.8em 0;
-
     width: 100%;
-    box-sizing: border-box;
-    height: 15em;
-    padding: 1em;
+    min-height: 12em;
+    padding: 0.8em;
+    border: 0;
 
-    font-family: 'Gudea', sans-serif;
-    font-size: 0.8em;
-    line-height: 2em;
+    background-color: rgba(250, 189, 47, 0.1);
+    border-radius: 8px;
+    line-height: 1.6em;
+
+    resize: none;
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .urukLabel {
-    margin: 0 1.6em 0 0.8em;
+    margin: 0 2.4em 0 1.2em;
+}
+
+.urukLine {
+    display: flex;
+    padding: 0.8em 0 0.4em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.urukLineHigh {
+    padding: 0.8em 0 1.6em;
 }
 
 .urukNav {
     margin: auto;
     display: flex;
-
     justify-content: flex-end;
     gap: 6em;
 }
 
 .urukSearch {
+    width: 100%;
+    height: 2.4em;
+
     border: 0;
     border-bottom: 3px solid rgba(250, 189, 47, 0.3);
-
-    padding: 0.8em 0;
-
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0.4em 0.8em;
-
-    font-family: 'Gudea', sans-serif;
+    padding: 0.8em 0.8em;
+    
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1em;
 }
 
 .urukSearchOptions {
-    border: 0;
-    border-radius: 8px;
-    padding: 0.2em 1.6em 0.8em;
-    margin: 1em 0;
-
     background-color: rgba(250, 189, 47, 0.06);
-    font-size: 0.8em;
+    padding: 0.2em 1.6em 0.8em;
+    border-radius: 8px;
 }
 
 .urukSmallText {
     font-size: 0.8em;
+}
+
+.urukTranscription {
+    display: block;
+    margin-bottom: 1em;
+    width: 100%;
+
+    margin: 0.8em 0;
+    padding: 0.8em 1.6em;
+    background-color: rgba(250, 189, 47, 0.06);
+    border-radius: 8px;
+    letter-spacing: 0.04em;
+
+    box-sizing: border-box;
 }
 
 .urukTable {
@@ -151,16 +167,4 @@ h2 {
     border: 0;
     text-align: left;
     letter-spacing: normal;
-}
-
-.urukTranscription {
-    display: block;
-    margin-bottom: 1em;
-    width: 100%;
-
-    margin: 0.8em 0;
-    padding: 0.8em 1.6em;
-    background-color: rgba(250, 189, 47, 0.06);
-    border-radius: 8px;
-    letter-spacing: 0.04em;
 }

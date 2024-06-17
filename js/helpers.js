@@ -123,4 +123,8 @@ export function displayLexicalEntries(lexicalItems) {
     return tree;
 }
 
-
+export function makeJSONButton(data) {
+    const jsonData = JSON.stringify(data, null, 4);
+    const jsonDataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonData);
+    return `<a href="${jsonDataUri}" target="_blank">View as JSON</a>`;
+}

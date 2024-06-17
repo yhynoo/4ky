@@ -49,6 +49,7 @@
                                     <% section.items.forEach(([key, value], itemIndex, array) => { %>
                                         <span class="urukHighlight"><%= key %></span> (<%= Object.keys(value).map(key => key === '0' ? 'unknown' : (lexicalListLabels[key] || '')).join(', ') %>)<%= itemIndex !== array.length - 1 ? ', ' : '' %>
                                     <% }); %>
+                                    <br>
                                 </span>
                     <% 
                             } else if (section.name === 'timeExpressions') { 
@@ -78,7 +79,7 @@
             </div>            
 
             <div class="urukAttestation">
-                <b>Your</b> <span class = 'urukHelp'><b>query</b><span class = 'urukHelpText'>As you can see, all metadata was removed from your query. This is done to make sure that the AI does not get 'distracted.'</span></span><b>:</b>
+                <b>Your query:</b>
                 <div class="urukTranscription">
                     <pre><%- data.text %></pre>
                 </div>

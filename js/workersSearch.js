@@ -1,5 +1,5 @@
 import data from '../data/4ky_clean.json' with {type: 'json'}
-import { checkMatch, highlightMatches, isStopWord, cleanVariants } from './helpers.js';
+import { checkMatch, highlightMatches, isStopWord, cleanVariants, makeJSONButton } from './helpers.js';
 import { lexicalListLabels, locationLabels, periodLabels } from './labels.js';
 
 export function searchCorpus(term, periods, origins, distinguishVariantsFlag, splitCompoundsFlag) {
@@ -87,6 +87,8 @@ export function countUniqueAccounts(economicAttestations) {
 }
 
 export function processSearchDistribution(economicAttestations) {
+    let distributionHTML = ''
+    if (economicAttestations.length === 0) return distributionHTML
 
     // make the actual table
     const table = [
@@ -115,7 +117,7 @@ export function processSearchDistribution(economicAttestations) {
     })
 
     // make the HTML
-    let distributionHTML = `<div class='urukAttestation urukSmallText'><b>Distribution:</b><div class = 'urukTranscription'><table class = 'urukTable'>`;
+    distributionHTML = `<div class = 'urukTranscription'><table class = 'urukTable'>`;
 
     table.forEach((row, index) => {
         distributionHTML += `<tr>`
@@ -132,7 +134,7 @@ export function processSearchDistribution(economicAttestations) {
         }
         distributionHTML += `</tr>`
     });
-    distributionHTML += '</table></div></div>'
+    distributionHTML += '</table></div>'
 
     return distributionHTML
 }
@@ -151,9 +153,6 @@ export function processSearchCollocations(query, economicAttestations, distingui
             line: { line }
         } = tablet
 
-        if (!uniqueTablets.includes(id)) uniqueTablets.push(id) 
-            else return
-
         const processedQuery = distinguishVariantsFlag ? query.replace(',', '').split(' ') : cleanVariants(query.replace(',', '').split(' '))
 
         if (!isCoordinated) {
@@ -167,6 +166,10 @@ export function processSearchCollocations(query, economicAttestations, distingui
                 totalSignsLine++
             })
         }
+
+        // for this, take each tablet only once!
+        if (!uniqueTablets.includes(id)) uniqueTablets.push(id) 
+            else return
 
         transliterationClean.trim().split(' ').forEach(sign => {
             const processedSign = distinguishVariantsFlag ? sign : sign.replace(/~[a-z](\d)?/g, '')
@@ -185,35 +188,22 @@ export function processSearchCollocations(query, economicAttestations, distingui
     const tabletCountsArray = Object.entries(tabletCounts).sort().sort((a, b) => b[1] - a[1])
 
     // building the HTML (only if there is something to write.)
-    let lineCountsHTML = ''
-    let tabletCountsHTML = ''
+    const lineCountsHTML = (lineCountsArray.length > 0) 
+        ? `<div class='urukTranscription'>` + lineCountsArray.filter(item => (item[1] / totalSignsLine * 100).toFixed(1) >= 3 && item[1] >= 3).map(item => `${item[0]}: <span class = 'urukLabel'>${item[1]} times, ${(item[1] / totalSignsLine * 100).toFixed(1)}%</span>`).join('<br>') + '</div>'
+        : ''
 
-    if (lineCountsArray.length > 0) {
-        lineCountsHTML += `<div class='urukAttestation urukSmallText'><b>Signs attested in the same case:</b> <div class='urukTranscription'>`
-        + lineCountsArray.slice(0, 3).map(item => `${item[0]}: <span class = 'urukLabel'>${item[1]} times, ${(item[1] / totalSignsLine * 100).toFixed()}%</span>`).join('<br>') 
-        + `</div>`
+    const tabletCountsHTML = (tabletCountsArray.length > 0)
+        ? `<div class='urukTranscription'>` + tabletCountsArray.filter(item => (item[1] / totalSignsTablet * 100).toFixed(1) >= 3 && item[1] >= 3).map(item => `${item[0]}: <span class = 'urukLabel'>${item[1]} times, ${(item[1] / totalSignsTablet * 100).toFixed(1)}%</span>`).join('<br>') + '</div>'
+        : ''
 
-        const jsonData = JSON.stringify(Object.fromEntries(lineCountsArray), null, 4);
-        const jsonDataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonData);
-        lineCountsHTML += `<span class = 'urukNav'><a href="${jsonDataUri}" target="_blank">View complete results as JSON</a></span></div>`;
-    }
+    // building the buttons
+    const jsonButtonLine = (lineCountsArray.length > 0) ? makeJSONButton(Object.fromEntries(lineCountsArray)) : ''
+    const jsonButtonTablet = (tabletCountsArray.length > 0) ? makeJSONButton(Object.fromEntries(tabletCountsArray)) : ''
 
-    if (tabletCountsArray.length > 0) {
-        tabletCountsHTML += `<div class='urukAttestation urukSmallText'><b>Signs attested on the same tablet:</b> <div class='urukTranscription'>`
-        + tabletCountsArray.slice(0, 3).map(item => `${item[0]}: <span class = 'urukLabel'>${item[1]} times, ${(item[1] / totalSignsTablet * 100).toFixed()}%</span>`).join('<br>') 
-        + `</div>`
-
-        const jsonData = JSON.stringify(Object.fromEntries(tabletCountsArray), null, 4);
-        const jsonDataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonData);
-        tabletCountsHTML += `<span class = 'urukNav'><a href="${jsonDataUri}" target="_blank">View complete results as JSON</a></span></div>`;
-    }
-
-    return { lineCountsHTML, tabletCountsHTML }
+    return { lineCountsHTML, jsonButtonLine, tabletCountsHTML, jsonButtonTablet }
 }
 
 export function processSearchEconomicCompounds(economicCompounds) {
-    if (economicCompounds.length === 0) return ''
-
     const counts = {}
     economicCompounds.forEach(item => {
         if (!counts[item]) counts[item] = 1
@@ -221,17 +211,12 @@ export function processSearchEconomicCompounds(economicCompounds) {
     })
 
     const countsArray = Object.entries(counts).sort().sort((a, b) => b[1] - a[1])
-
-    let compoundsHTML = `<div class='urukAttestation urukSmallText'><b>Dismantled compound signs:</b> <div class='urukTranscription'>`
-        + countsArray.slice(0, 3).map(item => `${item[0]}: <span class = 'urukLabel'>${item[1]} times, ${(item[1] / economicCompounds.length * 100).toFixed()}%</span>`).join('<br>') 
-        + `</div>`
+    const compoundsHTML = (countsArray.length > 0) 
+        ? `<div class='urukTranscription'>` + countsArray.slice(0, 3).map(item => `${item[0]}: <span class = 'urukLabel'>${item[1]} times, ${(item[1] / economicCompounds.length * 100).toFixed()}%</span>`).join('<br>') + `</div>`
+        : ''
     
-    // Create a download link for the JSON file
-    const jsonData = JSON.stringify(Object.fromEntries(countsArray), null, 4);
-    const jsonDataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonData);
-    compoundsHTML += `<span class = 'urukNav'><a href="${jsonDataUri}" target="_blank">View complete results as JSON</a></span></div>`;
-    
-    return compoundsHTML
+    const jsonButtonCompounds = (countsArray.length > 0) ? makeJSONButton(Object.fromEntries(countsArray)) : ''
+    return { compoundsHTML, jsonButtonCompounds }
 }
 
 export function processSearchEconomic(economicAttestations) {
@@ -315,7 +300,7 @@ export function drawSearchLexical(hierarchy) {
         Object.keys(hierarchy[line]).sort().forEach(text => {
             attestationHTML += `
                 <div class = 'urukTranscription'>
-                <b>${lexicalListLabels[text] || 'unknown'}</b><br>`
+                <b>${lexicalListLabels[text] || 'unknown'}</b>`
 
                 Object.keys(hierarchy[line][text]).sort().forEach(place => {
                     attestationHTML += `<p>${locationLabels[place] || 'uncertain'} (${hierarchy[line][text][place].length}): <span class = 'urukLabel'>`
@@ -323,7 +308,7 @@ export function drawSearchLexical(hierarchy) {
                         return `<a href = 'https://cdli.mpiwg-berlin.mpg.de/artifacts/${item.id}' target='_blank'>${item.id}</a> (${periodLabels[item.time]})`
                     }).join(', ')
                 })
-                attestationHTML += '</span></p></div>'
+                attestationHTML += '</p></span></div>'
         })
         attestationHTML += `</div>`
     })

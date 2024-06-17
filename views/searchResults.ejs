@@ -8,45 +8,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4ky: <%= term %></title>
 </head>
-<body>
-    <div class="urukContainer">
+<body class = 'urukContainer'>
+    <nav>
         <div class="urukBox urukNav urukSmallText">
             <a href="/">Sign search</a>
-            <a href="/analysis">Analysis</a>
             <a href="/about">About</a>
         </div>
+    </nav>
 
-        <div class='urukBox'>
-            <h1>Search results for <%= term %></h1>
-        </div>
-
-        <div class="urukBox">
-            <h2>Statistics</h2>
-            <p>Data in this section concers the administrative accounts only. For an explanation of the algorithms used for calculations, see the <a href = '/about'>About</a> section.</p>
-            <%- data.statistics.distribution %>
-            <%- data.statistics.lineCollocations %>
-            <%- data.statistics.tabletCollocations %>
-            <%- data.statistics.economicCompounds %>
-        </div>
-
-        <% if (Object.keys(data.lexicalItems).length > 0) { %>
-            <div class="urukBox">
-                <h2>Lexical attestations (<%= data.lexicalItemsCount %> witnesses)</h2>
-                <%- data.lexicalItems %>
-            </div>
-        <% } %>
-
-        <% if (data.economicAttestations) { %>
-            <div class="urukBox">
-                <% if (data.isCoordinated) { %>
-                    <h2>Administrative attestations (<%= data.economicAccountsCount %> accounts)</h2>
-                <% } else { %>
-                    <h2>Administrative attestations (<%= data.economicAttestationsCount %> matches in <%= data.economicAccountsCount %> accounts)</h2>
-                <% } %>
-                <%- data.economicAttestations %>
-            </div>
-        <% } %>
-
+    <div class='urukBox'>
+        <h1>Search results for "<%= term %>"</h1>
     </div>
+
+    <div class="urukBox">
+        <% if (data.economicAttestations) { %>
+            <div class="urukLine">
+                <h2>Statistics:</h2>
+            </div>
+
+            <% if (data.statistics.compoundsHTML !== '') { %>
+                <div class='urukAttestation urukSmallText'>
+                    <div class="urukLine">
+                        <b>Most common split compounds:</b>
+                        <%- data.jsonButtonCompounds %>
+                    </div>
+                    <%- data.statistics.compoundsHTML %>
+                </div>
+            <% } %>
+            
+            <% if (data.statistics.lineCountsHTML !== '') { %>
+                <div class='urukAttestation urukSmallText'>
+                    <div class="urukLine">
+                        <b>Signs most commonly found in the same case:</b>
+                        <%- data.jsonButtonLine %>
+                    </div>
+                    <%- data.statistics.lineCountsHTML %>
+                </div>
+            <% } %>
+
+            <% if (data.statistics.tabletCountsHTML !== '') { %>
+                <div class='urukAttestation urukSmallText'>
+                    <div class="urukLine">
+                        <b>Signs most commonly found on the same tablet:</b>
+                        <%- data.jsonButtonTablet %>
+                    </div>
+                    <%- data.statistics.tabletCountsHTML %>
+                </div>
+            <% } %>
+
+            <% if (data.statistics.distribution !== '') { %>
+                <div class='urukAttestation urukSmallText'>
+                    <div class="urukLine">
+                        <b>Distribution:</b>
+                    </div>
+                    <%- data.statistics.distribution %>
+                </div>
+            <% } %>
+        </div>
+    <% } else { %>
+        No results.
+    <% } %>
+
+    <% if (Object.keys(data.lexicalItems).length > 0) { %>
+        <div class="urukBox">
+            <div class="urukLine urukLineHigh">
+                <h2>Lexical attestations (<%= data.lexicalItemsCount %> witnesses):</h2>
+                <span class = "urukSmallText"><%- data.jsonButtonLexical %></span>
+            </div>
+            <%- data.lexicalItems %>
+        </div>
+    <% } %>
+
+    <% if (data.economicAttestations) { %>
+        <div class="urukBox">
+            <div class="urukLine urukLineHigh">
+                <% if (data.isCoordinated) { %>
+                    <h2>Administrative attestations (<%= data.economicAccountsCount %> accounts):</h2>
+                <% } else { %>
+                    <h2>Administrative attestations (<%= data.economicAttestationsCount %> matches in <%= data.economicAccountsCount %> accounts):</h2>
+                <% } %>
+                <span class = "urukSmallText"><%- data.jsonButtonEconomic %></span>
+            </div>
+            <%- data.economicAttestations %>
+        </div>
+    <% } %>
+
 </body>
 </html>
