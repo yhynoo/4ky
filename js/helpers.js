@@ -1,13 +1,17 @@
-export function cleanTranscription(transcription) {
+export function cleanTranscription(transcription, cases, numbers) {
     const transcriptionArray = transcription
-        .split(/\r\n?\r?\n/g)
-        .filter(line => line.trim() !== '' && /^\d/.test(line))
-        .map(line => line.replace(/[#()?|\[\]]/g, '').replace(/^\d+[^ ]*\s*/, ' ').replace(', ', '').trim())
+        .split(/\r?\n/) // Split into lines
+        .filter(line => line.trim() !== '' && /^\d/.test(line)) // Keep non-empty lines starting with a digit
+        .map(line => line
+            .replace(/[#()?|\[\]]/g, '')        // Remove special characters
+            .replace(/^\d+\S*\s*/, '')          // Remove leading digits and following non-space characters
+            .replace(', ', '')                  // Remove remaining comma-space sequences
+        )
+        .map(line => makeCasesAndNumbers(line, cases, numbers))
+        .filter(line => line.trim() !== '')
 
-    const transcriptionString = transcriptionArray
-        .join('\n')
-
-    return { transcriptionArray, transcriptionString }
+    const transcriptionString = transcriptionArray.join('\n');
+    return { transcriptionArray, transcriptionString };
 }
 
 export function cleanVariants(line) {
@@ -72,6 +76,25 @@ export function highlightMatches(query, line, distinguishVariantsFlag, splitComp
     return newLine.join(' ');
 }
 
+export function makeCasesAndNumbers(line, cases, numbers) {
+    let result = line
+
+    result = result.replace(/\.\.\./g, '')
+                   .replace(/\b[NX]\b/g, '')
+                   .replace(/(?<=\s),(?=\s)/g, '')
+                   .replace(/[^\S\r\n]+/g, ' ')
+
+    if (cases) {
+        result = result.split(' ').sort().join(' ')
+    }
+    if (!numbers) {
+        result = result.replace(/\b(\d+)N(\d{2}(?:~[a-z])?(?![\w.]))/g, '')
+    }
+    result = result.trim()
+
+    return result
+}
+
 export function splitAndEvaluateCompounds(query, line) {
     const trueMatches = []
     const potentialMatches = line.filter(item => /[.+&x]/g.test(item))
@@ -126,5 +149,5 @@ export function displayLexicalEntries(lexicalItems) {
 export function makeJSONButton(data) {
     const jsonData = JSON.stringify(data, null, 4);
     const jsonDataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonData);
-    return `<a href="${jsonDataUri}" target="_blank">View as JSON</a>`;
+    return `<a href="${jsonDataUri}" target="_blank">View all as JSON</a>`;
 }

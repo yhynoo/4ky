@@ -1,5 +1,5 @@
 import { cleanTranscription, displayLexicalEntries, makeJSONButton } from './helpers.js'
-import { analysisLexical, analysisFeatures, analysisPrediction } from "./workersAnalysis.js"
+import { analysisLexical, analysisFeatures, analysisPrediction, analysisSimilarity, processSimilarity } from "./workersAnalysis.js"
 import { 
     searchCorpus,
     countUniqueAccounts,
@@ -14,11 +14,13 @@ import {
 import { lexicalListLabels } from './labels.js'
 
 export function analysisPost(req, res) {
-    const transcription = req.body.transcription
+    const { transcription, cases, numbers } = req.body
 
     // create a URL
     const queryParams = new URLSearchParams({
-        transcription
+        transcription,
+        cases,
+        numbers
     })
 
     // send the URL data and the user to a new page
@@ -26,14 +28,19 @@ export function analysisPost(req, res) {
 }
 
 export async function analysisResultsGet(req, res) {
-    const { transcriptionArray, transcriptionString } = cleanTranscription(req.query.transcription)
+    const cases = (req.query.cases === "1") ? 1 : 0
+    const numbers = (req.query.numbers === "1") ? 1 : 0
+
+    const { transcriptionArray, transcriptionString } = cleanTranscription(req.query.transcription, cases, numbers)
 
     // operate on the array
     const { foundLexicalItems } = analysisLexical(transcriptionArray)
     const { foundTheonyms, foundTimeExpressions, foundToponyms } = analysisFeatures(transcriptionArray)
-
     const processedLexicalEntries = displayLexicalEntries(foundLexicalItems)
+    
     const processedPrediction = await analysisPrediction(transcriptionString)
+    const similarityResults = await analysisSimilarity(transcriptionString, cases, numbers)
+    const { similarityHTML, jsonButtonSimilarity } = processSimilarity(similarityResults)
 
     // render the results page
     res.render('analysisResults', {data: 
@@ -51,6 +58,11 @@ export async function analysisResultsGet(req, res) {
             
             // type
             prediction: processedPrediction,
+
+            // similarity
+            similarityHTML,
+            jsonButtonSimilarity,
+
             text: transcriptionString
         },
         lexicalListLabels

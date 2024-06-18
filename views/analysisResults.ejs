@@ -76,15 +76,24 @@
                         }); 
                     %>
                 </div>
-            </div>            
+            </div>
+            
+            <% if (data.similarityHTML !== '') { %>
+                <div class='urukAttestation'>
+                    <div class="urukLine">
+                        <b>Similarity scores:</b>
+                        <%- data.jsonButtonSimilarity %>
+                    </div>
+                    <%- data.similarityHTML %>
+                </div>
+            <% } %>
 
-            <div class="urukAttestation">
-                <b>Your query:</b>
-                <div class="urukTranscription">
-                    <pre><%- data.text %></pre>
+            <div class='urukAttestation'>
+                <b>Your cleaned query:</b>
+                <div class='urukTranscription'>
+                    <%- data.text.replace(/\n/g, '<br>') %> %>
                 </div>
             </div>
-
         </div>
     </div>
 </body>

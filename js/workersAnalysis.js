@@ -1,4 +1,4 @@
-import { cleanVariants } from './helpers.js';
+import { cleanVariants, makeJSONButton } from './helpers.js';
 import data from '../data/4ky_clean.json' with {type: 'json'}
 
 // to be expanded according to scholarship
@@ -33,19 +33,24 @@ const allToponyms = [
 export function analysisLexical(transcriptionArray) {
     const foundLexicalItems = []
     transcriptionArray.forEach(testLine => {
+        
+        // early break for empty lines
+        if (testLine.length === 0) return
+
         data.filter(tablet => tablet.inscription.accountType.includes('lexical')).forEach(tablet => {
             const tabletContent = tablet.inscription.transliterationClean
             tabletContent.split('\n').forEach(line => {
                 if (!line.includes('...') && !line.includes('X')) {
                     const lexicalLine = line.replace(/,|(?<!\S)\d+N\d+(?!\S)/g, '').replace(/\bN\b/g, '').trim();
-
-                    if (checkOppositeMatch(testLine, lexicalLine)) {
-                        foundLexicalItems.push({tablet, lexicalLine})
-                    }
+                    
+                    // if the line has become empty, drop it this attempt, otherwise check for matches.
+                    if (lexicalLine.length === 0) return
+                    if (checkOppositeMatch(testLine, lexicalLine)) foundLexicalItems.push({tablet, lexicalLine})
                 }
             })
         })
     })
+
     return { foundLexicalItems }
 }
 
@@ -73,13 +78,48 @@ function countOccurrences(array) {
     return counts;
 }
 
-export async function analysisSimilarity(transcriptionString) {
-    
+export async function analysisSimilarity(transcriptionString, cases, numbers) {
+    const similarities = new Deno.Command('python3', { args: [ `${Deno.cwd()}/ai/ai_loader_similarity.py`, transcriptionString, cases, numbers ] })
+    const { stdout, stderr } = await similarities.output()
+
+    if (stderr) console.log(new TextDecoder().decode(stderr))
+    return new TextDecoder().decode(stdout)
+}
+
+export function processSimilarity(results) {
+    const parsedResults = JSON.parse(results.replace(/'/g, '"'))
+
+    // build the HTML (only if there is something to write)
+    const similarityHTML = (parsedResults.length > 0) 
+        ? `<div class='urukTranscription'>` + parsedResults.slice(0, 3).map(item => `<a href='https://cdli.mpiwg-berlin.mpg.de/artifacts/${item.id}'>${item.designation}</a>: <span class='urukLabel'>${(item.similarity_score * 100).toFixed(1)}%</span>`).join('<br>') + '</div>'
+        : ''
+
+    // check the scores for the JSON
+    const validScores = parsedResults.filter(item => !isNaN(item.similarity_score))
+    const averageScore = validScores.reduce((sum, item) => sum + item.similarity_score, 0) / validScores.length
+    const averageScorePercentage = (averageScore * 100).toFixed(2)
+    const countAboveAverage = validScores.filter(item => item.similarity_score > averageScore).length
+
+    const jsonButtonSimilarity = (validScores.length > 0) ? makeJSONButton({
+        "count": validScores.length,
+        "average": averageScorePercentage,
+        "countAboveAverage": countAboveAverage,
+        "scores": validScores.map(item => {
+            const { id, designation, similarity_score } = item
+            const link = `https://cdli.mpiwg-berlin.mpg.de/artifacts/${id}`
+            const shortSimilarity = (similarity_score * 100).toFixed(1)
+            return { id, designation, link, similarity_score: shortSimilarity }
+        })
+    }) : ''
+
+    return { similarityHTML, jsonButtonSimilarity }
 }
 
 export async function analysisPrediction(transcriptionString) {
-    const prediction = new Deno.Command('python3', { args: [ Deno.cwd() + '/ai/ai_proba_loader.py', transcriptionString ] })
-    const { stdout } = await prediction.output();
+    const prediction = new Deno.Command('python3', { args: [ `${Deno.cwd()}/ai/ai_loader_accountType.py`, transcriptionString ] })
+    const { stdout, stderr } = await prediction.output()
+
+    if (stderr) console.log(new TextDecoder().decode(stderr))
     return new TextDecoder().decode(stdout)
 }
 
