@@ -8,7 +8,7 @@ body {
     margin: 0;
 
     font-family: 'IBM Plex Sans', sans-serif;
-    line-height: 1.6em;
+    line-height: 1.8em;
     font-weight: 400;
 
     display: flex;
@@ -62,7 +62,7 @@ fieldset {
 }
 
 .urukBox {
-    padding: 1.6em 0;
+    padding: 2.4em 0;
 }
 
 .urukContainer {

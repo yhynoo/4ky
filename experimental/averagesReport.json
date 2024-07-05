@@ -1,0 +1,62 @@
+{
+    "count": 8,
+    "totalAverage": 0.02,
+    "results": [
+        {
+            "id": 6438,
+            "score": 0.03,
+            "accountType": [
+                "economic"
+            ]
+        },
+        {
+            "id": 2718,
+            "score": 0.02,
+            "accountType": [
+                "economic"
+            ]
+        },
+        {
+            "id": 1770,
+            "score": 0,
+            "accountType": [
+                "economic"
+            ]
+        },
+        {
+            "id": 1918,
+            "score": 0,
+            "accountType": [
+                "economic"
+            ]
+        },
+        {
+            "id": 2198,
+            "score": 0.09,
+            "accountType": [
+                "economic"
+            ]
+        },
+        {
+            "id": 2866,
+            "score": 0,
+            "accountType": [
+                "economic"
+            ]
+        },
+        {
+            "id": 2883,
+            "score": 0,
+            "accountType": [
+                "economic"
+            ]
+        },
+        {
+            "id": 3173,
+            "score": 0,
+            "accountType": [
+                "economic"
+            ]
+        }
+    ]
+}

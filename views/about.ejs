@@ -1,0 +1,101 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="grain.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4ky: about</title>
+</head>
+<body class = 'urukContainer'>
+    <nav>
+        <div class="urukBox urukNav urukSmallText">
+            <a href="/">Sign search</a>
+            <a href="/about">About</a>
+        </div>
+    </nav>
+
+    <div class = "urukBox">
+        <h1>About</h1>
+    </div>
+
+    <div class="urukBox">
+        <h2>Data</h2>
+        <div class="urukSmallText">
+            <p>
+                All the transcriptions are sourced from <a href = "https://cdli.mpiwg-berlin.mpg.de" target = "_blank">CDLI</a>. The corpus of <b>4ky</b> consists of 6,502 tablets from the entirety of the Uruk period, as they were sourced on 27 February 2024.
+            </p>
+            <p>
+                The artifact data was exported as JSON files, and then processed using the scripts available on the <b>4ky</b> <a href = "https://github.com/yhynoo/4ky">GitHub</a> page.
+            </p>
+        </div>
+    </div>
+
+    <div class = "urukBox">
+        <h2>Searches</h2>
+        <div class = "urukSmallText">
+            <p>
+                To search for an individual sign, just type its name in the search box in capital letters, like: <span class = "urukHighlight">GAR</span>.
+            </p>
+            <p>
+                To search for a group of signs appearing in the same case — separate all the signs with a space, for example: <span class = "urukHighlight">NAM2 DI</span>. Since the original accounts are not written in a linear fashion, the order in which you enter the signs does not matter. 4ky will find all cases in which all the signs that you entered appear.
+            </p>
+            <p>
+                To search for signs all across a tablet, separate them with commas — for example: <span class = "urukHighlight">SAL, KUR</span>. This query will simply find all tablets where both signs appear. Again, the order of appearance does not matter.
+            </p>
+
+            <br>
+            <p>
+                By default, <b>4ky</b> ignores sign variants. Yet, if you tick the “distinguish variants” box on the search page, you will be able to find for instance only specifically <span class = "urukHighlight">DUG~c</span> signs, instead of all the <span class = "urukHighlight">DUG</span> forms.
+            </p>
+            <p>
+                <b>4ky</b> treats compounds like <span class = "urukHighlight">SAL.KUR</span> as single signs. To change that, tick the "split compounds" box, and the search engine will treat the compounds' constituent signs as separate entities, and the results for SAL will also include its compound forms &mdash; like <span class = "urukHighlight">SAL.KUR</span> or <span class = "urukHighlight">ZATU737xSAL</span>.
+            </p>
+        </div>
+    </div>
+
+    <div class = "urukBox">
+        <h2>Transcriptions</h2>
+        <div class = "urukSmallText">
+            <p>
+                When preparing the data for <b>4ky</b>, the transcription conventions used by <a href = "https://cdli.mpiwg-berlin.mpg.de" target = "_blank">CDLI</a> were followed in most cases, including the following:
+            </p>
+
+            <div class="urukTranscription">
+                <span class = "urukLabel">SZ</span> for shin<br>
+                <span class = "urukLabel">H</span> for khet<br>
+            </div>
+
+            <p>
+                Regular numbers are used instead of subscripts, so <span class = "urukHighlight">LU2</span> for L&Uacute;, and sign variants are written after the <b>~</b> sign, so <span class = "urukHighlight">SZE~a</span> represents the <b>a</b> variant of the ŠE sign. The marks of sign adjacency were left unchanged.
+            </p>
+
+            <p>
+                Additionally, a number of signs have been removed to clean up the transcriptions:
+            </p>
+            <div class = "urukTranscription">
+                <span class = "urukLabel">[ ]</span><br>
+                <span class = "urukLabel">( )</span><br>
+                <span class = "urukLabel">?</span><br>
+                <span class = "urukLabel">|</span><br>
+                <span class = "urukLabel">#</span>
+            </div>
+        </div>
+    </div>
+
+    <div class = "urukBox">
+        <h2>Author</h2>
+        <div class = "urukSmallText">
+            <p>
+                4ky is available on <a href = "https://github.com/yhynoo/4ky">GitHub</a>.<br>
+                The author of 4ky (2023-2024) is Piotr Zadworny, a PhD candidate at Freie Universität Berlin.
+            </p>
+            <p>
+                <a href = "https://leidenuniv.academia.edu/PiotrekZadworny">Academia.edu</a><br>
+                <a href = "https://www.linkedin.com/in/piotr-zadworny/">LinkedIn</a><br>
+                <a href = "mailto:piotrekzadworny@gmail.com">Email</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

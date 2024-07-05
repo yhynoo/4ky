@@ -24,6 +24,9 @@ app.get('/', (_req, res) => res.render('search'));
 app.post('/', asyncHandler(searchPost));
 app.get('/searchResults', asyncHandler(searchResultsGet));
 
+// About
+app.get('/about', (_req, res) => res.render('about'));
+
 // Analysis
 app.get('/analysis', (_req, res) => res.render('analysis'));
 app.post('/analysis', asyncHandler(analysisPost));

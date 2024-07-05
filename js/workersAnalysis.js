@@ -82,7 +82,7 @@ export async function analysisSimilarity(transcriptionString, cases, numbers) {
     const similarities = new Deno.Command('python3', { args: [ `${Deno.cwd()}/ai/ai_loader_similarity.py`, transcriptionString, cases, numbers ] })
     const { stdout, stderr } = await similarities.output()
 
-    if (stderr) console.log(new TextDecoder().decode(stderr))
+    // if (stderr) console.log(new TextDecoder().decode(stderr))
     return new TextDecoder().decode(stdout)
 }
 
@@ -91,7 +91,7 @@ export function processSimilarity(results) {
 
     // build the HTML (only if there is something to write)
     const similarityHTML = (parsedResults.length > 0) 
-        ? `<div class='urukTranscription'>` + parsedResults.slice(0, 3).map(item => `<a href='https://cdli.mpiwg-berlin.mpg.de/artifacts/${item.id}'>${item.designation}</a>: <span class='urukLabel'>${(item.similarity_score * 100).toFixed(1)}%</span>`).join('<br>') + '</div>'
+        ? `<div class='urukTranscription'>` + parsedResults.slice(0, 3).map(item => `<a href='https://cdli.mpiwg-berlin.mpg.de/artifacts/${item.id}' target='_blank'>${item.designation}</a>: <span class='urukLabel'>${(item.similarity_score * 100).toFixed(1)}%</span>`).join('<br>') + '</div>'
         : ''
 
     // check the scores for the JSON
@@ -119,7 +119,7 @@ export async function analysisPrediction(transcriptionString) {
     const prediction = new Deno.Command('python3', { args: [ `${Deno.cwd()}/ai/ai_loader_accountType.py`, transcriptionString ] })
     const { stdout, stderr } = await prediction.output()
 
-    if (stderr) console.log(new TextDecoder().decode(stderr))
+    // if (stderr) console.log(new TextDecoder().decode(stderr))
     return new TextDecoder().decode(stdout)
 }
 

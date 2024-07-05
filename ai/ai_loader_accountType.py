@@ -52,6 +52,9 @@ if max_confidence > 0.9:
 else:
     type = "Sorry, I'm not sure what kind of account this is."
 
+# Alternative option: print out the predicted labels and confidences:
+# print("[" + ", ".join(f"{i:.2f}" for i in confidences) + "]")
+
 # Prepare the complete assessment string
 categories = mlb.classes_
 assessment = ", ".join(f"{category}: {confidence_percentages[i]}" for i, category in enumerate(categories))
