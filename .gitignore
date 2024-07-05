@@ -1,9 +1,4 @@
 /data/total.json
 /data/added.md
-/ai/signStop
-/ai/aiData.json
-/ai/dataExtractionForAI.js
-/ai/ai_multibinary_classifier.py
-/ai/ai_multibinary_loader.py
-/ai/ai_proba.py
+version 1.1.md
 .DS_Store

@@ -4,20 +4,12 @@ const ATFCleaner = (atf) => {
     atf = atf.replace(/\r/g, '')    // Remove all the unnecessary \r characters
     const lines = atf.split('\n');
 
-    // Filter out lines starting with #, @, >, or $
-    const filteredLines = lines.filter(line => !/^[#@>$&]/.test(line));
+    const cleanLines = lines.filter(line => !/^[#@>$&]/.test(line))                  // Filter out lines starting with #, @, >, or $
+                            .map(line => line.replace(/[#()?|\[\]]/g, ''))           // Remove characters #, (, ), ?, |, [, and ]
+                            .map(line => line.replace(/^\d+[^ ]*\s*/, ' '))          // Remove everything from the beginning of the line until the first space if the line starts with a number
+                            .filter(line => line.trim() !== '');                     // Remove empty lines or lines with just a space
 
-    // Remove characters #, (, ), ?, |, [, and ]
-    const cleanedLines = filteredLines.map(line => line.replace(/[#()?|\[\]]/g, ''));
-
-    // Remove everything from the beginning of the line until the first space if the line starts with a number
-    const processedLines = cleanedLines.map(line => line.replace(/^\d+[^ ]*\s*/, ' '));
-
-    // Remove empty lines or lines with just a space
-    const nonEmptyLines = processedLines.filter(line => line.trim() !== '');
-
-    // Join lines with line breaks
-    return nonEmptyLines.join('\n');
+    return cleanLines.join('\n');        // Join lines with line breaks
 }
 
 const processTablet = (tablet) => {

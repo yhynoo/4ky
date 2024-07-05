@@ -189,11 +189,11 @@ export function processSearchCollocations(query, economicAttestations, distingui
 
     // building the HTML (only if there is something to write.)
     const lineCountsHTML = (lineCountsArray.length > 0) 
-        ? `<div class='urukTranscription'>` + lineCountsArray.filter(item => (item[1] / totalSignsLine * 100).toFixed(1) >= 3 && item[1] >= 3).map(item => `${item[0]}: <span class = 'urukLabel'>${item[1]} times, ${(item[1] / totalSignsLine * 100).toFixed(1)}%</span>`).join('<br>') + '</div>'
+        ? `<div class='urukTranscription'>` + lineCountsArray.filter(item => (item[1] / totalSignsLine * 100).toFixed(1) >= 3 && item[1] >= 3).map(item => `<span class = 'urukLabel'>${item[0]}:</span> ${item[1]} times, ${(item[1] / totalSignsLine * 100).toFixed(1)}%`).join('<br>') + '</div>'
         : ''
 
     const tabletCountsHTML = (tabletCountsArray.length > 0)
-        ? `<div class='urukTranscription'>` + tabletCountsArray.filter(item => (item[1] / totalSignsTablet * 100).toFixed(1) >= 3 && item[1] >= 3).map(item => `${item[0]}: <span class = 'urukLabel'>${item[1]} times, ${(item[1] / totalSignsTablet * 100).toFixed(1)}%</span>`).join('<br>') + '</div>'
+        ? `<div class='urukTranscription'>` + tabletCountsArray.filter(item => (item[1] / totalSignsTablet * 100).toFixed(1) >= 3 && item[1] >= 3).map(item => `<span class = 'urukLabel'>${item[0]}:</span> ${item[1]} times, ${(item[1] / totalSignsTablet * 100).toFixed(1)}%`).join('<br>') + '</div>'
         : ''
 
     // building the buttons

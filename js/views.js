@@ -1,5 +1,4 @@
 import { cleanTranscription, displayLexicalEntries, makeJSONButton } from './helpers.js'
-import { analysisLexical, analysisFeatures, analysisPrediction, analysisSimilarity, processSimilarity } from "./workersAnalysis.js"
 import { 
     searchCorpus,
     countUniqueAccounts,
