@@ -151,3 +151,29 @@ export function makeJSONButton(data) {
     const jsonDataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(jsonData);
     return `<a href="${jsonDataUri}" target="_blank">View all as JSON</a>`;
 }
+
+export function displayAccountTypes(data, threshold = 0.8) {
+  const accountTypes = data.accountType || [];
+  const fi = data.featureIndicators || {};
+
+  const result = accountTypes.map(type => {
+    if (type.endsWith('(aut.)')) {
+      // remove the "(aut.)" to get the key
+      const key = type.replace(/\s*\(aut\.\)$/i, '');
+      const prob = fi[key]?.probability ?? 0;
+
+      if (prob >= threshold) {
+        return `${key} (${Math.round(prob * 100)}%)`;
+      } else {
+        return null; // skip if below threshold
+      }
+    } else if (type !== 'economic' && type !== 'lexical') {
+      // manual type, keep as-is
+      return type;
+    } else {
+      return null; // skip "economic" and "lexical"
+    }
+  }).filter(Boolean); // remove nulls
+
+  return result.join(', ');
+}

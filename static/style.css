@@ -1,13 +1,13 @@
 /* imports */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gudea');
 
 /* handles */
 
 body {
     margin: 0;
 
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Gudea', sans-serif;
     line-height: 1.6em;
     font-weight: 400;
 
@@ -60,7 +60,8 @@ fieldset {
 /* classes */
 
 .urukAttestation {
-    padding: 0 3% 1.2em;
+    margin-bottom: 1.8em;
+    padding: 0 3% 1.8em;
 }
 
 .urukBox {
@@ -123,7 +124,7 @@ fieldset {
     border-bottom: 3px solid rgba(250, 189, 47, 0.3);
     padding: 0.8em 0.8em;
     
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Gudea', sans-serif;
     font-size: 1em;
 }
 

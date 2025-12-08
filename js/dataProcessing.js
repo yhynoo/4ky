@@ -1,4 +1,4 @@
-import data from '../data/total.json' with {type: 'json'}
+// import data from '../data/total.json' with {type: 'json'}
 
 const ATFCleaner = (atf) => {
     atf = atf.replace(/\r/g, '')    // Remove all the unnecessary \r characters
@@ -17,7 +17,7 @@ const processTablet = (tablet) => {
 
     const atf = inscription && inscription.atf ? inscription.atf : ''
     const provenienceId = provenience && provenience.id ? provenience.id : 0
-    const link = `https://cdli.mpiwg-berlin.mpg.de/artifacts/${id}`
+    const link = `https://cdli.earth/artifacts/${id}`
 
     const compositeId = composites.length > 0 ? composites[0].composite.id : 0
     const accountType = []

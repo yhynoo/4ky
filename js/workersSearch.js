@@ -1,5 +1,5 @@
-import data from '../data/4ky_clean.json' with {type: 'json'}
-import { checkMatch, highlightMatches, isStopWord, cleanVariants, makeJSONButton } from './helpers.js';
+import data from '../data/4ky_updated.json' with {type: 'json'}
+import { checkMatch, highlightMatches, isStopWord, cleanVariants, makeJSONButton, displayAccountTypes } from './helpers.js';
 import { lexicalListLabels, locationLabels, periodLabels } from './labels.js';
 
 export function searchCorpus(term, periods, origins, distinguishVariantsFlag, splitCompoundsFlag) {
@@ -92,10 +92,10 @@ export function processSearchDistribution(economicAttestations) {
 
     // make the actual table
     const table = [
-        ['',    105,    159,    72,     154,    168,    306,    1000],
-        [4,     0,      0,      0,      0,      0,      0,      0],
-        [3,     0,      0,      0,      0,      0,      0,      0],
-        [2,     0,      0,      0,      0,      0,      0,      0],
+        ['',    105,    159,    72,     154,    168,    306,    1000    ],
+        [4,     0,      0,      0,      0,      0,      0,      0       ],
+        [3,     0,      0,      0,      0,      0,      0,      0       ],
+        [2,     0,      0,      0,      0,      0,      0,      0       ],
     ];
     
     economicAttestations.forEach(item => {
@@ -184,16 +184,16 @@ export function processSearchCollocations(query, economicAttestations, distingui
     })
 
     // sorting
-    const lineCountsArray = Object.entries(lineCounts).sort().sort((a, b) => b[1] - a[1])
-    const tabletCountsArray = Object.entries(tabletCounts).sort().sort((a, b) => b[1] - a[1])
+    const lineCountsArray = Object.entries(lineCounts).sort((a, b) => b[1] - a[1])
+    const tabletCountsArray = Object.entries(tabletCounts).sort((a, b) => b[1] - a[1])
 
     // building the HTML (only if there is something to write.)
     const lineCountsHTML = (lineCountsArray.length > 0) 
-        ? `<div class='urukTranscription'>` + lineCountsArray.filter(item => (item[1] / totalSignsLine * 100).toFixed(1) >= 3 && item[1] >= 3).map(item => `<span class = 'urukLabel'>${item[0]}:</span> ${item[1]} times, ${(item[1] / totalSignsLine * 100).toFixed(1)}%`).join('<br>') + '</div>'
+        ? `<div class='urukTranscription'>` + lineCountsArray.filter(item => (item[1] / totalSignsLine * 100).toFixed(1) >= 3 && item[1] >= 3).slice(0, 3).map(item => `<span class = 'urukLabel'>${item[0]}:</span> ${item[1]} times, ${(item[1] / totalSignsLine * 100).toFixed(1)}%`).join('<br>') + '</div>'
         : ''
 
     const tabletCountsHTML = (tabletCountsArray.length > 0)
-        ? `<div class='urukTranscription'>` + tabletCountsArray.filter(item => (item[1] / totalSignsTablet * 100).toFixed(1) >= 3 && item[1] >= 3).map(item => `<span class = 'urukLabel'>${item[0]}:</span> ${item[1]} times, ${(item[1] / totalSignsTablet * 100).toFixed(1)}%`).join('<br>') + '</div>'
+        ? `<div class='urukTranscription'>` + tabletCountsArray.filter(item => (item[1] / totalSignsTablet * 100).toFixed(1) >= 3 && item[1] >= 3).slice(0, 3).map(item => `<span class = 'urukLabel'>${item[0]}:</span> ${item[1]} times, ${(item[1] / totalSignsTablet * 100).toFixed(1)}%`).join('<br>') + '</div>'
         : ''
 
     // building the buttons
@@ -225,12 +225,12 @@ export function processSearchEconomic(economicAttestations) {
     economicAttestations.forEach(item => {
         const { 
             tablet: { id, designation },
-            tablet: { inscription: { transliterationClean } },
+            tablet: { inscription: { transliterationClean, accountType, featureIndicators } },
             tablet: { origin: { provenience: place, period: time} },
             line: { highlightedLine, index }
         } = item
 
-        if (!hierarchy[id]) hierarchy[id] = { designation, place, time, transliterationClean, lines: [] }
+        if (!hierarchy[id]) hierarchy[id] = { designation, place, time, transliterationClean, accountType, featureIndicators, lines: [] }
         if (!hierarchy[id]["lines"].some(entry => entry.index === index)) {
             hierarchy[id]["lines"].push({ highlightedLine, index })
         }
@@ -249,9 +249,14 @@ export function drawSearchEconomic(hierarchy) {
     // writing the HTML
     sortedTablets.forEach(tablet => {
         const allLines = hierarchy[tablet].transliterationClean.split('\n')
+        const accountTypesHTML = displayAccountTypes(hierarchy[tablet]);
+
         attestationHTML += `
             <div class='urukAttestation urukSmallText'>
-                <b><a href = 'https://cdli.mpiwg-berlin.mpg.de/artifacts/${tablet}' target = '_blank'>${hierarchy[tablet].designation}</a> (${locationLabels[hierarchy[tablet].place] || 'uncertain'}, ${periodLabels[hierarchy[tablet].time] || 'uncertain'})</b> 
+                <center>
+                    <b><a href = 'https://cdli.earth/artifacts/${tablet}' target = '_blank'>${hierarchy[tablet].designation}</a><br>${locationLabels[hierarchy[tablet].place] || 'uncertain'}, ${periodLabels[hierarchy[tablet].time] || 'uncertain'}</b><br>
+                    ${accountTypesHTML}
+                </center>
         `;
 
         hierarchy[tablet].lines.forEach(line => {
