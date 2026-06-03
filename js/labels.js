@@ -40,3 +40,8 @@ export const periodLabels = {
     3: 'IV',
     4: 'III'
 }
+
+export const validTypes = [
+    "animals", "cereals", "dairy", "fields",
+    "fish", "stones", "textiles"
+];

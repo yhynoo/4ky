@@ -1,4 +1,4 @@
-import { cleanTranscription, displayLexicalEntries, makeJSONButton } from './helpers.js'
+import { cleanTranscription, displayLexicalEntries, makeJSONButton } from './helpers.js';
 import { 
     searchCorpus,
     countUniqueAccounts,
@@ -8,126 +8,184 @@ import {
     drawSearchEconomic,
     processSearchEconomicCompounds, 
     processSearchLexical, 
-    drawSearchLexical
-} from "./workersSearch.js"
-import { lexicalListLabels } from './labels.js'
+    drawSearchLexical,
+    processSearchAccountTypes,
+    drawSearchAccountTypes,
+    processSearchExcavation,
+    drawSearchExcavation,
+    drawSearchExcavationGrid
+} from "./workersSearch.js";
+import { lexicalListLabels } from './labels.js';
+
+/* ------------------------- ANALYSIS ------------------------- */
 
 export function analysisPost(req, res) {
-    const { transcription, cases, numbers } = req.body
+    const { transcription, cases, numbers } = req.body;
 
-    // create a URL
     const queryParams = new URLSearchParams({
         transcription,
         cases,
         numbers
-    })
+    });
 
-    // send the URL data and the user to a new page
-    res.redirect(`/analysisResults?${queryParams.toString()}`)
+    res.redirect(`/analysisResults?${queryParams.toString()}`);
 }
 
 export async function analysisResultsGet(req, res) {
-    const cases = (req.query.cases === "1") ? 1 : 0
-    const numbers = (req.query.numbers === "1") ? 1 : 0
+    const cases = req.query.cases === "1" ? 1 : 0;
+    const numbers = req.query.numbers === "1" ? 1 : 0;
 
-    const { transcriptionArray, transcriptionString } = cleanTranscription(req.query.transcription, cases, numbers)
+    const { transcriptionArray, transcriptionString } =
+        cleanTranscription(req.query.transcription, cases, numbers);
 
-    // operate on the array
-    const { foundLexicalItems } = analysisLexical(transcriptionArray)
-    const { foundTheonyms, foundTimeExpressions, foundToponyms } = analysisFeatures(transcriptionArray)
-    const processedLexicalEntries = displayLexicalEntries(foundLexicalItems)
-    
-    const processedPrediction = await analysisPrediction(transcriptionString)
-    const similarityResults = await analysisSimilarity(transcriptionString, cases, numbers)
-    const { similarityHTML, jsonButtonSimilarity } = processSimilarity(similarityResults)
+    const { foundLexicalItems } = analysisLexical(transcriptionArray);
+    const { foundTheonyms, foundTimeExpressions, foundToponyms } =
+        analysisFeatures(transcriptionArray);
 
-    // render the results page
-    res.render('analysisResults', {data: 
-        { 
-            // features - does it contain time expressions, original metadata ('colophon'), lexical items, is it a ration list?
+    const processedLexicalEntries = displayLexicalEntries(foundLexicalItems);
+
+    const prediction = await analysisPrediction(transcriptionString);
+    const similarityResults = await analysisSimilarity(transcriptionString, cases, numbers);
+    const { similarityHTML, jsonButtonSimilarity } = processSimilarity(similarityResults);
+
+    res.render('analysisResults', {
+        data: {
             features: {
-                isRations: false, // placeholder
+                isRations: false,
                 lexicalItems: processedLexicalEntries,
-                originalMetadata: '',  // placeholder
-
+                originalMetadata: '',
                 theonyms: foundTheonyms,
                 timeExpressions: foundTimeExpressions,
                 toponyms: foundToponyms
             },
-            
-            // type
-            prediction: processedPrediction,
-
-            // similarity
+            prediction,
             similarityHTML,
             jsonButtonSimilarity,
-
             text: transcriptionString
         },
         lexicalListLabels
-    })
+    });
 }
 
-export function searchPost(req, res) {
-    const term = req.body.term
-    const timePeriods = req.body.timePeriod
-    const provenience = req.body.provenience
+/* ------------------------- SEARCH ------------------------- */
 
-    const distinguishVariantsFlag = req.body.distinguishVariants === '1'
-    const splitCompoundsFlag = req.body.splitCompounds === '1'
+export function searchPost(req, res) {
+    const {
+        term,
+        timePeriod: timePeriods,
+        provenience,
+        accountType,
+        distinguishVariants,
+        distinguishQuantities,
+        splitCompounds
+    } = req.body;
 
     const queryParams = new URLSearchParams({
-        term, 
+        term,
         timePeriods,
         provenience,
+        distinguishVariantsFlag: distinguishVariants === '1',
+        distinguishQuantitiesFlag: distinguishQuantities === '1',
+        splitCompoundsFlag: splitCompounds === '1'
+    });
 
-        distinguishVariantsFlag,
-        splitCompoundsFlag
-    })
-    
+    // accountType may be array or single value
+    if (Array.isArray(accountType)) {
+        accountType.forEach(t => queryParams.append("accountType", t));
+    } else if (accountType) {
+        queryParams.append("accountType", accountType);
+    }
+
     res.redirect(`/searchResults?${queryParams.toString()}`);
 }
 
 export function searchResultsGet(req, res) {
-    const { term, timePeriods, provenience, distinguishVariantsFlag: distinguishVariants, splitCompoundsFlag: split } = req.query;
+    const {
+        term,
+        timePeriods,
+        provenience,
+        distinguishVariantsFlag,
+        distinguishQuantitiesFlag,
+        splitCompoundsFlag
+    } = req.query;
 
-    // Convert string values to booleans
-    const distinguishVariantsFlag = distinguishVariants === 'true'
-    const splitCompoundsFlag = split === 'true'
+    const accountTypes = req.query.accountType
+        ? [].concat(req.query.accountType)
+        : [];
 
-    const { economicAttestations,
-            economicCompounds, 
-            lexicalAttestations, 
-            _lexicalCompounds,
-            isCoordinated
-        } = searchCorpus(term, timePeriods, provenience, distinguishVariantsFlag, splitCompoundsFlag)
+    const distinguishVariants = distinguishVariantsFlag === 'true';
+    const distinguishQuantities = distinguishQuantitiesFlag === 'true';
+    const splitCompounds = splitCompoundsFlag === 'true';
 
-    const { lineCountsHTML, jsonButtonLine, tabletCountsHTML, jsonButtonTablet } = processSearchCollocations(term, economicAttestations, distinguishVariantsFlag, splitCompoundsFlag, isCoordinated)
-    const { compoundsHTML, jsonButtonCompounds } = processSearchEconomicCompounds(economicCompounds)
-    const jsonButtonEconomic = makeJSONButton(economicAttestations)
-    const jsonButtonLexical = makeJSONButton(lexicalAttestations)
+    const {
+        economicAttestations,
+        economicCompounds,
+        lexicalAttestations,
+        _lexicalCompounds,
+        isCoordinated
+    } = searchCorpus(
+        term,
+        timePeriods,
+        provenience,
+        distinguishVariants,
+        distinguishQuantities,
+        splitCompounds,
+        accountTypes
+    );
 
-    res.render('searchResults', {data: {
-            economicAttestations: drawSearchEconomic(processSearchEconomic(economicAttestations)),
+    const {
+        lineCountsHTML,
+        jsonButtonLine,
+        tabletCountsHTML,
+        jsonButtonTablet
+    } = processSearchCollocations(term, economicAttestations, distinguishVariants, splitCompounds, isCoordinated);
+
+    const { compoundsHTML, jsonButtonCompounds } =
+        processSearchEconomicCompounds(economicCompounds);
+
+    const jsonButtonEconomic = makeJSONButton(economicAttestations);
+    const jsonButtonLexical = makeJSONButton(lexicalAttestations);
+
+    const accountTypeHTML = drawSearchAccountTypes(
+        processSearchAccountTypes(economicAttestations)
+    );
+
+    const excavationData = processSearchExcavation(economicAttestations)
+    const excavationHTML = drawSearchExcavation(excavationData)
+
+    const excavationGridHTML = drawSearchExcavationGrid({
+        grid: excavationData.grid,
+        rows: excavationData.rows,
+        columns: excavationData.columns
+    });
+
+    res.render('searchResults', {
+        data: {
+            economicAttestations: drawSearchEconomic(
+                processSearchEconomic(economicAttestations)
+            ),
             economicAccountsCount: countUniqueAccounts(economicAttestations),
             economicAttestationsCount: economicAttestations.length,
             statistics: {
                 distribution: processSearchDistribution(economicAttestations),
                 lineCountsHTML,
                 tabletCountsHTML,
-                compoundsHTML 
+                compoundsHTML,
+                accountTypeHTML,
+                excavationHTML,
+                excavationGridHTML
             },
             isCoordinated,
-
             jsonButtonLine,
             jsonButtonTablet,
             jsonButtonCompounds,
             jsonButtonEconomic,
             jsonButtonLexical,
-            
             lexicalItemsCount: lexicalAttestations.length,
-            lexicalItems: drawSearchLexical(processSearchLexical(lexicalAttestations))
+            lexicalItems: drawSearchLexical(
+                processSearchLexical(lexicalAttestations)
+            )
         },
         term
-    })
+    });
 }

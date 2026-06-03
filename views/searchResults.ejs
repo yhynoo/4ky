@@ -22,74 +22,108 @@
 
     <% if (Object.keys(data.lexicalItems).length > 0) { %>
         <div class="urukBox">
-            <div class="urukLine urukLineHigh">
-                <h2>Lexical attestations (<%= data.lexicalItemsCount %> witnesses):</h2>
-                <span class = "urukSmallText"><a href="javascript:void(0);" onclick="toggleVisibility('lexicalResults')">Hide / show</a></span>
-            </div>
-            <div id = "lexicalResults">
-                <%- data.lexicalItems %>
+            <h2>Lexical attestations (<%= data.lexicalItemsCount %> witnesses)</h2>
+
+            <div class = "urukBox">
+                <h3>Lexical contexts <span class="urukSmallText urukLabel"><a href="javascript:void(0);" onclick="toggleVisibility('lexicalResults')">Hide / show</a></span></h3>
+                <div id = "lexicalResults">
+                    <%- data.lexicalItems %>
+                </div>
             </div>
         </div>
     <% } %>
 
     <% if (data.economicAttestations) { %>
         <div class="urukBox">
-            <div class="urukLine urukLineHigh">
-                <% if (data.isCoordinated) { %>
-                    <h2>Administrative attestations (<%= data.economicAccountsCount %> accounts):</h2>
-                <% } else { %>
-                    <h2>Administrative attestations (<%= data.economicAttestationsCount %> matches in <%= data.economicAccountsCount %> accounts):</h2>
-                <% } %>
-                <span class = "urukSmallText"><a href="javascript:void(0);" onclick="toggleVisibility('economicResults')">Hide / show</a></span>
-            </div>
+            <% if (data.isCoordinated) { %>
+                <h2>Administrative attestations (<%= data.economicAccountsCount %> accounts)</h2>
+            <% } else { %>
+                <h2>Administrative attestations (<%= data.economicAttestationsCount %> matches in <%= data.economicAccountsCount %> accounts)</h2>
+            <% } %>
 
-            <div id = "economicResults">
-                <% if (data.statistics.compoundsHTML !== '') { %>
-                    <div class='urukAttestation urukSmallText'>
-                        <div class="urukLine">
-                            <b>Most common split compounds:</b>
-                            <%- data.jsonButtonCompounds %>
+            <div class = "urukBox" id = "economicResults">
+                <h3>Semantic contexts <span class="urukSmallText urukLabel"><a href="javascript:void(0);" onclick="toggleVisibility('semanticResults')">Hide / show</a></span></h3>
+                <div id = "semanticResults" style = "padding-bottom: 1em; display: none;">
+                    <% if (data.statistics.compoundsHTML !== '') { %>
+                        <div class='urukAttestation urukSmallText'>
+                            <div class="urukLine">
+                                <b>Most common split compounds</b>
+                                <%- data.jsonButtonCompounds %>
+                            </div>
+                            <%- data.statistics.compoundsHTML %>
                         </div>
-                        <%- data.statistics.compoundsHTML %>
-                    </div>
-                <% } %>
-                
-                <% if (data.statistics.lineCountsHTML !== '') { %>
-                    <div class='urukAttestation urukSmallText'>
-                        <div class="urukLine">
-                            <b>Other signs in the same case:</b>
-                            <%- data.jsonButtonLine %>
+                    <% } %>
+                    
+                    <% if (data.statistics.lineCountsHTML !== '') { %>
+                        <div class='urukAttestation urukSmallText'>
+                            <div class="urukLine">
+                                <b>Other signs in the same case</b>
+                                <%- data.jsonButtonLine %>
+                            </div>
+                            <%- data.statistics.lineCountsHTML %>
                         </div>
-                        <%- data.statistics.lineCountsHTML %>
-                    </div>
-                <% } %>
-    
-                <% if (data.statistics.tabletCountsHTML !== '') { %>
-                    <div class='urukAttestation urukSmallText'>
-                        <div class="urukLine">
-                            <b>Other signs in the same account:</b>
-                            <%- data.jsonButtonTablet %>
+                    <% } %>
+        
+                    <% if (data.statistics.tabletCountsHTML !== '') { %>
+                        <div class='urukAttestation urukSmallText'>
+                            <div class="urukLine">
+                                <b>Other signs in the same account</b>
+                                <%- data.jsonButtonTablet %>
+                            </div>
+                            <%- data.statistics.tabletCountsHTML %>
                         </div>
-                        <%- data.statistics.tabletCountsHTML %>
-                    </div>
-                <% } %>
-    
-                <% if (data.statistics.distribution !== '') { %>
-                    <div class='urukAttestation urukSmallText'>
-                        <div class="urukLine">
-                            <b>Distribution:</b>
-                        </div>
-                        <%- data.statistics.distribution %>
-                    </div>
-                <% } %>
-    
-                <br>
-                <br>
-                <div class="urukLine urukLineHigh">
-                    <h2></h2>
-                    <span class = "urukSmallText"><%- data.jsonButtonEconomic %></span>
+                    <% } %>
+        
+                    <!--
+                        <% if (data.statistics.accountTypeHTML !== '') { %>
+                            <div class='urukAttestation urukSmallText'>
+                                <b>Account types</b>
+                                <span class="urukLabel"><a href="javascript:void(0);" onclick="toggleVisibility('accountTypes')">Hide / show</a></span>
+                                <div id = "accountTypes" style="display: none;">
+                                    <%- data.statistics.accountTypeHTML %>
+                                </div>
+                            </div>
+                        <% } %>
+                    -->
                 </div>
-                <%- data.economicAttestations %>
+                <br>
+
+                <h3>Archaeological contexts <span class="urukSmallText urukLabel"><a href="javascript:void(0);" onclick="toggleVisibility('archaeologicalResults')">Hide / show</a></span></h3>
+                <div id = "archaeologicalResults" style = "padding-bottom: 1em; display: none;">
+                    <% if (data.statistics.distribution !== '') { %>
+                        <div class='urukAttestation urukSmallText'>
+                            <div class="urukLine">
+                                <b>Geographic distribution:</b>
+                            </div>
+                            <%- data.statistics.distribution %>
+                        </div>
+                    <% } %>
+
+                    <% if (data.statistics.excavationHTML !== '') { %>
+                        <div class='urukAttestation urukSmallText'>
+                            <b>Excavation squares in Uruk</b>
+                            <span class="urukLabel"><a href="javascript:void(0);" onclick="toggleVisibility('excavationSquares')">Hide / show</a></span>
+
+                            <div id = "excavationSquares">
+                                <%- data.statistics.excavationGridHTML %>
+                                <%- data.statistics.excavationHTML %>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+                <br>
+
+                <h3 class = "urukLine">
+                    <span>
+                        Attestations 
+                        <span class="urukSmallText urukLabel"><a href="javascript:void(0);" onclick="toggleVisibility('attestations')">Hide / show</a></span>
+                    </span>
+                    <span class = "urukSmallText"><%- data.jsonButtonEconomic %></span>
+                </h3>
+                <br>
+                <div id = "attestations">
+                    <%- data.economicAttestations %>
+                </div>
             </div>
         </div>
     <% } else { %>

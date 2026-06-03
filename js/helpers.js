@@ -18,28 +18,42 @@ export function cleanVariants(line) {
     return line.map(item => item.replace(/~[a-z](\d)?/g, ''))
 }
 
-export function checkMatch(query, lineToCheck, distinguishVariantsFlag, splitCompoundsFlag, cleanMatchFlag) {
-    let foundCompoundsTablet = []
-    let sortedQuery = query.split(' ').slice().sort()
-    let sortedLineToCheck = lineToCheck.split(' ').slice().sort()
+export function cleanValues(line) {
+    return line.map(item => item.replace(/^(\d)(N.+)$/i, '$2'));
+}
 
+export function checkMatch(query, lineToCheck, distinguishVariantsFlag, distinguishQuantitiesFlag, splitCompoundsFlag, cleanMatchFlag) {
+    let foundCompoundsTablet = [];
+    let sortedQuery = query.split(' ').slice().sort();
+    let sortedLineToCheck = lineToCheck.split(' ').slice().sort();
+
+    // variants
     if (distinguishVariantsFlag === false) {
-        sortedQuery = cleanVariants(sortedQuery)
-        sortedLineToCheck = cleanVariants(sortedLineToCheck)
+        sortedQuery = cleanVariants(sortedQuery);
+        sortedLineToCheck = cleanVariants(sortedLineToCheck);
     }
 
-    // Unpacking the compounds and saving results
+    // values
+    if (distinguishQuantitiesFlag === false) {
+        sortedQuery = cleanValues(sortedQuery);
+        sortedLineToCheck = cleanValues(sortedLineToCheck);
+    }
+
+    // compounds
     if (splitCompoundsFlag === true) {
-        const { line, trueMatches } = splitAndEvaluateCompounds(sortedQuery, sortedLineToCheck)
-        sortedLineToCheck = line
-        foundCompoundsTablet = trueMatches
+        const { line, trueMatches } = splitAndEvaluateCompounds(sortedQuery, sortedLineToCheck);
+        sortedLineToCheck = line;
+        foundCompoundsTablet = trueMatches;
     }
 
-    // Managing returns
-    const isMatch = (cleanMatchFlag === true) ? sortedQuery.length === sortedLineToCheck.length && sortedQuery.every((value, index) => value === sortedLineToCheck[index]) : sortedQuery.every(value => sortedLineToCheck.includes(value))
-    foundCompoundsTablet = (isMatch) ? foundCompoundsTablet : []
+    // otherwise
+    const isMatch = (cleanMatchFlag === true)
+        ? sortedQuery.length === sortedLineToCheck.length && sortedQuery.every((value, index) => value === sortedLineToCheck[index])
+        : sortedQuery.every(value => sortedLineToCheck.includes(value));
 
-    return { isMatch, foundCompoundsTablet }
+    foundCompoundsTablet = (isMatch) ? foundCompoundsTablet : [];
+
+    return { isMatch, foundCompoundsTablet };
 }
 
 export function isStopWord(sign, query, splitCompoundsFlag) {
@@ -54,27 +68,60 @@ export function isStopWord(sign, query, splitCompoundsFlag) {
     return false
 }
 
-export function highlightMatches(query, line, distinguishVariantsFlag, splitCompoundsFlag) {
+export function highlightMatches(query, line, distinguishVariantsFlag, distinguishQuantitiesFlag, splitCompoundsFlag) {
     const splitLine = line.split(' ');
 
-    const processWord = word => distinguishVariantsFlag ? word : word.replace(/~[a-z](\d)?/g, '');
-    const processedQuery = distinguishVariantsFlag ? query.join(' ').replace(',', '').split(' ') : cleanVariants(query.join(' ').replace(',', '').split(' '));
+    // 1. helpers
+    const processWord = word => {
+        let w = word;
 
+        // remove variants if needed
+        if (!distinguishVariantsFlag) {
+            w = w.replace(/~[a-z](\d)?/g, '');
+        }
+
+        // remove quantity values if needed
+        if (!distinguishQuantitiesFlag) {
+            w = w.replace(/^(\d)(N.+)$/i, '$2');   // 4N01 → N01
+        }
+
+        return w;
+    };
+
+    // 2. clean the query
+    let processedQuery = query.join(' ').replace(',', '').split(' ');
+
+    if (!distinguishVariantsFlag) {
+        processedQuery = cleanVariants(processedQuery);
+    }
+
+    if (!distinguishQuantitiesFlag) {
+        processedQuery = cleanValues(processedQuery);
+    }
+
+    // 3. highlighting
     const newLine = splitLine.map(word => {
         const processedWord = processWord(word);
 
+        // direct match
         if (processedQuery.includes(processedWord)) {
             return `<span class='urukHighlight'>${word}</span>`;
-        } else if (splitCompoundsFlag && /[.+&x]/.test(processedWord)) {
-            if (processedWord.split(/[.+&x]/g).some(value => processedQuery.includes(value))) {
+        }
+
+        // compound match
+        if (splitCompoundsFlag && /[.+&x]/.test(processedWord)) {
+            const parts = processedWord.split(/[.+&x]/g);
+            if (parts.some(value => processedQuery.includes(value))) {
                 return `<span class='urukHighlight'>${word}</span>`;
             }
         }
+
         return word;
     });
 
     return newLine.join(' ');
 }
+
 
 export function makeCasesAndNumbers(line, cases, numbers) {
     let result = line
