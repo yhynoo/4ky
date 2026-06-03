@@ -108,31 +108,36 @@ export function processSearchDistribution(economicAttestations) {
     let distributionHTML = ''
     if (economicAttestations.length === 0) return distributionHTML
 
-    // make the actual table
-    const table = [
-        ['',    105,    159,    72,     154,    168,    306,    1000    ],
-        [4,     0,      0,      0,      0,      0,      0,      0       ],
-        [3,     0,      0,      0,      0,      0,      0,      0       ],
-        [2,     0,      0,      0,      0,      0,      0,      0       ],
-    ];
-    
+    const uniqueTablets = {};
+
     economicAttestations.forEach(item => {
-        let column = table[0].indexOf(item.tablet.origin.provenience)
+        uniqueTablets[item.tablet.id] = item.tablet;
+    });
+
+    const table = [
+        ['',    105,    159,    72,     154,    168,    306,    1000],
+        [4,     0,      0,      0,      0,      0,      0,      0   ],
+        [3,     0,      0,      0,      0,      0,      0,      0   ],
+        [2,     0,      0,      0,      0,      0,      0,      0   ],
+    ];
+
+    Object.values(uniqueTablets).forEach(tablet => {
+        let column = table[0].indexOf(tablet.origin.provenience);
         if (column === -1) column = 7;
 
         let row = 1;
-        switch(item.tablet.origin.period) {
-            case 3: {
+
+        switch(tablet.origin.period) {
+            case 3:
                 row = 2;
-                break
-            }
-            case 2: {
+                break;
+            case 2:
                 row = 3;
-                break
-            }
+                break;
         }
-        table[row][column]++
-    })
+
+        table[row][column]++;
+    });
 
     // make the HTML
     distributionHTML = `<div class = 'urukTranscription'><table class = 'urukTable'>`;
@@ -432,22 +437,18 @@ export function processSearchExcavation(economicAttestations) {
         "XVII,1","XVII,2","XVII,3","XVII,4","XVII,5"
     ];
 
-    // NEW: 2D grid
-    const grid = Array.from({ length: rows.length }, () =>
-        Array(columns.length).fill(0)
-    );
-
     economicAttestations.forEach(item => {
-        const { excavation } = item.tablet;
-        if (!excavation) return;
-        if (item.tablet.origin.provenience !== 105) return;
+        const { tablet } = item;
+        const { excavation, origin } = tablet;
 
-        total++;
+        if (!excavation) return;
+        if (origin.provenience !== 105) return;
 
         const square = excavation.findspot_square || "unknown";
-        const comment = excavation.findspot_comments || null;
+        const comment = excavation.findspot_comments || "uncertain";
 
-        // ---- existing aggregation ----
+        const tabletId = tablet.id;
+
         if (!squares[square]) {
             squares[square] = {
                 count: 0,
@@ -455,35 +456,54 @@ export function processSearchExcavation(economicAttestations) {
             };
         }
 
-        squares[square].count++;
-
-        if (comment) {
-            squares[square].comments[comment] =
-                (squares[square].comments[comment] || 0) + 1;
+        if (!squares[square].comments[comment]) {
+            squares[square].comments[comment] = {
+                count: 0,
+                tablets: {}
+            };
         }
 
-        // ---- NEW: fill grid ----
-        if (square !== "unknown") {
-            const [col, row] = square.split(" ");
+        const commentNode = squares[square].comments[comment];
 
-            const colIndex = columns.indexOf(col);
-            const rowIndex = rows.indexOf(row);
+        // ensure uniqueness per comment
+        if (!commentNode.tablets[tabletId]) {
+            commentNode.tablets[tabletId] = {
+                designation: tablet.designation,
+                period: origin.period
+            };
 
-            if (colIndex !== -1 && rowIndex !== -1) {
-                grid[rowIndex][colIndex]++;
-            }
+            commentNode.count++;
+            squares[square].count++;
+            total++;
         }
     });
 
+    // convert to arrays for rendering
     const sorted = Object.entries(squares)
         .sort((a, b) => b[1].count - a[1].count);
 
-    // NEW: human-readable console grid
+    // rebuild grid (tablet-based counts)
+    const grid = Array.from({ length: rows.length }, () =>
+        Array(columns.length).fill(0)
+    );
+
+    sorted.forEach(([square, data]) => {
+        if (square === "unknown") return;
+
+        const [col, row] = square.split(" ");
+
+        const colIndex = columns.indexOf(col);
+        const rowIndex = rows.indexOf(row);
+
+        if (colIndex !== -1 && rowIndex !== -1) {
+            grid[rowIndex][colIndex] = data.count;
+        }
+    });
+
     const labeledGrid = {};
 
     rows.forEach((rowLabel, r) => {
         labeledGrid[rowLabel] = {};
-
         columns.forEach((colLabel, c) => {
             labeledGrid[rowLabel][colLabel] = grid[r][c];
         });
@@ -495,31 +515,48 @@ export function processSearchExcavation(economicAttestations) {
         grid,
         rows,
         columns,
-        labeledGrid // optional but useful for debugging/UI later
+        labeledGrid
     };
 }
 
 export function drawSearchExcavation({ sorted, total }) {
     if (sorted.length === 0) return "";
 
-    let html = `<div class="urukTranscription">`;
+    let html = ``;
 
     sorted.forEach(([square, data]) => {
         const pct = ((data.count / total) * 100).toFixed(1);
-        html += `<b>${square}</b> — ${data.count}, ${pct}%<br>`;
 
-        const comments = Object.entries(data.comments);
-        if (comments.length > 0) {
-            html += `<ul>`;
-            comments.forEach(([comment, count]) => {
-                const pctC = ((count / total) * 100).toFixed(1);
-                html += `<li>${comment} <span class='urukLabel'>(${count}, ${pctC}%)</span></li>`;
+        html += `
+            <b>${square}</b> (${data.count}, ${pct}%)
+        `;
+
+        Object.entries(data.comments || {})
+            .sort((a, b) => b[1].count - a[1].count)
+            .forEach(([comment, node]) => {
+
+                html += `
+                    <div class='urukTranscription'>
+                        <b>${comment}</b> (${node.count}):
+                        <p>
+                `;
+
+                const tablets = Object.entries(node.tablets)
+                    .sort((a, b) =>
+                        a[1].designation.localeCompare(b[1].designation)
+                    );
+
+                html += tablets.map(([id, t]) => {
+                    return `<a href='https://cdli.mpiwg-berlin.mpg.de/artifacts/${id}' target='_blank'>${id}</a> (${periodLabels[t.period]})`;
+                }).join(', ');
+
+                html += `
+                        </p>
+                    </div>
+                `;
             });
-            html += `</ul>`;
-        }
     });
 
-    html += `</div>`;
     return html;
 }
 
