@@ -1,4 +1,4 @@
-// import data from '../data/total.json' with {type: 'json'}
+import data from '../data/schoyen.json' with {type: 'json'}
 
 const ATFCleaner = (atf) => {
     atf = atf.replace(/\r/g, '')    // Remove all the unnecessary \r characters
@@ -13,32 +13,44 @@ const ATFCleaner = (atf) => {
 }
 
 const processTablet = (tablet) => {
-    const { id, designation, inscription, genres, composites, period: {id: periodId }, provenience } = tablet
+    const {
+        id,
+        designation,
+        findspot_square,
+        findspot_comment,
+        inscription,
+        genres = [],
+        composites = [],
+        period,
+        provenience
+    } = tablet
 
-    const atf = inscription && inscription.atf ? inscription.atf : ''
-    const provenienceId = provenience && provenience.id ? provenience.id : 0
-    const link = `https://cdli.earth/artifacts/${id}`
+    const atf = inscription?.atf || ''
+    const periodId = period?.id || null
+    const provenienceId = provenience?.id || 0
+    const compositeId = composites[0]?.composite?.id || 0
 
-    const compositeId = composites.length > 0 ? composites[0].composite.id : 0
     const accountType = []
-    const features = []
-
-    if (genres.some(genre => genre.genre.id === 1)) { accountType.push('economic') }
-    if (genres.some(genre => genre.genre.id === 4)) { accountType.push('lexical') }
+    if (genres.some(g => g.genre?.id === 1)) accountType.push('economic')
+    if (genres.some(g => g.genre?.id === 4)) accountType.push('lexical')
 
     return {
         id,
         designation,
-        link,
+        link: `https://cdli.earth/artifacts/${id}`,
         inscription: {
             transliterationClean: ATFCleaner(atf),
             compositeId,
             accountType,
-            features
+            features: []
         },
         origin: {
             period: periodId,
             provenience: provenienceId
+        },
+        excavation: {
+            findspot_square,
+            findspot_comment
         }
     }
 }
@@ -47,4 +59,4 @@ const processTablet = (tablet) => {
 const processedData = data.map(tablet => processTablet(tablet))
 
 // Write to file
-Deno.writeTextFile('../data/4ky_clean.json', JSON.stringify(processedData))
+Deno.writeTextFile('../data/4ky_schoyen.json', JSON.stringify(processedData))
